@@ -21,6 +21,7 @@ public class Treatment
 	private String TreatmentSummary;
 	
 	//endregion
+
 	//region contors
 	
 	public Treatment()
@@ -40,6 +41,7 @@ public class Treatment
 	}
 	
 	//endregion
+
 	//region getters/setters
 
 	public long getTreatmentID()
@@ -90,6 +92,50 @@ public class Treatment
 	public void setTreatmentSummary(String treatmentSummary)
 	{
 		TreatmentSummary = treatmentSummary;
+	}
+	//endregion
+
+	//region overrideMethods
+	@Override
+	public int hashCode()
+	{
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (TreatmentID ^ (TreatmentID >>> 32));
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj)
+	{
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Treatment other = (Treatment) obj;
+		if (TreatmentID != other.TreatmentID)
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString()
+	{
+		StringBuilder builder = new StringBuilder();
+		builder.append("Treatment [TreatmentID=");
+		builder.append(TreatmentID);
+		builder.append(", TreatmentDoctorID=");
+		builder.append(TreatmentDoctorID);
+		builder.append(", TreatmentPatientID=");
+		builder.append(TreatmentPatientID);
+		builder.append(", TreatmentDate=");
+		builder.append(TreatmentDate);
+		builder.append(", TreatmentSummary=");
+		builder.append(TreatmentSummary);
+		builder.append("]");
+		return builder.toString();
 	}
 	//endregion
 }

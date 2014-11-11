@@ -23,6 +23,7 @@ public class Doctor
 	private String DoctorPhoneNumber;
 	
 	//endregion
+	
 	//region contors
 	
 	public Doctor()
@@ -45,6 +46,7 @@ public class Doctor
 	}
 
 	//endregion
+	
 	//region getters/setters
 	
 	public long getDoctorID()
@@ -116,5 +118,54 @@ public class Doctor
 	{
 		DoctorPhoneNumber = doctorPhoneNumber;
 	}
+	//endregion
+	
+	//region overrideMethods
+	@Override
+	public int hashCode()
+	{
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (DoctorID ^ (DoctorID >>> 32));
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj)
+	{
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Doctor other = (Doctor) obj;
+		if (DoctorID != other.DoctorID)
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString()
+	{
+		StringBuilder builder = new StringBuilder();
+		builder.append("Doctor [DoctorID=");
+		builder.append(DoctorID);
+		builder.append(", DoctorFirstName=");
+		builder.append(DoctorFirstName);
+		builder.append(", DoctorLastName=");
+		builder.append(DoctorLastName);
+		builder.append(", DoctorDoB=");
+		builder.append(DoctorDoB);
+		builder.append(", DoctorDoJ=");
+		builder.append(DoctorDoJ);
+		builder.append(", DoctorSalary=");
+		builder.append(DoctorSalary);
+		builder.append(", DoctorPhoneNumber=");
+		builder.append(DoctorPhoneNumber);
+		builder.append("]");
+		return builder.toString();
+	}
+	
 	//endregion
 }

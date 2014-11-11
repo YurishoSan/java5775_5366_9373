@@ -3,8 +3,6 @@
  */
 package entities;
 
-import java.util.Date;
-
 /**
  * @author Yitzhak Goldstein
  * @author Shalom Tzichtig
@@ -19,6 +17,7 @@ public class Prescription
 	private long PrescriptionMedicineID;
 	
 	//endregion
+
 	//region contors
 	
 	public Prescription()
@@ -36,6 +35,7 @@ public class Prescription
 	}
 
 	//endregion
+
 	//region getters/setters
 	
 	public long getPrescriptionID()
@@ -68,4 +68,40 @@ public class Prescription
 		PrescriptionMedicineID = prescriptionMedicineID;
 	}
 	//endregion
+
+	//region overrideMethods
+	@Override
+	public int hashCode()
+	{
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ (int) (PrescriptionID ^ (PrescriptionID >>> 32));
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj)
+	{
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Prescription other = (Prescription) obj;
+		if (PrescriptionID != other.PrescriptionID)
+			return false;
+		return true;
+	}
+	
+	@Override
+	public String toString()
+	{
+		return "Prescription [PrescriptionID=" + PrescriptionID
+				+ ", PrescriptionTreatmentID=" + PrescriptionTreatmentID
+				+ ", PrescriptionMedicineID=" + PrescriptionMedicineID + "]";
+	}
+	//endregion
+	
 }

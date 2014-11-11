@@ -22,6 +22,7 @@ public class Patient
 	private Date PatientDoB; // Date of birth
 	
 	//endregion
+
 	//region contors
 	
 	public Patient()
@@ -43,6 +44,7 @@ public class Patient
 	}
 
 	//endregion
+
 	//region getters/setters
 	
 	public long getPatientID()
@@ -103,6 +105,52 @@ public class Patient
 	public void setPatientDoB(Date patientDoB)
 	{
 		PatientDoB = patientDoB;
+	}
+	//endregion
+
+	//region overrideMethods
+	@Override
+	public int hashCode()
+	{
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (PatientID ^ (PatientID >>> 32));
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj)
+	{
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Patient other = (Patient) obj;
+		if (PatientID != other.PatientID)
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString()
+	{
+		StringBuilder builder = new StringBuilder();
+		builder.append("Patient [PatientID=");
+		builder.append(PatientID);
+		builder.append(", PatientFirstName=");
+		builder.append(PatientFirstName);
+		builder.append(", PatientLastName=");
+		builder.append(PatientLastName);
+		builder.append(", PatientServiceClass=");
+		builder.append(PatientServiceClass);
+		builder.append(", PatientPhoneNumber=");
+		builder.append(PatientPhoneNumber);
+		builder.append(", PatientDoB=");
+		builder.append(PatientDoB);
+		builder.append("]");
+		return builder.toString();
 	}
 	//endregion
 }

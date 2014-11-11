@@ -22,6 +22,7 @@ public class Medicine
 	private Date MedicineExpDate; //Expiration Date
 	
 	//endregion
+
 	//region contors
 	
 	public Medicine()
@@ -43,6 +44,7 @@ public class Medicine
 	}
 	
 	//endregion
+
 	//region getters/setters
 	
 	public long getMedicineID()
@@ -103,6 +105,53 @@ public class Medicine
 	public void setMedicineExpDate(Date medicineExpDate)
 	{
 		MedicineExpDate = medicineExpDate;
+	}
+	//endregion
+
+	//region overrideMethods
+	
+	@Override
+	public int hashCode()
+	{
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (MedicineID ^ (MedicineID >>> 32));
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj)
+	{
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Medicine other = (Medicine) obj;
+		if (MedicineID != other.MedicineID)
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString()
+	{
+		StringBuilder builder = new StringBuilder();
+		builder.append("Medicine [MedicineID=");
+		builder.append(MedicineID);
+		builder.append(", MedicineName=");
+		builder.append(MedicineName);
+		builder.append(", MedicineIngredients=");
+		builder.append(MedicineIngredients);
+		builder.append(", MedicineActiveIngredients=");
+		builder.append(MedicineActiveIngredients);
+		builder.append(", MedicineType=");
+		builder.append(MedicineType);
+		builder.append(", MedicineExpDate=");
+		builder.append(MedicineExpDate);
+		builder.append("]");
+		return builder.toString();
 	}
 	//endregion
 }
