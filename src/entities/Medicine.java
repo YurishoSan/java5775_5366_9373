@@ -20,22 +20,25 @@ public class Medicine
 	private String MedicineType; //TODO: make medicine type enum. Type i.e. pill, liquid, etc.
 	private Date MedicineExpDate; //Expiration Date
 	
-	public Medicine()
+	public Medicine() 
 	{
-		super();
+		MedicineID = 0;
+		MedicineName = "";
+		MedicineIngredients = "";
+		MedicineActiveIngredients = "";
+		MedicineType = "";
+		MedicineExpDate = null;
 	}
 	
 	public Medicine(long medicineID, String medicineName,
 			String medicineIngredients, String medicineActiveIngredients,
-			String medicineType, Date medicineExpDate)
+			String medicineType, Date medicineExpDate) 
 	{
-		super();
-		MedicineID = medicineID;
-		MedicineName = medicineName;
-		MedicineIngredients = medicineIngredients;
-		MedicineActiveIngredients = medicineActiveIngredients;
-		MedicineType = medicineType;
-		MedicineExpDate = medicineExpDate;
+		this.MedicineID = medicineID;
+		this.MedicineName = medicineName;
+		this.MedicineIngredients = medicineIngredients;
+		this.MedicineActiveIngredients = medicineActiveIngredients;
+		this.MedicineType = medicineType;
+		this.MedicineExpDate = medicineExpDate;
 	}
-	
 }

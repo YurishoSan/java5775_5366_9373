@@ -20,23 +20,26 @@ public class Patient
 	private String PatientPhoneNumber;
 	private Date PatientDoB; // Date of birth
 	
-	public Patient()
+	public Patient() 
 	{
-		super();
-	}
-
-	public Patient(long patientID, String patientFirstName,
-			String patientLastName, String patientServiceClass,
-			String patientPhoneNumber, Date patientDoB)
-	{
-		super();
-		PatientID = patientID;
-		PatientFirstName = patientFirstName;
-		PatientLastName = patientLastName;
-		PatientServiceClass = patientServiceClass;
-		PatientPhoneNumber = patientPhoneNumber;
-		PatientDoB = patientDoB;
+		PatientID = 0;
+		PatientFirstName = "";
+		PatientLastName = "";
+		PatientServiceClass = "";
+		PatientPhoneNumber = "";
+		PatientDoB = null;
+		
 	}
 	
-	
+	public Patient(long patientID,
+			String patientFirstName, String patientLastName,
+			String patientServiceClass, String PatientPhoneNumber, Date patientDoB) 
+	{
+		this.PatientID = patientID;
+		this.PatientFirstName = patientFirstName;
+		this.PatientLastName = patientLastName;
+		this.PatientServiceClass = patientServiceClass;
+		this.PatientPhoneNumber = PatientPhoneNumber;
+		this.PatientDoB = patientDoB;
+	}
 }

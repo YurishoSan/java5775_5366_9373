@@ -17,17 +17,18 @@ public class Prescription
 	private long PrescriptionTreatmentID;
 	private long PrescriptionMedicineID;
 	
-	public Prescription()
+	public Prescription() 
 	{
-		super();
+		PrescriptionID = 0;
+		PrescriptionTreatmentID = 0;
+		PrescriptionMedicineID = 0;
 	}
-
+	
 	public Prescription(long prescriptionID, long prescriptionTreatmentID,
-			long prescriptionMedicineID)
+			long prescriptionMedicineID) 
 	{
-		super();
-		PrescriptionID = prescriptionID;
-		PrescriptionTreatmentID = prescriptionTreatmentID;
-		PrescriptionMedicineID = prescriptionMedicineID;
+		this.PrescriptionID = prescriptionID;
+		this.PrescriptionTreatmentID = prescriptionTreatmentID;
+		this.PrescriptionMedicineID = prescriptionMedicineID;
 	}
 }
