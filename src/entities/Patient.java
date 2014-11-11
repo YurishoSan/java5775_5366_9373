@@ -17,6 +17,7 @@ public class Patient
 	private String PatientFirstName;
 	private String PatientLastName;
 	private String PatientServiceClass; // TODO: make service class enum.
+	private String PatientPhoneNumber;
 	private Date PatientDoB; // Date of birth
 	
 	public Patient() 
@@ -25,17 +26,20 @@ public class Patient
 		PatientFirstName = "";
 		PatientLastName = "";
 		PatientServiceClass = "";
+		PatientPhoneNumber = "";
 		PatientDoB = null;
+		
 	}
 	
 	public Patient(long patientID,
 			String patientFirstName, String patientLastName,
-			String patientServiceClass, Date patientDoB) 
+			String patientServiceClass, String PatientPhoneNumber, Date patientDoB) 
 	{
 		this.PatientID = patientID;
 		this.PatientFirstName = patientFirstName;
 		this.PatientLastName = patientLastName;
 		this.PatientServiceClass = patientServiceClass;
+		this.PatientPhoneNumber = PatientPhoneNumber;
 		this.PatientDoB = patientDoB;
 	}
 }

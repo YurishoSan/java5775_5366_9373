@@ -18,6 +18,7 @@ public class Doctor
 	private Date DoctorDoB; //Date of birth
 	private Date DoctorDoJ; //Date of joining company
 	private float DoctorSalary;
+	private String DoctorPhoneNumber;
 	
 	public Doctor()
 	{
@@ -26,11 +27,12 @@ public class Doctor
 	   DoctorLastName="";
 	   DoctorDoB=null;
 	   DoctorDoJ=null;
-	   DoctorSalary=0;	
+	   DoctorSalary=0;
+	   DoctorPhoneNumber = "";
 	}
 	
 	public Doctor(long DoctorID, String DoctorFirstName, String DoctorLastName,
-					Date DoctorDoB, Date DoctorDoJ, float DoctorSalary)
+					Date DoctorDoB, Date DoctorDoJ, float DoctorSalary, String DoctorPhoneNumber)
 	{
 		this.DoctorID = DoctorID;
 		this.DoctorFirstName=DoctorFirstName;
@@ -38,5 +40,6 @@ public class Doctor
 		this.DoctorDoB=DoctorDoB;
 		this.DoctorDoJ=DoctorDoJ;
 		this.DoctorSalary=DoctorSalary;	
+		this.DoctorPhoneNumber = DoctorPhoneNumber;
 	}
 }
