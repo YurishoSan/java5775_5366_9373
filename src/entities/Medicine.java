@@ -12,6 +12,7 @@ import java.util.Date;
  */
 public class Medicine
 {
+	//region attributes
 	
 	private long MedicineID;
 	private String MedicineName;
@@ -19,6 +20,9 @@ public class Medicine
 	private String MedicineActiveIngredients;
 	private String MedicineType; //TODO: make medicine type enum. Type i.e. pill, liquid, etc.
 	private Date MedicineExpDate; //Expiration Date
+	
+	//endregion
+	//region contors
 	
 	public Medicine()
 	{
@@ -38,4 +42,67 @@ public class Medicine
 		MedicineExpDate = medicineExpDate;
 	}
 	
+	//endregion
+	//region getters/setters
+	
+	public long getMedicineID()
+	{
+		return MedicineID;
+	}
+
+	public void setMedicineID(long medicineID)
+	{
+		MedicineID = medicineID;
+	}
+
+	public String getMedicineName()
+	{
+		return MedicineName;
+	}
+
+	public void setMedicineName(String medicineName)
+	{
+		MedicineName = medicineName;
+	}
+
+	public String getMedicineIngredients()
+	{
+		return MedicineIngredients;
+	}
+
+	public void setMedicineIngredients(String medicineIngredients)
+	{
+		MedicineIngredients = medicineIngredients;
+	}
+
+	public String getMedicineActiveIngredients()
+	{
+		return MedicineActiveIngredients;
+	}
+
+	public void setMedicineActiveIngredients(String medicineActiveIngredients)
+	{
+		MedicineActiveIngredients = medicineActiveIngredients;
+	}
+
+	public String getMedicineType()
+	{
+		return MedicineType;
+	}
+
+	public void setMedicineType(String medicineType)
+	{
+		MedicineType = medicineType;
+	}
+
+	public Date getMedicineExpDate()
+	{
+		return MedicineExpDate;
+	}
+
+	public void setMedicineExpDate(Date medicineExpDate)
+	{
+		MedicineExpDate = medicineExpDate;
+	}
+	//endregion
 }

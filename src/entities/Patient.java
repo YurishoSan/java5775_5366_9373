@@ -12,6 +12,7 @@ import java.util.Date;
  */
 public class Patient
 {
+	//region attributes
 	
 	private long PatientID;
 	private String PatientFirstName;
@@ -19,6 +20,9 @@ public class Patient
 	private String PatientServiceClass; // TODO: make service class enum.
 	private String PatientPhoneNumber;
 	private Date PatientDoB; // Date of birth
+	
+	//endregion
+	//region contors
 	
 	public Patient()
 	{
@@ -37,6 +41,68 @@ public class Patient
 		PatientPhoneNumber = patientPhoneNumber;
 		PatientDoB = patientDoB;
 	}
+
+	//endregion
+	//region getters/setters
 	
-	
+	public long getPatientID()
+	{
+		return PatientID;
+	}
+
+	public void setPatientID(long patientID)
+	{
+		PatientID = patientID;
+	}
+
+	public String getPatientFirstName()
+	{
+		return PatientFirstName;
+	}
+
+	public void setPatientFirstName(String patientFirstName)
+	{
+		PatientFirstName = patientFirstName;
+	}
+
+	public String getPatientLastName()
+	{
+		return PatientLastName;
+	}
+
+	public void setPatientLastName(String patientLastName)
+	{
+		PatientLastName = patientLastName;
+	}
+
+	public String getPatientServiceClass()
+	{
+		return PatientServiceClass;
+	}
+
+	public void setPatientServiceClass(String patientServiceClass)
+	{
+		PatientServiceClass = patientServiceClass;
+	}
+
+	public String getPatientPhoneNumber()
+	{
+		return PatientPhoneNumber;
+	}
+
+	public void setPatientPhoneNumber(String patientPhoneNumber)
+	{
+		PatientPhoneNumber = patientPhoneNumber;
+	}
+
+	public Date getPatientDoB()
+	{
+		return PatientDoB;
+	}
+
+	public void setPatientDoB(Date patientDoB)
+	{
+		PatientDoB = patientDoB;
+	}
+	//endregion
 }
