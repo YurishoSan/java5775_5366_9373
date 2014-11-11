@@ -22,24 +22,20 @@ public class Doctor
 	
 	public Doctor()
 	{
-       DoctorID = 0;
-	   DoctorFirstName="";
-	   DoctorLastName="";
-	   DoctorDoB=null;
-	   DoctorDoJ=null;
-	   DoctorSalary=0;
-	   DoctorPhoneNumber = "";
+		super();
 	}
-	
-	public Doctor(long DoctorID, String DoctorFirstName, String DoctorLastName,
-					Date DoctorDoB, Date DoctorDoJ, float DoctorSalary, String DoctorPhoneNumber)
+
+	public Doctor(long doctorID, String doctorFirstName, String doctorLastName,
+			Date doctorDoB, Date doctorDoJ, float doctorSalary,
+			String doctorPhoneNumber)
 	{
-		this.DoctorID = DoctorID;
-		this.DoctorFirstName=DoctorFirstName;
-		this.DoctorLastName=DoctorLastName;
-		this.DoctorDoB=DoctorDoB;
-		this.DoctorDoJ=DoctorDoJ;
-		this.DoctorSalary=DoctorSalary;	
-		this.DoctorPhoneNumber = DoctorPhoneNumber;
+		super();
+		DoctorID = doctorID;
+		DoctorFirstName = doctorFirstName;
+		DoctorLastName = doctorLastName;
+		DoctorDoB = doctorDoB;
+		DoctorDoJ = doctorDoJ;
+		DoctorSalary = doctorSalary;
+		DoctorPhoneNumber = doctorPhoneNumber;
 	}
 }
