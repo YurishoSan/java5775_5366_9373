@@ -21,12 +21,22 @@ public class Doctor
 	
 	public Doctor()
 	{
+       this.DoctorID = 0;
+	   this.DoctorFirstName="";
+	   this.DoctorLastName="";
+	   this.DoctorDoB=null;
+	   this.DoctorDoJ=null;
+	   this.DoctorSalary=0;	
 	}
 	
 	public Doctor(long DoctorID, String DoctorFirstName, String DoctorLastName,
 					Date DoctorDoB, Date DoctorDoJ, float DoctorSalary)
 	{
 		this.DoctorID = DoctorID;
-		
+		this.DoctorFirstName=DoctorFirstName;
+		this.DoctorLastName=DoctorLastName;
+		this.DoctorDoB=DoctorDoB;
+		this.DoctorDoJ=DoctorDoJ;
+		this.DoctorSalary=DoctorSalary;	
 	}
 }
