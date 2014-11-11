@@ -18,14 +18,22 @@ public class Treatment
 	private Date TreatmentDate;
 	private String TreatmentSummary;
 	
+	public Treatment() 
+	{
+		TreatmentID = 0;
+		TreatmentDoctorID = 0;
+		TreatmentPatientID = 0;
+		TreatmentDate = null;
+		TreatmentSummary = "";
+	}
 
 	public Treatment(long treatmentID, long treatmentDoctorID,
 			long treatmentPatientID, Date treatmentDate, String treatmentSummary) 
 	{
-		TreatmentID = treatmentID;
-		TreatmentDoctorID = treatmentDoctorID;
-		TreatmentPatientID = treatmentPatientID;
-		TreatmentDate = treatmentDate;
-		TreatmentSummary = treatmentSummary;
+		this.TreatmentID = treatmentID;
+		this.TreatmentDoctorID = treatmentDoctorID;
+		this.TreatmentPatientID = treatmentPatientID;
+		this.TreatmentDate = treatmentDate;
+		this.TreatmentSummary = treatmentSummary;
 	}
 }

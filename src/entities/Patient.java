@@ -14,22 +14,28 @@ public class Patient
 {
 	
 	private long PatientID;
-	private long PatientHistoryID; // ID of patient's treatment history.
 	private String PatientFirstName;
 	private String PatientLastName;
 	private String PatientServiceClass; // TODO: make service class enum.
 	private Date PatientDoB; // Date of birth
 	
+	public Patient() 
+	{
+		PatientID = 0;
+		PatientFirstName = "";
+		PatientLastName = "";
+		PatientServiceClass = "";
+		PatientDoB = null;
+	}
 	
-	public Patient(long patientID, long patientHistoryID,
+	public Patient(long patientID,
 			String patientFirstName, String patientLastName,
 			String patientServiceClass, Date patientDoB) 
 	{
-		PatientID = patientID;
-		PatientHistoryID = patientHistoryID;
-		PatientFirstName = patientFirstName;
-		PatientLastName = patientLastName;
-		PatientServiceClass = patientServiceClass;
-		PatientDoB = patientDoB;
+		this.PatientID = patientID;
+		this.PatientFirstName = patientFirstName;
+		this.PatientLastName = patientLastName;
+		this.PatientServiceClass = patientServiceClass;
+		this.PatientDoB = patientDoB;
 	}
 }

@@ -21,12 +21,12 @@ public class Doctor
 	
 	public Doctor()
 	{
-       this.DoctorID = 0;
-	   this.DoctorFirstName="";
-	   this.DoctorLastName="";
-	   this.DoctorDoB=null;
-	   this.DoctorDoJ=null;
-	   this.DoctorSalary=0;	
+       DoctorID = 0;
+	   DoctorFirstName="";
+	   DoctorLastName="";
+	   DoctorDoB=null;
+	   DoctorDoJ=null;
+	   DoctorSalary=0;	
 	}
 	
 	public Doctor(long DoctorID, String DoctorFirstName, String DoctorLastName,
