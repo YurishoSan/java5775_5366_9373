@@ -18,4 +18,15 @@ public class Doctor
 	private Date DoctorDoB; //Date of birth
 	private Date DoctorDoJ; //Date of joining company
 	private float DoctorSalary;
+	
+	public Doctor()
+	{
+	}
+	
+	public Doctor(long DoctorID, String DoctorFirstName, String DoctorLastName,
+					Date DoctorDoB, Date DoctorDoJ, float DoctorSalary)
+	{
+		this.DoctorID = DoctorID;
+		
+	}
 }
