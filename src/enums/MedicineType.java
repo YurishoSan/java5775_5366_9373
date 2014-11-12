@@ -16,9 +16,13 @@ package enums;
  */
 public enum MedicineType
 {
+	//region values
+	
 	PILL_TABLET(0),
 	PILL_BOTTLE(1),
 	LIQUID_BOTTLE(10);
+	
+	//endregion
 	
 	@SuppressWarnings("unused")
 	private int value;

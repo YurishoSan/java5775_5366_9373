@@ -16,9 +16,13 @@ package enums;
  */
 public enum ServiceClass
 {
+	//region values
+	
 	REGULAR, //Fedaraly required minimum service
 	SILVER,
 	GOLD,
 	PLATINUM,
 	VIP
+	
+	//endregion
 }
