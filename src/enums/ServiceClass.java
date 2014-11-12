@@ -1,0 +1,24 @@
+/**
+ * 
+ */
+package enums;
+
+/**
+ * enum representing the different service levels the medical company provides.
+ * 
+ * Credit to Javarevisited for info on enums.
+ * Read more:  {@link http://javarevisited.blogspot.com/2011/08/enum-in-java-example-tutorial.html#ixzz3IrkBxYfG }
+ * 
+ * @author Yitzhak Goldstein
+ * @author Shalom Tzichtig
+ *
+ * @see entities.Patient#ServiceClass
+ */
+public enum ServiceClass
+{
+	REGULAR, //Fedaraly required minimum service
+	SILVER,
+	GOLD,
+	PLATINUM,
+	VIP
+}

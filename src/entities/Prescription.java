@@ -4,9 +4,13 @@
 package entities;
 
 /**
+ * Class representing a prescription on a medicine during a treatment.
+ * 
  * @author Yitzhak Goldstein
  * @author Shalom Tzichtig
  * 
+ * @see Medicine
+ * @see Treatment
  */
 public class Prescription
 {

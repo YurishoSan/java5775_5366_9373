@@ -6,9 +6,10 @@ package entities;
 import java.util.Date;
 
 /**
+ * Class representing a doctor working for the medical company
+ *  
  * @author Yitzhak Goldstein
  * @author Shalom Tzichtig
- * 
  */
 public class Doctor
 {

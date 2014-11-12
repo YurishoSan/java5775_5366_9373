@@ -5,10 +5,13 @@ package entities;
 
 import java.util.Date;
 
+import enums.ServiceClass;
+
 /**
- * @author Yitzhak Goldstein
- * @author Shalom Tzichtig
+ * Class representing a patient of the medical company
  * 
+ * @author Yitzhak Goldstein
+ * @author Shalom Tzichtig 
  */
 public class Patient
 {
@@ -17,7 +20,7 @@ public class Patient
 	private long PatientID;
 	private String PatientFirstName;
 	private String PatientLastName;
-	private String PatientServiceClass; // TODO: make service class enum.
+	private ServiceClass PatientServiceClass;
 	private String PatientPhoneNumber;
 	private Date PatientDoB; // Date of birth
 	
@@ -31,7 +34,7 @@ public class Patient
 	}
 
 	public Patient(long patientID, String patientFirstName,
-			String patientLastName, String patientServiceClass,
+			String patientLastName, ServiceClass patientServiceClass,
 			String patientPhoneNumber, Date patientDoB)
 	{
 		super();
@@ -77,12 +80,12 @@ public class Patient
 		PatientLastName = patientLastName;
 	}
 
-	public String getPatientServiceClass()
+	public ServiceClass getPatientServiceClass()
 	{
 		return PatientServiceClass;
 	}
 
-	public void setPatientServiceClass(String patientServiceClass)
+	public void setPatientServiceClass(ServiceClass patientServiceClass)
 	{
 		PatientServiceClass = patientServiceClass;
 	}

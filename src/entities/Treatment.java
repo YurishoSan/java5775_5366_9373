@@ -6,9 +6,13 @@ package entities;
 import java.util.Date;
 
 /**
+ * Class representing a treatment of a patient by a doctor.
+ * 
  * @author Yitzhak Goldstein
  * @author Shalom Tzichtig
  * 
+ * @see Patient
+ * @see Doctor
  */
 public class Treatment
 {
@@ -18,7 +22,9 @@ public class Treatment
 	private long TreatmentDoctorID;
 	private long TreatmentPatientID;
 	private Date TreatmentDate;
+	private String TreatmentLocation;
 	private String TreatmentSummary;
+	private boolean TreatmentDone; // false = treatment is appointment, true = treatment is over.
 	
 	//endregion
 
@@ -30,16 +36,20 @@ public class Treatment
 	}
 	
 	public Treatment(long treatmentID, long treatmentDoctorID,
-			long treatmentPatientID, Date treatmentDate, String treatmentSummary)
+			long treatmentPatientID, Date treatmentDate,
+			String treatmentLocation, String treatmentSummary,
+			boolean treatmentDone)
 	{
 		super();
 		TreatmentID = treatmentID;
 		TreatmentDoctorID = treatmentDoctorID;
 		TreatmentPatientID = treatmentPatientID;
 		TreatmentDate = treatmentDate;
+		TreatmentLocation = treatmentLocation;
 		TreatmentSummary = treatmentSummary;
+		TreatmentDone = treatmentDone;
 	}
-	
+
 	//endregion
 
 	//region getters/setters
@@ -93,6 +103,27 @@ public class Treatment
 	{
 		TreatmentSummary = treatmentSummary;
 	}
+
+	public String getTreatmentLocation()
+	{
+		return TreatmentLocation;
+	}
+
+	public void setTreatmentLocation(String treatmentLocation)
+	{
+		TreatmentLocation = treatmentLocation;
+	}
+
+	public boolean isTreatmentDone()
+	{
+		return TreatmentDone;
+	}
+
+	public void setTreatmentDone(boolean treatmentDone)
+	{
+		TreatmentDone = treatmentDone;
+	}
+	
 	//endregion
 
 	//region overrideMethods

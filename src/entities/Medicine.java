@@ -4,11 +4,12 @@
 package entities;
 
 import java.util.Date;
+import enums.MedicineType;
 
 /**
+ * Class representing medicines the doctors can prescribe to patients.
  * @author Yitzhak Goldstein
  * @author Shalom Tzichtig
- * 
  */
 public class Medicine
 {
@@ -18,7 +19,7 @@ public class Medicine
 	private String MedicineName;
 	private String MedicineIngredients;
 	private String MedicineActiveIngredients;
-	private String MedicineType; //TODO: make medicine type enum. Type i.e. pill, liquid, etc.
+	private MedicineType MedicineType;
 	private Date MedicineExpDate; //Expiration Date
 	
 	//endregion
@@ -32,7 +33,7 @@ public class Medicine
 	
 	public Medicine(long medicineID, String medicineName,
 			String medicineIngredients, String medicineActiveIngredients,
-			String medicineType, Date medicineExpDate)
+			MedicineType medicineType, Date medicineExpDate)
 	{
 		super();
 		MedicineID = medicineID;
@@ -87,12 +88,12 @@ public class Medicine
 		MedicineActiveIngredients = medicineActiveIngredients;
 	}
 
-	public String getMedicineType()
+	public MedicineType getMedicineType()
 	{
 		return MedicineType;
 	}
 
-	public void setMedicineType(String medicineType)
+	public void setMedicineType(MedicineType medicineType)
 	{
 		MedicineType = medicineType;
 	}
