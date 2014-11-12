@@ -11,162 +11,121 @@ import java.util.Date;
  * @author Yitzhak Goldstein
  * @author Shalom Tzichtig
  */
-public class Doctor
+public class Doctor extends Human
 {
 	//region attributes
 	
-	private long DoctorID;
-	private String DoctorFirstName;
-	private String DoctorLastName;
-	private Date DoctorDoB; //Date of birth
 	private Date DoctorDoJ; //Date of joining company
 	private float DoctorSalary;
 	private String DoctorPhoneNumber;
-	
 	//endregion
 	
-	//region contors
-	
+	//region contor
+	/**
+	 * 
+	 */
+	/**
+	 * 
+	 */
 	public Doctor()
 	{
 		super();
 	}
-
-	public Doctor(long doctorID, String doctorFirstName, String doctorLastName,
-			Date doctorDoB, Date doctorDoJ, float doctorSalary,
+	
+	/**
+	 * @param humanID
+	 * @param humanFirstName
+	 * @param humanLastName
+	 * @param humanDoB
+	 * @param doctorDoJ
+	 * @param doctorSalary
+	 * @param doctorPhoneNumber
+	 */
+	public Doctor(long humanID, String humanFirstName, String humanLastName,
+			Date humanDoB, Date doctorDoJ, float doctorSalary,
 			String doctorPhoneNumber)
 	{
-		super();
-		DoctorID = doctorID;
-		DoctorFirstName = doctorFirstName;
-		DoctorLastName = doctorLastName;
-		DoctorDoB = doctorDoB;
+		super(humanID, humanFirstName, humanLastName, humanDoB);
 		DoctorDoJ = doctorDoJ;
 		DoctorSalary = doctorSalary;
 		DoctorPhoneNumber = doctorPhoneNumber;
 	}
-
 	//endregion
 	
 	//region getters/setters
-	
-	public long getDoctorID()
-	{
-		return DoctorID;
-	}
-
-	public void setDoctorID(long doctorID)
-	{
-		DoctorID = doctorID;
-	}
-
-	public String getDoctorFirstName()
-	{
-		return DoctorFirstName;
-	}
-
-	public void setDoctorFirstName(String doctorFirstName)
-	{
-		DoctorFirstName = doctorFirstName;
-	}
-
-	public String getDoctorLastName()
-	{
-		return DoctorLastName;
-	}
-
-	public void setDoctorLastName(String doctorLastName)
-	{
-		DoctorLastName = doctorLastName;
-	}
-
-	public Date getDoctorDoB()
-	{
-		return DoctorDoB;
-	}
-
-	public void setDoctorDoB(Date doctorDoB)
-	{
-		DoctorDoB = doctorDoB;
-	}
-
+	/**
+	 * @return the doctorDoJ
+	 */
 	public Date getDoctorDoJ()
 	{
 		return DoctorDoJ;
 	}
 
+	/**
+	 * @param doctorDoJ the doctorDoJ to set
+	 */
 	public void setDoctorDoJ(Date doctorDoJ)
 	{
 		DoctorDoJ = doctorDoJ;
 	}
 
+	/**
+	 * @return the doctorSalary
+	 */
 	public float getDoctorSalary()
 	{
 		return DoctorSalary;
 	}
 
+	/**
+	 * @param doctorSalary the doctorSalary to set
+	 */
 	public void setDoctorSalary(float doctorSalary)
 	{
 		DoctorSalary = doctorSalary;
 	}
 
+	/**
+	 * @return the doctorPhoneNumber
+	 */
 	public String getDoctorPhoneNumber()
 	{
 		return DoctorPhoneNumber;
 	}
 
+	/**
+	 * @param doctorPhoneNumber the doctorPhoneNumber to set
+	 */
 	public void setDoctorPhoneNumber(String doctorPhoneNumber)
 	{
 		DoctorPhoneNumber = doctorPhoneNumber;
 	}
 	//endregion
-	
+
 	//region overrideMethods
-	@Override
-	public int hashCode()
-	{
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + (int) (DoctorID ^ (DoctorID >>> 32));
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj)
-	{
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Doctor other = (Doctor) obj;
-		if (DoctorID != other.DoctorID)
-			return false;
-		return true;
-	}
-
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString()
 	{
 		StringBuilder builder = new StringBuilder();
-		builder.append("Doctor [DoctorID=");
-		builder.append(DoctorID);
-		builder.append(", DoctorFirstName=");
-		builder.append(DoctorFirstName);
-		builder.append(", DoctorLastName=");
-		builder.append(DoctorLastName);
-		builder.append(", DoctorDoB=");
-		builder.append(DoctorDoB);
-		builder.append(", DoctorDoJ=");
+		builder.append("Doctor [DoctorDoJ=");
 		builder.append(DoctorDoJ);
 		builder.append(", DoctorSalary=");
 		builder.append(DoctorSalary);
 		builder.append(", DoctorPhoneNumber=");
 		builder.append(DoctorPhoneNumber);
+		builder.append(", HumanID=");
+		builder.append(HumanID);
+		builder.append(", HumanFirstName=");
+		builder.append(HumanFirstName);
+		builder.append(", HumanLastName=");
+		builder.append(HumanLastName);
+		builder.append(", HumanDoB=");
+		builder.append(HumanDoB);
 		builder.append("]");
 		return builder.toString();
 	}
-	
 	//endregion
 }

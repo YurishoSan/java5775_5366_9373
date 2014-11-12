@@ -13,145 +13,94 @@ import enums.ServiceClass;
  * @author Yitzhak Goldstein
  * @author Shalom Tzichtig 
  */
-public class Patient
+public class Patient extends Human
 {
 	//region attributes
-	
-	private long PatientID;
-	private String PatientFirstName;
-	private String PatientLastName;
 	private ServiceClass PatientServiceClass;
-	private String PatientPhoneNumber;
-	private Date PatientDoB; // Date of birth
-	
+	private String PatientPhoneNumber;	
 	//endregion
 
 	//region contors
-	
+	/**
+	 * 
+	 */
 	public Patient()
 	{
 		super();
 	}
 
-	public Patient(long patientID, String patientFirstName,
-			String patientLastName, ServiceClass patientServiceClass,
-			String patientPhoneNumber, Date patientDoB)
+	/**
+	 * @param humanID
+	 * @param humanFirstName
+	 * @param humanLastName
+	 * @param humanDoB
+	 * @param patientServiceClass
+	 * @param patientPhoneNumber
+	 */
+	public Patient(long humanID, String humanFirstName, String humanLastName,
+			Date humanDoB, ServiceClass patientServiceClass,
+			String patientPhoneNumber)
 	{
-		super();
-		PatientID = patientID;
-		PatientFirstName = patientFirstName;
-		PatientLastName = patientLastName;
+		super(humanID, humanFirstName, humanLastName, humanDoB);
 		PatientServiceClass = patientServiceClass;
 		PatientPhoneNumber = patientPhoneNumber;
-		PatientDoB = patientDoB;
 	}
-
 	//endregion
 
 	//region getters/setters
-	
-	public long getPatientID()
-	{
-		return PatientID;
-	}
-
-	public void setPatientID(long patientID)
-	{
-		PatientID = patientID;
-	}
-
-	public String getPatientFirstName()
-	{
-		return PatientFirstName;
-	}
-
-	public void setPatientFirstName(String patientFirstName)
-	{
-		PatientFirstName = patientFirstName;
-	}
-
-	public String getPatientLastName()
-	{
-		return PatientLastName;
-	}
-
-	public void setPatientLastName(String patientLastName)
-	{
-		PatientLastName = patientLastName;
-	}
-
+	/**
+	 * @return the patientServiceClass
+	 */
 	public ServiceClass getPatientServiceClass()
 	{
 		return PatientServiceClass;
 	}
 
+	/**
+	 * @param patientServiceClass the patientServiceClass to set
+	 */
 	public void setPatientServiceClass(ServiceClass patientServiceClass)
 	{
 		PatientServiceClass = patientServiceClass;
 	}
 
+	/**
+	 * @return the patientPhoneNumber
+	 */
 	public String getPatientPhoneNumber()
 	{
 		return PatientPhoneNumber;
 	}
 
+	/**
+	 * @param patientPhoneNumber the patientPhoneNumber to set
+	 */
 	public void setPatientPhoneNumber(String patientPhoneNumber)
 	{
 		PatientPhoneNumber = patientPhoneNumber;
 	}
-
-	public Date getPatientDoB()
-	{
-		return PatientDoB;
-	}
-
-	public void setPatientDoB(Date patientDoB)
-	{
-		PatientDoB = patientDoB;
-	}
 	//endregion
 
 	//region overrideMethods
-	@Override
-	public int hashCode()
-	{
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + (int) (PatientID ^ (PatientID >>> 32));
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj)
-	{
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Patient other = (Patient) obj;
-		if (PatientID != other.PatientID)
-			return false;
-		return true;
-	}
-
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString()
 	{
 		StringBuilder builder = new StringBuilder();
-		builder.append("Patient [PatientID=");
-		builder.append(PatientID);
-		builder.append(", PatientFirstName=");
-		builder.append(PatientFirstName);
-		builder.append(", PatientLastName=");
-		builder.append(PatientLastName);
-		builder.append(", PatientServiceClass=");
+		builder.append("Patient [PatientServiceClass=");
 		builder.append(PatientServiceClass);
 		builder.append(", PatientPhoneNumber=");
 		builder.append(PatientPhoneNumber);
-		builder.append(", PatientDoB=");
-		builder.append(PatientDoB);
+		builder.append(", HumanID=");
+		builder.append(HumanID);
+		builder.append(", HumanFirstName=");
+		builder.append(HumanFirstName);
+		builder.append(", HumanLastName=");
+		builder.append(HumanLastName);
+		builder.append(", HumanDoB=");
+		builder.append(HumanDoB);
 		builder.append("]");
 		return builder.toString();
 	}

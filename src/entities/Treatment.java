@@ -28,13 +28,24 @@ public class Treatment
 	
 	//endregion
 
-	//region contors
-	
+	//region contors	
+	/**
+	 * 
+	 */
 	public Treatment()
 	{
 		super();
 	}
 	
+	/**
+	 * @param treatmentID
+	 * @param treatmentDoctorID
+	 * @param treatmentPatientID
+	 * @param treatmentDate
+	 * @param treatmentLocation
+	 * @param treatmentSummary
+	 * @param treatmentDone
+	 */
 	public Treatment(long treatmentID, long treatmentDoctorID,
 			long treatmentPatientID, Date treatmentDate,
 			String treatmentLocation, String treatmentSummary,
@@ -49,76 +60,117 @@ public class Treatment
 		TreatmentSummary = treatmentSummary;
 		TreatmentDone = treatmentDone;
 	}
-
 	//endregion
 
 	//region getters/setters
 
+	/**
+	 * @return the treatmentID
+	 */
 	public long getTreatmentID()
 	{
 		return TreatmentID;
 	}
 
+	/**
+	 * @param treatmentID the treatmentID to set
+	 */
 	public void setTreatmentID(long treatmentID)
 	{
 		TreatmentID = treatmentID;
 	}
 
+	/**
+	 * @return the treatmentDoctorID
+	 */
 	public long getTreatmentDoctorID()
 	{
 		return TreatmentDoctorID;
 	}
 
+	/**
+	 * @param treatmentDoctorID the treatmentDoctorID to set
+	 */
 	public void setTreatmentDoctorID(long treatmentDoctorID)
 	{
 		TreatmentDoctorID = treatmentDoctorID;
 	}
 
+	/**
+	 * @return the treatmentPatientID
+	 */
 	public long getTreatmentPatientID()
 	{
 		return TreatmentPatientID;
 	}
 
+	/**
+	 * @param treatmentPatientID the treatmentPatientID to set
+	 */
 	public void setTreatmentPatientID(long treatmentPatientID)
 	{
 		TreatmentPatientID = treatmentPatientID;
 	}
 
+	/**
+	 * @return the treatmentDate
+	 */
 	public Date getTreatmentDate()
 	{
 		return TreatmentDate;
 	}
 
+	/**
+	 * @param treatmentDate the treatmentDate to set
+	 */
 	public void setTreatmentDate(Date treatmentDate)
 	{
 		TreatmentDate = treatmentDate;
 	}
 
-	public String getTreatmentSummary()
-	{
-		return TreatmentSummary;
-	}
-
-	public void setTreatmentSummary(String treatmentSummary)
-	{
-		TreatmentSummary = treatmentSummary;
-	}
-
+	/**
+	 * @return the treatmentLocation
+	 */
 	public String getTreatmentLocation()
 	{
 		return TreatmentLocation;
 	}
 
+	/**
+	 * @param treatmentLocation the treatmentLocation to set
+	 */
 	public void setTreatmentLocation(String treatmentLocation)
 	{
 		TreatmentLocation = treatmentLocation;
 	}
 
+	/**
+	 * @return the treatmentSummary
+	 */
+	public String getTreatmentSummary()
+	{
+		return TreatmentSummary;
+	}
+
+	/**
+	 * @param treatmentSummary the treatmentSummary to set
+	 */
+	public void setTreatmentSummary(String treatmentSummary)
+	{
+		TreatmentSummary = treatmentSummary;
+	}
+
+	/**
+	 * @return the treatmentDone
+	 */
 	public boolean isTreatmentDone()
 	{
 		return TreatmentDone;
 	}
 
+	/**
+	 * @param treatmentDone the treatmentDone to set
+	 */
 	public void setTreatmentDone(boolean treatmentDone)
 	{
 		TreatmentDone = treatmentDone;
@@ -127,6 +179,9 @@ public class Treatment
 	//endregion
 
 	//region overrideMethods
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
 	@Override
 	public int hashCode()
 	{
@@ -136,6 +191,9 @@ public class Treatment
 		return result;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
 	@Override
 	public boolean equals(Object obj)
 	{
@@ -151,6 +209,9 @@ public class Treatment
 		return true;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString()
 	{
@@ -163,8 +224,12 @@ public class Treatment
 		builder.append(TreatmentPatientID);
 		builder.append(", TreatmentDate=");
 		builder.append(TreatmentDate);
+		builder.append(", TreatmentLocation=");
+		builder.append(TreatmentLocation);
 		builder.append(", TreatmentSummary=");
 		builder.append(TreatmentSummary);
+		builder.append(", TreatmentDone=");
+		builder.append(TreatmentDone);
 		builder.append("]");
 		return builder.toString();
 	}

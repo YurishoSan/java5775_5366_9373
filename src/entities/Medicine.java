@@ -4,6 +4,7 @@
 package entities;
 
 import java.util.Date;
+
 import enums.MedicineType;
 
 /**
@@ -26,14 +27,25 @@ public class Medicine
 
 	//region contors
 	
+	/**
+	 * 
+	 */
 	public Medicine()
 	{
 		super();
 	}
 	
+	/**
+	 * @param medicineID
+	 * @param medicineName
+	 * @param medicineIngredients
+	 * @param medicineActiveIngredients
+	 * @param medicineType
+	 * @param medicineExpDate
+	 */
 	public Medicine(long medicineID, String medicineName,
 			String medicineIngredients, String medicineActiveIngredients,
-			MedicineType medicineType, Date medicineExpDate)
+			enums.MedicineType medicineType, Date medicineExpDate)
 	{
 		super();
 		MedicineID = medicineID;
@@ -43,66 +55,100 @@ public class Medicine
 		MedicineType = medicineType;
 		MedicineExpDate = medicineExpDate;
 	}
-	
 	//endregion
 
 	//region getters/setters
-	
+	/**
+	 * @return the medicineID
+	 */
 	public long getMedicineID()
 	{
 		return MedicineID;
 	}
 
+	/**
+	 * @param medicineID the medicineID to set
+	 */
 	public void setMedicineID(long medicineID)
 	{
 		MedicineID = medicineID;
 	}
 
+	/**
+	 * @return the medicineName
+	 */
 	public String getMedicineName()
 	{
 		return MedicineName;
 	}
 
+	/**
+	 * @param medicineName the medicineName to set
+	 */
 	public void setMedicineName(String medicineName)
 	{
 		MedicineName = medicineName;
 	}
 
+	/**
+	 * @return the medicineIngredients
+	 */
 	public String getMedicineIngredients()
 	{
 		return MedicineIngredients;
 	}
 
+	/**
+	 * @param medicineIngredients the medicineIngredients to set
+	 */
 	public void setMedicineIngredients(String medicineIngredients)
 	{
 		MedicineIngredients = medicineIngredients;
 	}
 
+	/**
+	 * @return the medicineActiveIngredients
+	 */
 	public String getMedicineActiveIngredients()
 	{
 		return MedicineActiveIngredients;
 	}
 
+	/**
+	 * @param medicineActiveIngredients the medicineActiveIngredients to set
+	 */
 	public void setMedicineActiveIngredients(String medicineActiveIngredients)
 	{
 		MedicineActiveIngredients = medicineActiveIngredients;
 	}
 
+	/**
+	 * @return the medicineType
+	 */
 	public MedicineType getMedicineType()
 	{
 		return MedicineType;
 	}
 
+	/**
+	 * @param medicineType the medicineType to set
+	 */
 	public void setMedicineType(MedicineType medicineType)
 	{
 		MedicineType = medicineType;
 	}
 
+	/**
+	 * @return the medicineExpDate
+	 */
 	public Date getMedicineExpDate()
 	{
 		return MedicineExpDate;
 	}
 
+	/**
+	 * @param medicineExpDate the medicineExpDate to set
+	 */
 	public void setMedicineExpDate(Date medicineExpDate)
 	{
 		MedicineExpDate = medicineExpDate;
@@ -110,7 +156,10 @@ public class Medicine
 	//endregion
 
 	//region overrideMethods
-	
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
 	@Override
 	public int hashCode()
 	{
@@ -120,6 +169,9 @@ public class Medicine
 		return result;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
 	@Override
 	public boolean equals(Object obj)
 	{
@@ -135,6 +187,9 @@ public class Medicine
 		return true;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString()
 	{

@@ -23,12 +23,19 @@ public class Prescription
 	//endregion
 
 	//region contors
-	
+	/**
+	 * 
+	 */
 	public Prescription()
 	{
 		super();
 	}
 
+	/**
+	 * @param prescriptionID
+	 * @param prescriptionTreatmentID
+	 * @param prescriptionMedicineID
+	 */
 	public Prescription(long prescriptionID, long prescriptionTreatmentID,
 			long prescriptionMedicineID)
 	{
@@ -41,32 +48,49 @@ public class Prescription
 	//endregion
 
 	//region getters/setters
-	
+	/**
+	 * @return the prescriptionID
+	 */
 	public long getPrescriptionID()
 	{
 		return PrescriptionID;
 	}
 
+	/**
+	 * @param prescriptionID the prescriptionID to set
+	 */
 	public void setPrescriptionID(long prescriptionID)
 	{
 		PrescriptionID = prescriptionID;
 	}
 
+	/**
+	 * @return the prescriptionTreatmentID
+	 */
 	public long getPrescriptionTreatmentID()
 	{
 		return PrescriptionTreatmentID;
 	}
 
+	/**
+	 * @param prescriptionTreatmentID the prescriptionTreatmentID to set
+	 */
 	public void setPrescriptionTreatmentID(long prescriptionTreatmentID)
 	{
 		PrescriptionTreatmentID = prescriptionTreatmentID;
 	}
 
+	/**
+	 * @return the prescriptionMedicineID
+	 */
 	public long getPrescriptionMedicineID()
 	{
 		return PrescriptionMedicineID;
 	}
 
+	/**
+	 * @param prescriptionMedicineID the prescriptionMedicineID to set
+	 */
 	public void setPrescriptionMedicineID(long prescriptionMedicineID)
 	{
 		PrescriptionMedicineID = prescriptionMedicineID;
@@ -74,6 +98,9 @@ public class Prescription
 	//endregion
 
 	//region overrideMethods
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
 	@Override
 	public int hashCode()
 	{
@@ -84,6 +111,11 @@ public class Prescription
 		return result;
 	}
 
+
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
 	@Override
 	public boolean equals(Object obj)
 	{
@@ -99,13 +131,21 @@ public class Prescription
 		return true;
 	}
 	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString()
 	{
-		return "Prescription [PrescriptionID=" + PrescriptionID
-				+ ", PrescriptionTreatmentID=" + PrescriptionTreatmentID
-				+ ", PrescriptionMedicineID=" + PrescriptionMedicineID + "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("Prescription [PrescriptionID=");
+		builder.append(PrescriptionID);
+		builder.append(", PrescriptionTreatmentID=");
+		builder.append(PrescriptionTreatmentID);
+		builder.append(", PrescriptionMedicineID=");
+		builder.append(PrescriptionMedicineID);
+		builder.append("]");
+		return builder.toString();
 	}
 	//endregion
-	
 }
