@@ -8,6 +8,7 @@ import java.util.Date;
 
 
 
+
 import enums.Gender;
 import enums.ServiceClass;
 
@@ -39,24 +40,19 @@ public class Patient extends Human
 	 * @param humanLastName
 	 * @param humanGender
 	 * @param humanDoB
+	 * @param emailAdress
 	 * @param patientServiceClass
 	 * @param patientPhoneNumber
 	 */
 	public Patient(long humanID, String humanFirstName, String humanLastName,
-<<<<<<< HEAD
-			Date humanDoB, ServiceClass patientServiceClass, String email,
-			String patientPhoneNumber)
-	{
-		super(humanID, humanFirstName, humanLastName, humanDoB ,email);
-=======
-			Gender humanGender, Date humanDoB,
-			ServiceClass patientServiceClass, String patientPhoneNumber)
-	{
-		super(humanID, humanFirstName, humanLastName, humanGender, humanDoB);
->>>>>>> origin/master
+			Gender humanGender, Date humanDoB, String emailAdress,
+			ServiceClass patientServiceClass, String patientPhoneNumber) {
+		super(humanID, humanFirstName, humanLastName, humanGender, humanDoB,
+				emailAdress);
 		PatientServiceClass = patientServiceClass;
 		PatientPhoneNumber = patientPhoneNumber;
 	}
+
 	//endregion
 
 	//region getters/setters

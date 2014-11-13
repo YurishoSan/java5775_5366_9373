@@ -5,6 +5,7 @@ package entities;
 
 import java.util.Date;
 
+import enums.Gender;
 import enums.Specialization;
 
 /**
@@ -34,25 +35,25 @@ public class Doctor extends Human
 	{
 		super();
 	}
-	
+
 	/**
+	 * @param humanID
+	 * @param humanFirstName
+	 * @param humanLastName
+	 * @param humanGender
+	 * @param humanDoB
+	 * @param emailAdress
 	 * @param doctorDoJ
 	 * @param doctorSalary
 	 * @param doctorPhoneNumber
 	 * @param doctorSpecialization
 	 */
-<<<<<<< HEAD
 	public Doctor(long humanID, String humanFirstName, String humanLastName,
-			Date humanDoB,String email, Date doctorDoJ, float doctorSalary,
-			String doctorPhoneNumber)
-	{
-		super(humanID, humanFirstName, humanLastName, humanDoB ,email);
-=======
-	public Doctor(Date doctorDoJ, float doctorSalary, String doctorPhoneNumber,
-			Specialization doctorSpecialization)
-	{
-		super();
->>>>>>> origin/master
+			Gender humanGender, Date humanDoB, String emailAdress,
+			Date doctorDoJ, float doctorSalary, String doctorPhoneNumber,
+			Specialization doctorSpecialization) {
+		super(humanID, humanFirstName, humanLastName, humanGender, humanDoB,
+				emailAdress);
 		DoctorDoJ = doctorDoJ;
 		DoctorSalary = doctorSalary;
 		DoctorPhoneNumber = doctorPhoneNumber;

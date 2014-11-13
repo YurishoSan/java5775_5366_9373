@@ -36,29 +36,27 @@ abstract class Human
 	{
 		super();
 	}
-	
+
+
 	/**
 	 * @param humanID
 	 * @param humanFirstName
 	 * @param humanLastName
 	 * @param humanGender
 	 * @param humanDoB
+	 * @param emailAdress
 	 */
 	public Human(long humanID, String humanFirstName, String humanLastName,
-<<<<<<< HEAD
-			Date humanDoB ,String email)
-=======
-			Gender humanGender, Date humanDoB)
->>>>>>> origin/master
-	{
+			Gender humanGender, Date humanDoB, String emailAdress) {
 		super();
 		HumanID = humanID;
 		HumanFirstName = humanFirstName;
 		HumanLastName = humanLastName;
 		HumanGender = humanGender;
 		HumanDoB = humanDoB;
-		EmailAdress= email;
+		EmailAdress = emailAdress;
 	}
+
 
 	//endregion
 
