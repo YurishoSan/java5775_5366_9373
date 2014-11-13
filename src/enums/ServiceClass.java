@@ -5,7 +5,7 @@ package enums;
 
 /**
  * enum representing the different service levels the medical company provides.
- * 
+ * <p>
  * Credit to Javarevisited for info on enums.
  * Read more:  {@link http://javarevisited.blogspot.com/2011/08/enum-in-java-example-tutorial.html#ixzz3IrkBxYfG }
  * 

@@ -5,6 +5,8 @@ package entities;
 
 import java.util.Date;
 
+import enums.Specialization;
+
 /**
  * Class representing a doctor working for the medical company
  *  
@@ -18,6 +20,7 @@ public class Doctor extends Human
 	private Date DoctorDoJ; //Date of joining company
 	private float DoctorSalary;
 	private String DoctorPhoneNumber;
+	private Specialization DoctorSpecialization;
 	//endregion
 	
 	//region contor
@@ -33,22 +36,27 @@ public class Doctor extends Human
 	}
 	
 	/**
-	 * @param humanID
-	 * @param humanFirstName
-	 * @param humanLastName
-	 * @param humanDoB
 	 * @param doctorDoJ
 	 * @param doctorSalary
 	 * @param doctorPhoneNumber
+	 * @param doctorSpecialization
 	 */
+<<<<<<< HEAD
 	public Doctor(long humanID, String humanFirstName, String humanLastName,
 			Date humanDoB,String email, Date doctorDoJ, float doctorSalary,
 			String doctorPhoneNumber)
 	{
 		super(humanID, humanFirstName, humanLastName, humanDoB ,email);
+=======
+	public Doctor(Date doctorDoJ, float doctorSalary, String doctorPhoneNumber,
+			Specialization doctorSpecialization)
+	{
+		super();
+>>>>>>> origin/master
 		DoctorDoJ = doctorDoJ;
 		DoctorSalary = doctorSalary;
 		DoctorPhoneNumber = doctorPhoneNumber;
+		DoctorSpecialization = doctorSpecialization;
 	}
 	//endregion
 	
@@ -86,6 +94,22 @@ public class Doctor extends Human
 	}
 
 	/**
+	 * @return the doctorSpecialization
+	 */
+	public Specialization getDoctorSpecialization()
+	{
+		return DoctorSpecialization;
+	}
+
+	/**
+	 * @param doctorSpecialization the doctorSpecialization to set
+	 */
+	public void setDoctorSpecialization(Specialization doctorSpecialization)
+	{
+		DoctorSpecialization = doctorSpecialization;
+	}
+
+	/**
 	 * @return the doctorPhoneNumber
 	 */
 	public String getDoctorPhoneNumber()
@@ -102,7 +126,6 @@ public class Doctor extends Human
 	}
 	//endregion
 
-	//region overrideMethods
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
@@ -116,16 +139,9 @@ public class Doctor extends Human
 		builder.append(DoctorSalary);
 		builder.append(", DoctorPhoneNumber=");
 		builder.append(DoctorPhoneNumber);
-		builder.append(", HumanID=");
-		builder.append(HumanID);
-		builder.append(", HumanFirstName=");
-		builder.append(HumanFirstName);
-		builder.append(", HumanLastName=");
-		builder.append(HumanLastName);
-		builder.append(", HumanDoB=");
-		builder.append(HumanDoB);
+		builder.append(", DoctorSpecialization=");
+		builder.append(DoctorSpecialization);
 		builder.append("]");
 		return builder.toString();
 	}
-	//endregion
 }

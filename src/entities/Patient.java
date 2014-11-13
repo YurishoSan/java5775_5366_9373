@@ -5,6 +5,10 @@ package entities;
 
 import java.util.Date;
 
+
+
+
+import enums.Gender;
 import enums.ServiceClass;
 
 /**
@@ -33,15 +37,23 @@ public class Patient extends Human
 	 * @param humanID
 	 * @param humanFirstName
 	 * @param humanLastName
+	 * @param humanGender
 	 * @param humanDoB
 	 * @param patientServiceClass
 	 * @param patientPhoneNumber
 	 */
 	public Patient(long humanID, String humanFirstName, String humanLastName,
+<<<<<<< HEAD
 			Date humanDoB, ServiceClass patientServiceClass, String email,
 			String patientPhoneNumber)
 	{
 		super(humanID, humanFirstName, humanLastName, humanDoB ,email);
+=======
+			Gender humanGender, Date humanDoB,
+			ServiceClass patientServiceClass, String patientPhoneNumber)
+	{
+		super(humanID, humanFirstName, humanLastName, humanGender, humanDoB);
+>>>>>>> origin/master
 		PatientServiceClass = patientServiceClass;
 		PatientPhoneNumber = patientPhoneNumber;
 	}
@@ -81,7 +93,6 @@ public class Patient extends Human
 	}
 	//endregion
 
-	//region overrideMethods
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
@@ -99,10 +110,11 @@ public class Patient extends Human
 		builder.append(HumanFirstName);
 		builder.append(", HumanLastName=");
 		builder.append(HumanLastName);
+		builder.append(", HumanGender=");
+		builder.append(HumanGender);
 		builder.append(", HumanDoB=");
 		builder.append(HumanDoB);
 		builder.append("]");
 		return builder.toString();
 	}
-	//endregion
 }

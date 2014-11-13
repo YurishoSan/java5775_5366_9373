@@ -1,4 +1,8 @@
 /android/
 /com/
 /.gitignore
+<<<<<<< HEAD
+=======
+/enums/
+>>>>>>> origin/master
 /entities/
