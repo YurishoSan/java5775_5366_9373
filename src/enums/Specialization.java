@@ -4,8 +4,8 @@
 package enums;
 
 /**
- * @author Yurisho
- *
+ * @author Yitzhak Goldstein
+ * @author Shalom Tzichtig
  */
 public enum Specialization
 {
