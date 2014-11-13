@@ -42,10 +42,10 @@ public class Doctor extends Human
 	 * @param doctorPhoneNumber
 	 */
 	public Doctor(long humanID, String humanFirstName, String humanLastName,
-			Date humanDoB, Date doctorDoJ, float doctorSalary,
+			Date humanDoB,String email, Date doctorDoJ, float doctorSalary,
 			String doctorPhoneNumber)
 	{
-		super(humanID, humanFirstName, humanLastName, humanDoB);
+		super(humanID, humanFirstName, humanLastName, humanDoB ,email);
 		DoctorDoJ = doctorDoJ;
 		DoctorSalary = doctorSalary;
 		DoctorPhoneNumber = doctorPhoneNumber;

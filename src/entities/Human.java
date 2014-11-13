@@ -22,6 +22,7 @@ abstract class Human
 	protected String HumanFirstName;
 	protected String HumanLastName;
 	protected Date HumanDoB; //Date of birth
+	protected String EmailAdress;
 	//endregion
 
 	//region contors
@@ -40,13 +41,14 @@ abstract class Human
 	 * @param humanDoB
 	 */
 	public Human(long humanID, String humanFirstName, String humanLastName,
-			Date humanDoB)
+			Date humanDoB ,String email)
 	{
 		super();
 		HumanID = humanID;
 		HumanFirstName = humanFirstName;
 		HumanLastName = humanLastName;
 		HumanDoB = humanDoB;
+		EmailAdress= email;
 	}
 	//endregion
 	

@@ -38,10 +38,10 @@ public class Patient extends Human
 	 * @param patientPhoneNumber
 	 */
 	public Patient(long humanID, String humanFirstName, String humanLastName,
-			Date humanDoB, ServiceClass patientServiceClass,
+			Date humanDoB, ServiceClass patientServiceClass, String email,
 			String patientPhoneNumber)
 	{
-		super(humanID, humanFirstName, humanLastName, humanDoB);
+		super(humanID, humanFirstName, humanLastName, humanDoB ,email);
 		PatientServiceClass = patientServiceClass;
 		PatientPhoneNumber = patientPhoneNumber;
 	}
