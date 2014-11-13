@@ -6,8 +6,8 @@ package entities;
 import enums.Permit;
 
 /**
- * @author Yurisho
- *
+ * @author Yitzhak Goldstein
+ * @author Shalom Tzichtig
  */
 public class Password
 {
