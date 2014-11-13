@@ -3,8 +3,6 @@
  */
 package entities;
 
-import enums.AllergyType;
-
 /**
  * @author Yurisho
  *
@@ -13,8 +11,7 @@ public class Allergy
 {
 	//region attributes
 	private long AllergyID;
-	private long AllergyPatientID;
-	private AllergyType AllergyName;
+	private String AllergyName;
 	private String AllergyNotes; //extra notes and info
 	//endregion
 	
@@ -28,16 +25,13 @@ public class Allergy
 	}
 	/**
 	 * @param allergyID
-	 * @param allergyPatientID
 	 * @param allergyName
 	 * @param allergyNotes
 	 */
-	public Allergy(long allergyID, long allergyPatientID,
-			AllergyType allergyName, String allergyNotes)
+	public Allergy(long allergyID, String allergyName, String allergyNotes)
 	{
 		super();
 		AllergyID = allergyID;
-		AllergyPatientID = allergyPatientID;
 		AllergyName = allergyName;
 		AllergyNotes = allergyNotes;
 	}
@@ -59,30 +53,16 @@ public class Allergy
 		AllergyID = allergyID;
 	}
 	/**
-	 * @return the allergyPatientID
-	 */
-	public long getAllergyPatientID()
-	{
-		return AllergyPatientID;
-	}
-	/**
-	 * @param allergyPatientID the allergyPatientID to set
-	 */
-	public void setAllergyPatientID(long allergyPatientID)
-	{
-		AllergyPatientID = allergyPatientID;
-	}
-	/**
 	 * @return the allergyName
 	 */
-	public AllergyType getAllergyName()
+	public String getAllergyName()
 	{
 		return AllergyName;
 	}
 	/**
 	 * @param allergyName the allergyName to set
 	 */
-	public void setAllergyName(AllergyType allergyName)
+	public void setAllergyName(String allergyName)
 	{
 		AllergyName = allergyName;
 	}
@@ -141,7 +121,6 @@ public class Allergy
 		builder.append("Allergy [AllergyID=");
 		builder.append(AllergyID);
 		builder.append(", AllergyPatientID=");
-		builder.append(AllergyPatientID);
 		builder.append(", AllergyName=");
 		builder.append(AllergyName);
 		builder.append(", AllergyNotes=");
