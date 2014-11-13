@@ -5,6 +5,8 @@ package entities;
 
 import java.util.Date;
 
+import enums.Gender;
+
 /**
  * Class representing a human.
  * 
@@ -21,6 +23,7 @@ abstract class Human
 	protected long HumanID;
 	protected String HumanFirstName;
 	protected String HumanLastName;
+	protected Gender HumanGender;
 	protected Date HumanDoB; //Date of birth
 	//endregion
 
@@ -37,19 +40,22 @@ abstract class Human
 	 * @param humanID
 	 * @param humanFirstName
 	 * @param humanLastName
+	 * @param humanGender
 	 * @param humanDoB
 	 */
 	public Human(long humanID, String humanFirstName, String humanLastName,
-			Date humanDoB)
+			Gender humanGender, Date humanDoB)
 	{
 		super();
 		HumanID = humanID;
 		HumanFirstName = humanFirstName;
 		HumanLastName = humanLastName;
+		HumanGender = humanGender;
 		HumanDoB = humanDoB;
 	}
+
 	//endregion
-	
+
 	//region getters/setters
 	/**
 	 * @return the humanID
@@ -97,6 +103,22 @@ abstract class Human
 	public void setHumanLastName(String humanLastName)
 	{
 		HumanLastName = humanLastName;
+	}
+	
+	/**
+	 * @return the humanGender
+	 */
+	public Gender getHumanGender()
+	{
+		return HumanGender;
+	}
+
+	/**
+	 * @param humanGender the humanGender to set
+	 */
+	public void setHumanGender(Gender humanGender)
+	{
+		HumanGender = humanGender;
 	}
 	
 	/**
@@ -160,10 +182,11 @@ abstract class Human
 		builder.append(HumanFirstName);
 		builder.append(", HumanLastName=");
 		builder.append(HumanLastName);
+		builder.append(", HumanGender=");
+		builder.append(HumanGender);
 		builder.append(", HumanDoB=");
 		builder.append(HumanDoB);
 		builder.append("]");
 		return builder.toString();
 	}
-	//endregion
 }
