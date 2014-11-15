@@ -17,11 +17,13 @@ import enums.ServiceClass;
  * 
  * @author Yitzhak Goldstein
  * @author Shalom Tzichtig 
+ * 
+ * @see enums.ServiceClass
  */
 public class Patient extends Human
 {
 	//region attributes
-	private ServiceClass PatientServiceClass;
+	private ServiceClass PatientServiceClass; // level of service the company provides to the patient
 	private String PatientPhoneNumber;	
 	//endregion
 

@@ -4,8 +4,13 @@
 package entities;
 
 /**
- * @author Yurisho
- *
+ * Class representing pairs of medicines and an allergy it can cause
+ * 
+ * @author Yitzhak Goldstein
+ * @author Shalom Tzichtig
+ * 
+ * @see Medicine
+ * @see Allergy
  */
 public class MedicineAllergy
 {

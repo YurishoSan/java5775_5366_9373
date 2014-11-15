@@ -1,7 +1,4 @@
 /**
- * 
- */
-/**
  * @author Yitzhak Goldstein
  * @author Shalom Tzichtig
  * 

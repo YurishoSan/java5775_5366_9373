@@ -4,7 +4,7 @@
 package enums;
 
 /**
- * enum representing the different types a medicine can be.
+ * Enum representing the different types a medicine can be.
  * <p>
  * Credit to Javarevisited for info on enums.
  * Read more:  {@link http://javarevisited.blogspot.com/2011/08/enum-in-java-example-tutorial.html#ixzz3IrkBxYfG}
@@ -12,7 +12,7 @@ package enums;
  * @author Yitzhak Goldstein
  * @author Shalom Tzichtig
  * 
- * @see entities.Medicine#MedicineType
+ * @see entities.Medicine
  */
 public enum MedicineType
 {

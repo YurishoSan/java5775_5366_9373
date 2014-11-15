@@ -4,8 +4,10 @@
 package entities;
 
 /**
- * @author Yurisho
- *
+ * Class representing an allergy a person can have, and a medicine can cause.
+ * 
+ * @author Yitzhak Goldstein
+ * @author Shalom Tzichtig
  */
 public class Allergy
 {

@@ -6,16 +6,17 @@ package entities;
 import enums.Permit;
 
 /**
+ * A Class representing the list of passwords used by the system users.
+ * 
  * @author Yitzhak Goldstein
  * @author Shalom Tzichtig
  */
 public class Password
 {
 	//region attributes
-	private long PasswordUserID;
-	private String PasswordWord;
-	private Permit PasswordPermit;
-	//endregion
+	private long PasswordUserID; // ID of the user using this password
+	private String PasswordWord; // Password string
+	private Permit PasswordPermit; // user permeations.
 	
 	//region contors
 	/**
@@ -23,7 +24,7 @@ public class Password
 	 */
 	public Password()
 	{
-		// TODO Auto-generated constructor stub
+		super();
 	}
 
 	/**
