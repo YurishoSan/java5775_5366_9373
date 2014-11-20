@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">java5775_5366_9373</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="welcome">ברוכים הבאים לאפליקציה</string>
     <string name="action_settings">Settings</string>
 
 </resources>

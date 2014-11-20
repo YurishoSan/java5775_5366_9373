@@ -60,6 +60,22 @@ abstract class Human
 
 	//endregion
 
+	/**
+	 * @return the emailAdress
+	 */
+	public String getEmailAdress() {
+		return EmailAdress;
+	}
+
+
+	/**
+	 * @param emailAdress the emailAdress to set
+	 */
+	public void setEmailAdress(String emailAdress) {
+		EmailAdress = emailAdress;
+	}
+
+
 	//region getters/setters
 	/**
 	 * @return the humanID
@@ -116,7 +132,7 @@ abstract class Human
 	{
 		return HumanGender;
 	}
-
+   
 	/**
 	 * @param humanGender the humanGender to set
 	 */
