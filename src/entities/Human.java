@@ -13,6 +13,7 @@ import enums.Gender;
  * @author Yitzhak Goldstein
  * @author Shalom Tzichtig
  * 
+ * @see enum.Gender
  * @see Patient
  * @see Doctor
  */

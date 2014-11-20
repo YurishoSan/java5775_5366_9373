@@ -9,8 +9,11 @@ import enums.MedicineType;
 
 /**
  * Class representing medicines the doctors can prescribe to patients.
+ * 
  * @author Yitzhak Goldstein
  * @author Shalom Tzichtig
+ * 
+ * @see enums.MedicineType
  */
 public class Medicine
 {

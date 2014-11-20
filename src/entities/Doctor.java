@@ -13,6 +13,8 @@ import enums.Specialization;
  *  
  * @author Yitzhak Goldstein
  * @author Shalom Tzichtig
+ * 
+ * @see enums.Specialization
  */
 public class Doctor extends Human
 {

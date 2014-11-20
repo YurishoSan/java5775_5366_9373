@@ -4,8 +4,13 @@
 package entities;
 
 /**
- * @author Yurisho
- *
+ * Class representing pairs of patients and an allergy they have.
+ * 
+ * @author Yitzhak Goldstein
+ * @author Shalom Tzichtig
+ * 
+ * @see Patient
+ * @see Allergy
  */
 public class PatientAllergy
 {
