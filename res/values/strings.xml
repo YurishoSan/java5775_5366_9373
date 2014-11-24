@@ -2,11 +2,7 @@
 <resources>
 
     <string name="app_name">java5775_5366_9373</string>
-<<<<<<< HEAD
-    <string name="wellcome">ברוכים הבאים לאפליקציית \n רפואה וישועה</string>
-=======
-    <string name="welcome">ברוכים הבאים לאפליקציה</string>
->>>>>>> 272de944e35b6c5cc04879e5f3d659258ef54897
+    <string name="wellcome">ברוכים הבאים לאפליקציה</string>
     <string name="action_settings">Settings</string>
 
 </resources>
