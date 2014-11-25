@@ -7,5 +7,6 @@
     <string name="docNum">מספר רופא</string>
     <string name="docPass">סיסמה</string>
     <string name="loginButtonText">התחבר</string>
+    <string name="mainMenuStartTreatment">התחל טיפול</string>
 
 </resources>
