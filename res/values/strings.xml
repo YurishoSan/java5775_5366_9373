@@ -2,7 +2,11 @@
 <resources>
 
     <string name="app_name">java5775_5366_9373</string>
-    <string name="welcome">ברוכים הבאים לאפליקציה</string>
+    <string name="wellcome">ברוכים הבאים לאפליקציה</string>
     <string name="action_settings">Settings</string>
+    <string name="docNum">מספר רופא</string>
+    <string name="docPass">סיסמה</string>
+    <string name="loginButtonText">התחבר</string>
+    <string name="mainMenuStartTreatment">התחל טיפול</string>
 
 </resources>

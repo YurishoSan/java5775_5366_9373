@@ -16,10 +16,16 @@ import enums.Specialization;
  * 
  * @see enums.Specialization
  */
-public class Doctor extends Human
+public class Doctor
 {
 	//region attributes
 	
+	private long DoctorID;
+	private String DoctorFirstName;
+	private String DoctorLastName;
+	private Gender DoctorGender;
+	private Date DoctorDoB; //Date of birth
+	private String DoctorEmailAdress;
 	private Date DoctorDoJ; //Date of joining company
 	private float DoctorSalary;
 	private String DoctorPhoneNumber;
@@ -37,33 +43,136 @@ public class Doctor extends Human
 	{
 		super();
 	}
-
+	
 	/**
-	 * @param humanID
-	 * @param humanFirstName
-	 * @param humanLastName
-	 * @param humanGender
-	 * @param humanDoB
-	 * @param emailAdress
+	 * @param doctorID
+	 * @param doctorFirstName
+	 * @param doctorLastName
+	 * @param doctorGender
+	 * @param doctorDoB
+	 * @param doctorEmailAdress
 	 * @param doctorDoJ
 	 * @param doctorSalary
 	 * @param doctorPhoneNumber
 	 * @param doctorSpecialization
 	 */
-	public Doctor(long humanID, String humanFirstName, String humanLastName,
-			Gender humanGender, Date humanDoB, String emailAdress,
+	public Doctor(long doctorID, String doctorFirstName, String doctorLastName,
+			Gender doctorGender, Date doctorDoB, String doctorEmailAdress,
 			Date doctorDoJ, float doctorSalary, String doctorPhoneNumber,
-			Specialization doctorSpecialization) {
-		super(humanID, humanFirstName, humanLastName, humanGender, humanDoB,
-				emailAdress);
+			Specialization doctorSpecialization)
+	{
+		super();
+		DoctorID = doctorID;
+		DoctorFirstName = doctorFirstName;
+		DoctorLastName = doctorLastName;
+		DoctorGender = doctorGender;
+		DoctorDoB = doctorDoB;
+		DoctorEmailAdress = doctorEmailAdress;
 		DoctorDoJ = doctorDoJ;
 		DoctorSalary = doctorSalary;
 		DoctorPhoneNumber = doctorPhoneNumber;
 		DoctorSpecialization = doctorSpecialization;
 	}
+
 	//endregion
-	
+
 	//region getters/setters
+	/**
+	 * @return the doctorID
+	 */
+	public long getDoctorID()
+	{
+		return DoctorID;
+	}
+
+	/**
+	 * @param doctorID the doctorID to set
+	 */
+	public void setDoctorID(long doctorID)
+	{
+		DoctorID = doctorID;
+	}
+
+	/**
+	 * @return the doctorFirstName
+	 */
+	public String getDoctorFirstName()
+	{
+		return DoctorFirstName;
+	}
+
+	/**
+	 * @param doctorFirstName the doctorFirstName to set
+	 */
+	public void setDoctorFirstName(String doctorFirstName)
+	{
+		DoctorFirstName = doctorFirstName;
+	}
+
+	/**
+	 * @return the doctorLastName
+	 */
+	public String getDoctorLastName()
+	{
+		return DoctorLastName;
+	}
+
+	/**
+	 * @param doctorLastName the doctorLastName to set
+	 */
+	public void setDoctorLastName(String doctorLastName)
+	{
+		DoctorLastName = doctorLastName;
+	}
+
+	/**
+	 * @return the doctorGender
+	 */
+	public Gender getDoctorGender()
+	{
+		return DoctorGender;
+	}
+
+	/**
+	 * @param doctorGender the doctorGender to set
+	 */
+	public void setDoctorGender(Gender doctorGender)
+	{
+		DoctorGender = doctorGender;
+	}
+
+	/**
+	 * @return the doctorDoB
+	 */
+	public Date getDoctorDoB()
+	{
+		return DoctorDoB;
+	}
+
+	/**
+	 * @param doctorDoB the doctorDoB to set
+	 */
+	public void setDoctorDoB(Date doctorDoB)
+	{
+		DoctorDoB = doctorDoB;
+	}
+
+	/**
+	 * @return the doctorEmailAdress
+	 */
+	public String getDoctorEmailAdress()
+	{
+		return DoctorEmailAdress;
+	}
+
+	/**
+	 * @param doctorEmailAdress the doctorEmailAdress to set
+	 */
+	public void setDoctorEmailAdress(String doctorEmailAdress)
+	{
+		DoctorEmailAdress = doctorEmailAdress;
+	}
+
 	/**
 	 * @return the doctorDoJ
 	 */
@@ -129,6 +238,38 @@ public class Doctor extends Human
 	}
 	//endregion
 
+	//region overrideMethods
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
+	@Override
+	public int hashCode()
+	{
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (DoctorID ^ (DoctorID >>> 32));
+		return result;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj)
+	{
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Doctor other = (Doctor) obj;
+		if (DoctorID != other.DoctorID)
+			return false;
+		return true;
+	}
+
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
@@ -136,7 +277,19 @@ public class Doctor extends Human
 	public String toString()
 	{
 		StringBuilder builder = new StringBuilder();
-		builder.append("Doctor [DoctorDoJ=");
+		builder.append("Doctor [DoctorID=");
+		builder.append(DoctorID);
+		builder.append(", DoctorFirstName=");
+		builder.append(DoctorFirstName);
+		builder.append(", DoctorLastName=");
+		builder.append(DoctorLastName);
+		builder.append(", DoctorGender=");
+		builder.append(DoctorGender);
+		builder.append(", DoctorDoB=");
+		builder.append(DoctorDoB);
+		builder.append(", DoctorEmailAdress=");
+		builder.append(DoctorEmailAdress);
+		builder.append(", DoctorDoJ=");
 		builder.append(DoctorDoJ);
 		builder.append(", DoctorSalary=");
 		builder.append(DoctorSalary);
@@ -147,4 +300,6 @@ public class Doctor extends Human
 		builder.append("]");
 		return builder.toString();
 	}
+
+	//endregion
 }
