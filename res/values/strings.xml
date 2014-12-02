@@ -8,5 +8,7 @@
     <string name="docPass">סיסמה</string>
     <string name="loginButtonText">התחבר</string>
     <string name="mainMenuStartTreatment">התחל טיפול</string>
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>
