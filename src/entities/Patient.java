@@ -27,12 +27,12 @@ import enums.ServiceClass;
 public class Patient
 {
 	//region attributes
-	private long HumanID;
-	private String HumanFirstName;
-	private String HumanLastName;
-	private Gender HumanGender;
-	private Date HumanDoB; //Date of birth
-	private String EmailAdress;
+	private long PatientID;
+	private String PatientFirstName;
+	private String PatientLastName;
+	private Gender PatientGender;
+	private Date PatientDoB; //Date of birth
+	private String PatientEmailAdress;
 	private ServiceClass PatientServiceClass; // level of service the company provides to the patient
 	private String PatientPhoneNumber;	
 	//endregion
@@ -47,26 +47,26 @@ public class Patient
 	}
 
 	/**
-	 * @param humanID
-	 * @param humanFirstName
-	 * @param humanLastName
-	 * @param humanGender
-	 * @param humanDoB
-	 * @param emailAdress
+	 * @param patientID
+	 * @param patientFirstName
+	 * @param patientLastName
+	 * @param patientGender
+	 * @param patientDoB
+	 * @param patientemailAdress
 	 * @param patientServiceClass
 	 * @param patientPhoneNumber
 	 */
-	public Patient(long humanID, String humanFirstName, String humanLastName,
-			Gender humanGender, Date humanDoB, String emailAdress,
+	public Patient(long patientID, String patientFirstName, String patientLastName,
+			Gender patientGender, Date patientDoB, String patientEmailAdress,
 			ServiceClass patientServiceClass, String patientPhoneNumber)
 	{
 		super();
-		HumanID = humanID;
-		HumanFirstName = humanFirstName;
-		HumanLastName = humanLastName;
-		HumanGender = humanGender;
-		HumanDoB = humanDoB;
-		EmailAdress = emailAdress;
+		PatientID = patientID;
+		PatientFirstName = patientFirstName;
+		PatientLastName = patientLastName;
+		PatientGender = patientGender;
+		PatientDoB = patientDoB;
+		PatientEmailAdress = patientEmailAdress;
 		PatientServiceClass = patientServiceClass;
 		PatientPhoneNumber = patientPhoneNumber;
 	}
@@ -85,99 +85,99 @@ public class Patient
 	}
 
 	/**
-	 * @return the humanID
+	 * @return the patientID
 	 */
-	public long getHumanID()
+	public long getPatientID()
 	{
-		return HumanID;
+		return PatientID;
 	}
 
 	/**
-	 * @param humanID the humanID to set
+	 * @param patientID the patientID to set
 	 */
-	public void setHumanID(long humanID)
+	public void setPatientID(long patientID)
 	{
-		HumanID = humanID;
+		PatientID = patientID;
 	}
 
 	/**
-	 * @return the humanFirstName
+	 * @return the patientFirstName
 	 */
-	public String getHumanFirstName()
+	public String getPatientFirstName()
 	{
-		return HumanFirstName;
+		return PatientFirstName;
 	}
 
 	/**
-	 * @param humanFirstName the humanFirstName to set
+	 * @param patientFirstName the patientFirstName to set
 	 */
-	public void setHumanFirstName(String humanFirstName)
+	public void setPatientFirstName(String patientFirstName)
 	{
-		HumanFirstName = humanFirstName;
+		PatientFirstName = patientFirstName;
 	}
 
 	/**
-	 * @return the humanLastName
+	 * @return the patientLastName
 	 */
-	public String getHumanLastName()
+	public String getPatientLastName()
 	{
-		return HumanLastName;
+		return PatientLastName;
 	}
 
 	/**
-	 * @param humanLastName the humanLastName to set
+	 * @param patientLastName the patientLastName to set
 	 */
-	public void setHumanLastName(String humanLastName)
+	public void setPatientLastName(String patientLastName)
 	{
-		HumanLastName = humanLastName;
+		PatientLastName = patientLastName;
 	}
 
 	/**
-	 * @return the humanGender
+	 * @return the patientGender
 	 */
-	public Gender getHumanGender()
+	public Gender getPatientGender()
 	{
-		return HumanGender;
+		return PatientGender;
 	}
 
 	/**
-	 * @param humanGender the humanGender to set
+	 * @param patientGender the patientGender to set
 	 */
-	public void setHumanGender(Gender humanGender)
+	public void setHumanGender(Gender patientGender)
 	{
-		HumanGender = humanGender;
+		PatientGender = patientGender;
 	}
 
 	/**
-	 * @return the humanDoB
+	 * @return the patientDoB
 	 */
-	public Date getHumanDoB()
+	public Date getPatientDoB()
 	{
-		return HumanDoB;
+		return PatientDoB;
 	}
 
 	/**
-	 * @param humanDoB the humanDoB to set
+	 * @param patientDoB the patientDoB to set
 	 */
-	public void setHumanDoB(Date humanDoB)
+	public void setPatientDoB(Date patientDoB)
 	{
-		HumanDoB = humanDoB;
+		PatientDoB = patientDoB;
 	}
 
 	/**
-	 * @return the emailAdress
+	 * @return the patientemailAdress
 	 */
-	public String getEmailAdress()
+	public String getPatientEmailAdress()
 	{
-		return EmailAdress;
+		return PatientEmailAdress;
 	}
 
 	/**
-	 * @param emailAdress the emailAdress to set
+	 * @param patientEmailAdress the patientEmailAdress to set
 	 */
-	public void setEmailAdress(String emailAdress)
+	public void setPatientEmailAdress(String patientEmailAdress)
 	{
-		EmailAdress = emailAdress;
+		PatientEmailAdress = patientEmailAdress;
 	}
 
 	/**
@@ -205,6 +205,8 @@ public class Patient
 	}
 	//endregion
 
+	//region overrideMethods
+	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#hashCode()
 	 */
@@ -213,11 +215,9 @@ public class Patient
 	{
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + (int) (HumanID ^ (HumanID >>> 32));
+		result = prime * result + (int) (PatientID ^ (PatientID >>> 32));
 		return result;
 	}
-
-	//region overrideMethods
 	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#equals(java.lang.Object)
@@ -232,7 +232,7 @@ public class Patient
 		if (getClass() != obj.getClass())
 			return false;
 		Patient other = (Patient) obj;
-		if (HumanID != other.HumanID)
+		if (PatientID != other.PatientID)
 			return false;
 		return true;
 	}
@@ -244,18 +244,18 @@ public class Patient
 	public String toString()
 	{
 		StringBuilder builder = new StringBuilder();
-		builder.append("Patient [HumanID=");
-		builder.append(HumanID);
-		builder.append(", HumanFirstName=");
-		builder.append(HumanFirstName);
-		builder.append(", HumanLastName=");
-		builder.append(HumanLastName);
-		builder.append(", HumanGender=");
-		builder.append(HumanGender);
-		builder.append(", HumanDoB=");
-		builder.append(HumanDoB);
-		builder.append(", EmailAdress=");
-		builder.append(EmailAdress);
+		builder.append("Patient [PatientID=");
+		builder.append(PatientID);
+		builder.append(", PatientFirstName=");
+		builder.append(PatientFirstName);
+		builder.append(", PatientLastName=");
+		builder.append(PatientLastName);
+		builder.append(", PatientGender=");
+		builder.append(PatientGender);
+		builder.append(", PatientDoB=");
+		builder.append(PatientDoB);
+		builder.append(", PatientEmailAdress=");
+		builder.append(PatientEmailAdress);
 		builder.append(", PatientServiceClass=");
 		builder.append(PatientServiceClass);
 		builder.append(", PatientPhoneNumber=");
