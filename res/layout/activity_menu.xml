@@ -8,8 +8,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.java5775_5366_9373.MenuActivity"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    tools:context="com.example.java5775_5366_9373.MenuActivity" >
 
     <Button
         android:id="@+id/button1"
