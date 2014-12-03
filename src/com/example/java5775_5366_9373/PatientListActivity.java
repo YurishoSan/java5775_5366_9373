@@ -1,11 +1,17 @@
 package com.example.java5775_5366_9373;
 
-import android.app.ListActivity;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.ActionBar;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.os.Build;
 
-public class PatientListActivity extends ListActivity
+public class PatientListActivity extends ActionBarActivity
 {
 
 	@Override
@@ -13,6 +19,11 @@ public class PatientListActivity extends ListActivity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_patient_list);
+		if (savedInstanceState == null)
+		{
+			getSupportFragmentManager().beginTransaction()
+					.add(R.id.container, new PlaceholderFragment()).commit();
+		}
 	}
 
 	@Override
@@ -35,5 +46,25 @@ public class PatientListActivity extends ListActivity
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+
+	/**
+	 * A placeholder fragment containing a simple view.
+	 */
+	public static class PlaceholderFragment extends Fragment
+	{
+
+		public PlaceholderFragment()
+		{
+		}
+
+		@Override
+		public View onCreateView(LayoutInflater inflater, ViewGroup container,
+				Bundle savedInstanceState)
+		{
+			View rootView = inflater.inflate(
+					R.layout.fragment_patient_list_info, container, false);
+			return rootView;
+		}
 	}
 }
