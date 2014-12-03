@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <string name="app_name">java5775_5366_9373</string>
@@ -10,13 +10,11 @@
     <string name="mainMenuStartTreatment">התחל טיפול</string>
     <string name="title_activity_menu">תפריט ראשי</string>
     <string name="title_activity_patient_list">רשימת פציינטים</string>
-<<<<<<< HEAD
     <string name="title_activity_treatment">TreatmentActivity</string>
     <string name="hello_world">Hello world!</string>
     <string name="StartTreat">רישום טיפול</string>
     <string name="DocName">שם רופא</string>
     <string name="EnterIdPatient">ת ז של החולה</string>
-=======
     <string name="title_activity_patient_list_list_fragment">PatientListListFragment</string>
     <string name="hello_world">Hello world!</string>
 >>>>>>> origin/master
