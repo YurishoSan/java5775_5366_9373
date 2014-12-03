@@ -30,6 +30,10 @@
             android:name=".PatientListActivity"
             android:label="@string/title_activity_patient_list" >
         </activity>
+        <activity
+            android:name=".TreatmentActivity"
+            android:label="@string/title_activity_treatment" >
+        </activity>
     </application>
 
 </manifest>

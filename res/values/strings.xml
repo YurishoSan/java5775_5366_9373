@@ -10,5 +10,10 @@
     <string name="mainMenuStartTreatment">התחל טיפול</string>
     <string name="title_activity_menu">תפריט ראשי</string>
     <string name="title_activity_patient_list">רשימת פציינטים</string>
+    <string name="title_activity_treatment">TreatmentActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="StartTreat">רישום טיפול</string>
+    <string name="DocName">שם רופא</string>
+    <string name="EnterIdPatient">ת ז של החולה</string>
 
 </resources>
