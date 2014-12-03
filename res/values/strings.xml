@@ -10,5 +10,7 @@
     <string name="mainMenuStartTreatment">התחל טיפול</string>
     <string name="title_activity_menu">תפריט ראשי</string>
     <string name="title_activity_patient_list">רשימת פציינטים</string>
+    <string name="title_activity_patient_list_list_fragment">PatientListListFragment</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>

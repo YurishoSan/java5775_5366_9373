@@ -30,6 +30,13 @@
             android:name=".PatientListActivity"
             android:label="@string/title_activity_patient_list" >
         </activity>
+        <activity
+            android:name=".PatientListListFragment"
+            android:label="@string/title_activity_patient_list_list_fragment" >
+        </activity>
     </application>
+
+    <!-- To access Google+ APIs: -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
