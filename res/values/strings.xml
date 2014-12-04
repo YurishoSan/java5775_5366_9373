@@ -16,7 +16,6 @@
     <string name="DocName">שם רופא</string>
     <string name="EnterIdPatient">ת ז של החולה</string>
     <string name="title_activity_patient_list_list_fragment">PatientListListFragment</string>
-    <string name="hello_world">Hello world!</string>
->>>>>>> origin/master
+
 
 </resources>

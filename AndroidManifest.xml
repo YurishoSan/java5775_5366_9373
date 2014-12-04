@@ -31,13 +31,13 @@
             android:label="@string/title_activity_patient_list" >
         </activity>
         <activity
-<<<<<<< HEAD
+
             android:name=".TreatmentActivity"
             android:label="@string/title_activity_treatment" >
-=======
+
             android:name=".PatientListListFragment"
             android:label="@string/title_activity_patient_list_list_fragment" >
->>>>>>> origin/master
+
         </activity>
     </application>
 
