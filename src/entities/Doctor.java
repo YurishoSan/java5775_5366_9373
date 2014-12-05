@@ -5,8 +5,8 @@ package entities;
 
 import java.util.Date;
 
-import enums.Gender;
-import enums.Specialization;
+import entities.enums.Gender;
+import entities.enums.Specialization;
 
 /**
  * Class representing a doctor working for the medical company
@@ -14,7 +14,7 @@ import enums.Specialization;
  * @author Yitzhak Goldstein
  * @author Shalom Tzichtig
  * 
- * @see enums.Specialization
+ * @see entities.enums.Specialization
  */
 public class Doctor
 {

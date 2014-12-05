@@ -5,7 +5,7 @@ package entities;
 
 import java.util.Date;
 
-import enums.MedicineType;
+import entities.enums.MedicineType;
 
 /**
  * Class representing medicines the doctors can prescribe to patients.
@@ -13,7 +13,7 @@ import enums.MedicineType;
  * @author Yitzhak Goldstein
  * @author Shalom Tzichtig
  * 
- * @see enums.MedicineType
+ * @see entities.enums.MedicineType
  */
 public class Medicine
 {
@@ -48,7 +48,7 @@ public class Medicine
 	 */
 	public Medicine(long medicineID, String medicineName,
 			String medicineIngredients, String medicineActiveIngredients,
-			enums.MedicineType medicineType, Date medicineExpDate)
+			entities.enums.MedicineType medicineType, Date medicineExpDate)
 	{
 		super();
 		MedicineID = medicineID;

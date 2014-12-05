@@ -3,7 +3,7 @@
  */
 package entities;
 
-import enums.Permit;
+import entities.enums.Permit;
 
 /**
  * A Class representing the list of passwords used by the system users.
