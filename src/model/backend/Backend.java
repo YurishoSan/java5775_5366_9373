@@ -30,6 +30,13 @@ public interface Backend
 	public void deletePatient (long patientID) throws Exception;
 	public void deleteTreatment (long treatmentID) throws Exception;
 	
+	public void deleteMedicineAllergyByAllergy (long allergyID) throws Exception;
+	public void deleteMedicineAllergyByMedicine (long medicineID) throws Exception;
+	public void deletePatientAllergyByPatient (long patientID) throws Exception;
+	public void deletePatientAllergyByAllergy (long medicineID) throws Exception;
+	public void deleteTreatmetByMedicine (long medicineID) throws Exception;
+	public void deleteTreatmetByTreatment (long teatmentID) throws Exception;
+	
 	//endregion
 
 	//region updateFunctions
