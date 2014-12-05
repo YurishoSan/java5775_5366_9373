@@ -1,4 +1,6 @@
-package com.example.java5775_5366_9373;
+package control;
+
+import com.example.java5775_5366_9373.R;
 
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
