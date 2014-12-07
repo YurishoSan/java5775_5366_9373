@@ -16,7 +16,7 @@ public class PatientAllergy
 {
 	//region attributes
 	private long PatientAllergyID;
-	private long PateintID;
+	private long PatientID;
 	private long AllergyID;
 	//endregion
 	
@@ -30,14 +30,14 @@ public class PatientAllergy
 	}
 	/**
 	 * @param patientAllergyID
-	 * @param pateintID
+	 * @param patientID
 	 * @param allergyID
 	 */
-	public PatientAllergy(long patientAllergyID, long pateintID, long allergyID)
+	public PatientAllergy(long patientAllergyID, long patientID, long allergyID)
 	{
 		super();
 		PatientAllergyID = patientAllergyID;
-		PateintID = pateintID;
+		PatientID = patientID;
 		AllergyID = allergyID;
 	}
 	//endregion
@@ -58,18 +58,18 @@ public class PatientAllergy
 		PatientAllergyID = patientAllergyID;
 	}
 	/**
-	 * @return the pateintID
+	 * @return the patientID
 	 */
-	public long getPateintID()
+	public long getPatientID()
 	{
-		return PateintID;
+		return PatientID;
 	}
 	/**
 	 * @param pateintID the pateintID to set
 	 */
-	public void setPateintID(long pateintID)
+	public void setPatientID(long patientID)
 	{
-		PateintID = pateintID;
+		PatientID = patientID;
 	}
 	/**
 	 * @return the allergyID
@@ -126,8 +126,8 @@ public class PatientAllergy
 		StringBuilder builder = new StringBuilder();
 		builder.append("PatientAllergy [PatientAllergyID=");
 		builder.append(PatientAllergyID);
-		builder.append(", PateintID=");
-		builder.append(PateintID);
+		builder.append(", PatientID=");
+		builder.append(PatientID);
 		builder.append(", AllergyID=");
 		builder.append(AllergyID);
 		builder.append("]");

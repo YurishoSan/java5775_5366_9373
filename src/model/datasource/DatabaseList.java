@@ -141,42 +141,87 @@ public class DatabaseList implements Backend
 	@Override
 	public void deleteDoctor(long doctorID) throws Exception
 	{
-		// TODO Auto-generated method stub
+		for (Doctor doctorItem : doctors)
+		{
+			if (doctorItem.getDoctorID() == doctorID)
+			{
+				doctors.remove(doctorItem);
+				return;
+			}
+		}
+		
+		throw new Exception("לא נמצאה דוקטור למחיקה.");
 
 	}
 
 	@Override
 	public void deleteMedicine(long medicineID) throws Exception
 	{
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void deletePassword(long passwordID) throws Exception
-	{
-		// TODO Auto-generated method stub
+		deleteMedicineAllergyByMedicine(medicineID);
+		deletePrescriptionByMedicine(medicineID);
+		
+		for (Medicine medicineItem : medicines)
+		{
+			if (medicineItem.getMedicineID() == medicineID)
+			{
+				medicines.remove(medicineItem);
+				return;
+			}
+		}
+		
+		throw new Exception("לא נמצאה תרופה למחיקה.");
 
 	}
 
 	@Override
 	public void deletePatient(long patientID) throws Exception
 	{
-		// TODO Auto-generated method stub
+		deletePatientAllergyByPatient(patientID);
+		
+		for (Patient patientItem : patients)
+		{
+			if (patientItem.getPatientID() == patientID)
+			{
+				patients.remove(patientItem);
+				return;
+			}
+		}
+		
+		throw new Exception("לא נמצאה פציינאט למחיקה.");
 
 	}
 
 	@Override
 	public void deleteTreatment(long treatmentID) throws Exception
 	{
-		// TODO Auto-generated method stub
+		deletePrescriptionByTreatment(treatmentID);
+		
+		for (Treatment treatmentItem : treatments)
+		{
+			if (treatmentItem.getTreatmentID() == treatmentID)
+			{
+				treatments.remove(treatmentItem);
+				return;
+			}
+		}
+		
+		throw new Exception("לא נמצאה טיפול למחיקה.");
 
 	}
 	
 	@Override
 	public void deleteMedicineAllergyByAllergy(long allergyID) throws Exception
 	{
-		// TODO Auto-generated method stub
+		for (MedicineAllergy medicineAllergyItem : medicineAllergies)
+		{
+			if (medicineAllergyItem.getAllergyID() == allergyID)
+			{
+				medicineAllergies.remove(medicineAllergyItem);
+				return;
+			}
+		}
+		
+		throw new Exception("לא נמצאה קישור תרופה - אלרגיה למחיקה.");
 		
 	}
 
@@ -184,36 +229,97 @@ public class DatabaseList implements Backend
 	public void deleteMedicineAllergyByMedicine(long medicineID)
 			throws Exception
 	{
-		// TODO Auto-generated method stub
+		for (MedicineAllergy medicineAllergyItem : medicineAllergies)
+		{
+			if (medicineAllergyItem.getMedicineID() == medicineID)
+			{
+				medicineAllergies.remove(medicineAllergyItem);
+				return;
+			}
+		}
+		
+		throw new Exception("לא נמצאה קישור תרופה - אלרגיה למחיקה.");
 		
 	}
 
 	@Override
 	public void deletePatientAllergyByPatient(long patientID) throws Exception
 	{
-		// TODO Auto-generated method stub
+		for (PatientAllergy patientAllergyItem : patientAllergies)
+		{
+			if (patientAllergyItem.getPatientID() == patientID)
+			{
+				patientAllergies.remove(patientAllergyItem);
+				return;
+			}
+		}
+		
+		throw new Exception("לא נמצאה קישור פציינט - אלרגיה למחיקה.");
 		
 	}
 
 	@Override
-	public void deletePatientAllergyByAllergy(long medicineID) throws Exception
+	public void deletePatientAllergyByAllergy(long allergyID) throws Exception
 	{
-		// TODO Auto-generated method stub
+		for (PatientAllergy patientAllergyItem : patientAllergies)
+		{
+			if (patientAllergyItem.getAllergyID() == allergyID)
+			{
+				patientAllergies.remove(patientAllergyItem);
+				return;
+			}
+		}
+		
+		throw new Exception("לא נמצאה קישור פציינט - אלרגיה למחיקה.");
 		
 	}
 
 	@Override
-	public void deleteTreatmetByMedicine(long medicineID) throws Exception
+	public void deletePrescriptionByMedicine(long medicineID) throws Exception
 	{
-		// TODO Auto-generated method stub
+		for (Prescription prescriptionItem : prescriptions)
+		{
+			if (prescriptionItem.getPrescriptionMedicineID() == medicineID)
+			{
+				prescriptions.remove(prescriptionItem);
+				return;
+			}
+		}
+		
+		throw new Exception("לא נמצאה קישור תרופה - טיפול למחיקה.");
 		
 	}
 
 	@Override
-	public void deleteTreatmetByTreatment(long teatmentID) throws Exception
+	public void deletePrescriptionByTreatment(long teatmentID) throws Exception
 	{
-		// TODO Auto-generated method stub
+		for (Prescription prescriptionItem : prescriptions)
+		{
+			if (prescriptionItem.getPrescriptionTreatmentID() == teatmentID)
+			{
+				prescriptions.remove(prescriptionItem);
+				return;
+			}
+		}
 		
+		throw new Exception("לא נמצאה קישור תרופה - טיפול למחיקה.");
+		
+	}
+	
+	@Override
+	public void deletePasswordByUserID(long userID) throws Exception
+	{
+		for (Password passwordItem : passwords)
+		{
+			if (passwordItem.getPasswordUserID() == userID)
+			{
+				passwords.remove(passwordItem);
+				return;
+			}
+		}
+		
+		throw new Exception("לא נמצאה סיסמה למחיקה.");
+
 	}
 	
 	//endregion

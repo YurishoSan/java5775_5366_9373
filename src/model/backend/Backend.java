@@ -26,7 +26,6 @@ public interface Backend
 	public void deleteAllergy (long allergyID) throws Exception;
 	public void deleteDoctor (long doctorID) throws Exception;
 	public void deleteMedicine (long medicineID) throws Exception;
-	public void deletePassword (long passwordID) throws Exception;
 	public void deletePatient (long patientID) throws Exception;
 	public void deleteTreatment (long treatmentID) throws Exception;
 	
@@ -34,8 +33,9 @@ public interface Backend
 	public void deleteMedicineAllergyByMedicine (long medicineID) throws Exception;
 	public void deletePatientAllergyByPatient (long patientID) throws Exception;
 	public void deletePatientAllergyByAllergy (long medicineID) throws Exception;
-	public void deleteTreatmetByMedicine (long medicineID) throws Exception;
-	public void deleteTreatmetByTreatment (long teatmentID) throws Exception;
+	public void deletePrescriptionByMedicine (long medicineID) throws Exception;
+	public void deletePrescriptionByTreatment (long teatmentID) throws Exception;
+	public void deletePasswordByUserID (long userID) throws Exception;
 	
 	//endregion
 
