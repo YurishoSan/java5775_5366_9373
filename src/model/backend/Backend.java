@@ -7,6 +7,8 @@ import entities.enums.*;
 
 public interface Backend
 {
+	public void setLists();
+	
 	//region addFunctions
 	
 	public void addAllergy (Allergy allergy) throws Exception;
@@ -45,7 +47,8 @@ public interface Backend
 	public void updateDoctor (Doctor doctor) throws Exception;
 	public void updateMedicine (Medicine medicine) throws Exception;
 	public void updateMedicineAllergy (MedicineAllergy medicineAllergy) throws Exception;
-	public void updatePassword (Password password) throws Exception;
+	public void updatePassword (Password password, String newPassword) throws Exception;
+	public void updatePassword (Password oldPassword, String newPassword, Permit permit) throws Exception;
 	public void updatePatient (Patient patient) throws Exception;
 	public void updatePatientAllergy (PatientAllergy patientAllergy) throws Exception;
 	public void updatePrescription (Prescription prescription) throws Exception;
@@ -61,13 +64,12 @@ public interface Backend
 	public ArrayList<Medicine> getMedicineList () throws Exception;
 	public ArrayList<Medicine> getMedicineByTreatmentList (long treatmentID) throws Exception;
 	public ArrayList<Patient> getPatientList () throws Exception;
-	public ArrayList<Treatment> getTreatmentByDoctorList (long doctorID) throws Exception;
 	
-	public void getConectorMedicineAllergy (long MedicineID, long AllergyID) throws Exception;
-	public void getConectorPatientAllergy (long PatientID, long AllergyID) throws Exception;
-	public void getConectorPrescription (long TreatmentID, long MedicineID) throws Exception;
+	public MedicineAllergy getConectorMedicineAllergy (long medicineID, long allergyID) throws Exception;
+	public PatientAllergy getConectorPatientAllergy (long patientID, long allergyID) throws Exception;
+	public Prescription getConectorPrescription (long treatmentID, long medicineID) throws Exception;
 	
 	//endregion
 	
-	public Permit checkPassword (long loginID, long password) throws Exception;
+	public Permit checkPassword (long loginID, String password) throws Exception;
 }
