@@ -13,8 +13,9 @@ import java.util.Date;
 
 
 
-import enums.Gender;
-import enums.ServiceClass;
+
+import entities.enums.Gender;
+import entities.enums.ServiceClass;
 
 /**
  * Class representing a patient of the medical company
@@ -22,7 +23,7 @@ import enums.ServiceClass;
  * @author Yitzhak Goldstein
  * @author Shalom Tzichtig 
  * 
- * @see enums.ServiceClass
+ * @see entities.enums.ServiceClass
  */
 public class Patient
 {

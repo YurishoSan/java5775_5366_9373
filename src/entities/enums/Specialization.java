@@ -1,7 +1,7 @@
 /**
  * 
  */
-package enums;
+package entities.enums;
 
 /**
  * Enum representing the different specializations a doctor can have.

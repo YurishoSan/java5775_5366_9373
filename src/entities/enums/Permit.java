@@ -1,7 +1,7 @@
 /**
  * 
  */
-package enums;
+package entities.enums;
 
 /**
  * Enum representing the permeations a user can have in the system.
@@ -14,6 +14,7 @@ package enums;
 public enum Permit
 {
 	//region values
+	DENIED, //wrong password or username
 	ADMIN,	//system admin
 	COMPANY,//company worker
 	DOCTOR, //company doctor

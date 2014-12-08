@@ -6,4 +6,4 @@
  * @author Shalom Tzichtig
  * 
  */
-package enums;
+package entities.enums;

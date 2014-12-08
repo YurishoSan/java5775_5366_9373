@@ -1,7 +1,7 @@
 /**
  * 
  */
-package enums;
+package entities.enums;
 
 /**
  * Enum representing the different service levels the medical company provides.

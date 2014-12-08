@@ -1,7 +1,7 @@
 /**
  * 
  */
-package enums;
+package entities.enums;
 
 /**
  * Enum representing the genders a human can be.
