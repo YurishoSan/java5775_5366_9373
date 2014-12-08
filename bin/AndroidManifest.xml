@@ -7,6 +7,9 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="19" />
+    
+    <!-- To access Google+ APIs: -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -31,17 +34,16 @@
             android:label="@string/title_activity_patient_list" >
         </activity>
         <activity
-
             android:name="control.TreatmentActivity"
             android:label="@string/title_activity_treatment" >
-
-            android:name=".PatientListListFragment"
-            android:label="@string/title_activity_patient_list_list_fragment" >
-
+        </activity>
+                <activity
+            android:name="control.MedicineListActivity"
+            android:label="@string/title_activity_medicine_list" >
+        </activity>
+        <activity
+            android:name="control.AllergyListActivity"
+            android:label="@string/title_activity_allergy_list" >
         </activity>
     </application>
-
-    <!-- To access Google+ APIs: -->
-    <uses-permission android:name="android.permission.INTERNET" />
-
 </manifest>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <array name="mainMenuListViewArray">
-       <item><string>הצג פציינטים</string></item>
-       <item><string>הצג תרופות</string></item>
-       <item><string>]הצג אלרגיות</string></item>
-    </array>
-</resources>

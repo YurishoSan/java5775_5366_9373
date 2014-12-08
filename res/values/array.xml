@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mainMenuListViewArray">
+       <item name="show_patients">הצג פציינטים</item>
+       <item name="show_medicine">הצג תרופות</item>
+       <item name="show_allergies">הצג אלרגיות</item>
+    </string-array>
+</resources>
