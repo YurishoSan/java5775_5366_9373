@@ -3,9 +3,16 @@ package control;
 import com.example.java5775_5366_9373.R;
 
 import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ListView;
 
 public class MenuActivity extends ActionBarActivity
 {
@@ -15,6 +22,38 @@ public class MenuActivity extends ActionBarActivity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_menu);
+		
+		//set events
+		ListView listview = (ListView) findViewById(R.id.content);
+        listview.setOnItemClickListener(new OnItemClickListener()
+        {
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id)
+			{
+				Intent intent;
+				
+				switch(position)
+				{
+				case 0:
+					intent = new Intent(MenuActivity.this, PatientListActivity.class);
+					startActivity(intent);
+					break;
+				case 1:
+					intent = new Intent(MenuActivity.this, MedicineListActivity.class);
+					startActivity(intent);
+					break;
+				case 2:
+					intent = new Intent(MenuActivity.this, AllergyListActivity.class);
+					startActivity(intent);
+					break;
+				default:
+					//TODO: Throw exception unsupported choice.
+				}
+				
+			}
+        	
+        });
 	}
 
 	@Override
