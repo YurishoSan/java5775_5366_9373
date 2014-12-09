@@ -1,13 +1,17 @@
 package control;
 
+import model.backend.*;
+
 import com.example.java5775_5366_9373.R;
 
 import android.support.v7.app.ActionBarActivity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity
 {
@@ -16,8 +20,34 @@ public class MainActivity extends ActionBarActivity
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
-		
 		setContentView(R.layout.activity_main);
+		
+		ProgressDialog progressDialog = new ProgressDialog(this);
+		progressDialog.dismiss();
+		setProgressBarIndeterminateVisibility(false);
+		
+		try
+		{
+			asyncTask t1 = new asyncTask(MainActivity.this, progressDialog,
+					new Run()
+					{
+						@Override
+						public void run() throws Exception
+						{
+							if (BackendFactory.getInstance(getApplicationContext()).getDoctorList().size() == 0)
+								BackendFactory.getInstance(getApplicationContext()).setLists();
+							
+						}
+					},					
+					null);
+			
+			t1.execute();
+		}
+			
+		catch (Exception exp)
+		{
+			Toast.makeText(getApplicationContext(), "האפליקציה הפסיקה לעבוד", Toast.LENGTH_LONG).show();
+		}
 	}
 
 	@Override

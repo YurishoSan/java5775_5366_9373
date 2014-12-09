@@ -22,21 +22,13 @@ public class MedicineAllergy
 		
 		//region contors
 		/**
-		 * 
-		 */
-		public MedicineAllergy()
-		{
-			super();
-		}
-		/**
-		 * @param medicineAllergyID
 		 * @param medicineID
 		 * @param allergyID
+		 * 
 		 */
-		public MedicineAllergy(long medicineAllergyID, long medicineID, long allergyID)
+		public MedicineAllergy(long medicineID, long allergyID)
 		{
 			super();
-			MedicineAllergyID = medicineAllergyID;
 			MedicineID = medicineID;
 			AllergyID = allergyID;
 		}

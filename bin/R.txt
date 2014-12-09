@@ -565,8 +565,9 @@ int drawable abc_textfield_searchview_holo_dark 0x7f020053
 int drawable abc_textfield_searchview_holo_light 0x7f020054
 int drawable abc_textfield_searchview_right_holo_dark 0x7f020055
 int drawable abc_textfield_searchview_right_holo_light 0x7f020056
-int drawable ic_launcher 0x7f020057
-int drawable reka 0x7f020058
+int drawable activity_menu_handle_gradient 0x7f020057
+int drawable ic_launcher 0x7f020058
+int drawable reka 0x7f020059
 int id IdTextView 0x7f050048
 int id LinearLayout1 0x7f05003c
 int id NameTextView 0x7f050047
@@ -701,6 +702,7 @@ int string docNum 0x7f0a0010
 int string docPass 0x7f0a0011
 int string hello_world 0x7f0a0019
 int string loginButtonText 0x7f0a0012
+int string mainMenuSlidingDrawerHandle 0x7f0a001d
 int string mainMenuStartTreatment 0x7f0a0013
 int string title_activity_allergy_list 0x7f0a0017
 int string title_activity_medicine_list 0x7f0a0016

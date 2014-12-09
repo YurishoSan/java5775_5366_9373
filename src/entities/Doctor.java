@@ -57,8 +57,8 @@ public class Doctor
 	 * @param doctorSpecialization
 	 */
 	public Doctor(long doctorID, String doctorFirstName, String doctorLastName,
-			Gender doctorGender, Date doctorDoB, String doctorEmailAdress,
-			Date doctorDoJ, float doctorSalary, String doctorPhoneNumber,
+			Gender doctorGender, Date doctorDoB, Date doctorDoJ, 
+			String doctorEmailAdress, float doctorSalary, String doctorPhoneNumber,
 			Specialization doctorSpecialization)
 	{
 		super();
