@@ -17,9 +17,6 @@ public class MainActivity extends ActionBarActivity
 	{
 		super.onCreate(savedInstanceState);
 		
-		model.backend.Backend backend = model.backend.BackendFactory.getInstance(this);
-		backend.setLists();
-		
 		setContentView(R.layout.activity_main);
 	}
 
