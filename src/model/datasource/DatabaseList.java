@@ -1,6 +1,7 @@
 package model.datasource;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import entities.Allergy;
 import entities.Doctor;
@@ -11,7 +12,10 @@ import entities.Patient;
 import entities.PatientAllergy;
 import entities.Prescription;
 import entities.Treatment;
+import entities.enums.Gender;
+import entities.enums.MedicineType;
 import entities.enums.Permit;
+import entities.enums.Specialization;
 import model.backend.Backend;
 
 public class DatabaseList implements Backend
@@ -34,19 +38,34 @@ public class DatabaseList implements Backend
 	
 	//endregion
 	
+	@SuppressWarnings("deprecation") // Date is deprecated, should change Date to GeorgianCalender in next version.
 	public void setLists()
 	{
 		try
 		{
-			/*
-			this.addAllergy(allergy);
-			this.addDoctor(doctor);
-			this.addMedicine(medicine);
-			this.addMedicineAllergy(medicineAllergy);
-			this.addPassword(password);
+			this.addAllergy(new Allergy(0, "Paracetamol hypersensitivity",
+					"אלרגיה ל פאראסטמול, הרכיב הפעיל של אקמול."));
+			
+			this.addDoctor(new Doctor(333658712, "מוטי", "קרקר", Gender.MALE, new Date(1970, 5, 12), new Date(2002, 7, 1), 
+					"moti_kereker321@yahoo.com", (float)130000.0, "050777654", Specialization.FAMILY));
+			
+			this.addMedicine(new Medicine(0, "אקמול פוקוס",
+					"Microcrystalline cellulose, stearic acid, crospovidone, silicon dioxide, hydroxypropyl"
+				+	"methylcellulose, FD&C red #40, FD&C yellow #6, polyethylene glycol 400, titanium dioxide,"
+				+	"polysorbate 80, purified water. "
+				, "Acetylsalicylic acid 250 mg, Paracetamol 250 mg, Caffeine anhydrous 65 mg",
+				MedicineType.PILL_TABLET, new Date(2016, 3, 1)));
+			
+			this.addMedicineAllergy(new MedicineAllergy(0, 0));
+			
+			/*this.addPassword(password);
+			
 			this.addPatient(patient);
+			
 			this.addPatientAllergy(patientAllergy);
+			
 			this.addPrescription(prescription);
+			
 			this.addTreatment(treatment);
 			*/
 		}

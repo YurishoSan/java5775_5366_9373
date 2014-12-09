@@ -8,10 +8,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ListView;
 
 public class MenuActivity extends ActionBarActivity
@@ -48,7 +47,7 @@ public class MenuActivity extends ActionBarActivity
 					startActivity(intent);
 					break;
 				default:
-					//TODO: Throw exception unsupported choice.
+					Toast.makeText(getApplicationContext(), "הבחירה אינה נתמכת", Toast.LENGTH_LONG).show();
 				}
 				
 			}
