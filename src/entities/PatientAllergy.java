@@ -15,7 +15,6 @@ package entities;
 public class PatientAllergy
 {
 	//region attributes
-	private long PatientAllergyID;
 	private long PatientID;
 	private long AllergyID;
 	//endregion
@@ -33,30 +32,15 @@ public class PatientAllergy
 	 * @param patientID
 	 * @param allergyID
 	 */
-	public PatientAllergy(long patientAllergyID, long patientID, long allergyID)
+	public PatientAllergy(long patientID, long allergyID)
 	{
 		super();
-		PatientAllergyID = patientAllergyID;
 		PatientID = patientID;
 		AllergyID = allergyID;
 	}
 	//endregion
 	
 	//region getters/setters
-	/**
-	 * @return the patientAllergyID
-	 */
-	public long getPatientAllergyID()
-	{
-		return PatientAllergyID;
-	}
-	/**
-	 * @param patientAllergyID the patientAllergyID to set
-	 */
-	public void setPatientAllergyID(long patientAllergyID)
-	{
-		PatientAllergyID = patientAllergyID;
-	}
 	/**
 	 * @return the patientID
 	 */
@@ -88,6 +72,7 @@ public class PatientAllergy
 	//endregion
 	
 	//region overrideMethods
+	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#hashCode()
 	 */
@@ -96,8 +81,8 @@ public class PatientAllergy
 	{
 		final int prime = 31;
 		int result = 1;
-		result = prime * result
-				+ (int) (PatientAllergyID ^ (PatientAllergyID >>> 32));
+		result = prime * result + (int) (AllergyID ^ (AllergyID >>> 32));
+		result = prime * result + (int) (PatientID ^ (PatientID >>> 32));
 		return result;
 	}
 	/* (non-Javadoc)
@@ -113,7 +98,9 @@ public class PatientAllergy
 		if (getClass() != obj.getClass())
 			return false;
 		PatientAllergy other = (PatientAllergy) obj;
-		if (PatientAllergyID != other.PatientAllergyID)
+		if (AllergyID != other.AllergyID)
+			return false;
+		if (PatientID != other.PatientID)
 			return false;
 		return true;
 	}
@@ -124,14 +111,13 @@ public class PatientAllergy
 	public String toString()
 	{
 		StringBuilder builder = new StringBuilder();
-		builder.append("PatientAllergy [PatientAllergyID=");
-		builder.append(PatientAllergyID);
-		builder.append(", PatientID=");
+		builder.append("PatientAllergy [PatientID=");
 		builder.append(PatientID);
 		builder.append(", AllergyID=");
 		builder.append(AllergyID);
 		builder.append("]");
 		return builder.toString();
 	}
+	
 	//endregion
 }

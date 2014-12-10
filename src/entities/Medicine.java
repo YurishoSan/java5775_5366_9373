@@ -26,7 +26,6 @@ public class Medicine implements Serializable
 	private String MedicineIngredients;
 	private String MedicineActiveIngredients;
 	private MedicineType MedicineType;
-	private Date MedicineExpDate; //Expiration Date
 	
 	//endregion
 
@@ -46,11 +45,10 @@ public class Medicine implements Serializable
 	 * @param medicineIngredients
 	 * @param medicineActiveIngredients
 	 * @param medicineType
-	 * @param medicineExpDate
 	 */
 	public Medicine(long medicineID, String medicineName,
 			String medicineIngredients, String medicineActiveIngredients,
-			entities.enums.MedicineType medicineType, Date medicineExpDate)
+			entities.enums.MedicineType medicineType)
 	{
 		super();
 		MedicineID = medicineID;
@@ -58,7 +56,6 @@ public class Medicine implements Serializable
 		MedicineIngredients = medicineIngredients;
 		MedicineActiveIngredients = medicineActiveIngredients;
 		MedicineType = medicineType;
-		MedicineExpDate = medicineExpDate;
 	}
 	//endregion
 
@@ -142,22 +139,6 @@ public class Medicine implements Serializable
 	{
 		MedicineType = medicineType;
 	}
-
-	/**
-	 * @return the medicineExpDate
-	 */
-	public Date getMedicineExpDate()
-	{
-		return MedicineExpDate;
-	}
-
-	/**
-	 * @param medicineExpDate the medicineExpDate to set
-	 */
-	public void setMedicineExpDate(Date medicineExpDate)
-	{
-		MedicineExpDate = medicineExpDate;
-	}
 	//endregion
 
 	//region overrideMethods
@@ -209,8 +190,6 @@ public class Medicine implements Serializable
 		builder.append(MedicineActiveIngredients);
 		builder.append(", MedicineType=");
 		builder.append(MedicineType);
-		builder.append(", MedicineExpDate=");
-		builder.append(MedicineExpDate);
 		builder.append("]");
 		return builder.toString();
 	}

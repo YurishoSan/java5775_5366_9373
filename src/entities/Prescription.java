@@ -3,6 +3,8 @@
  */
 package entities;
 
+import java.util.Date;
+
 /**
  * Class representing a prescription on a medicine during a treatment.
  * 
@@ -16,9 +18,9 @@ public class Prescription
 {
 	//region attributes
 	
-	private long PrescriptionID;
 	private long PrescriptionTreatmentID;
 	private long PrescriptionMedicineID;
+	private Date PrescriptionMedicineExperationDate;
 	
 	//endregion
 
@@ -32,37 +34,22 @@ public class Prescription
 	}
 
 	/**
-	 * @param prescriptionID
 	 * @param prescriptionTreatmentID
 	 * @param prescriptionMedicineID
+	 * @param prescriptionMedicineExperationDate
 	 */
-	public Prescription(long prescriptionID, long prescriptionTreatmentID,
-			long prescriptionMedicineID)
+	public Prescription(long prescriptionTreatmentID,
+			long prescriptionMedicineID, Date prescriptionMedicineExperationDate)
 	{
 		super();
-		PrescriptionID = prescriptionID;
 		PrescriptionTreatmentID = prescriptionTreatmentID;
 		PrescriptionMedicineID = prescriptionMedicineID;
+		PrescriptionMedicineExperationDate = prescriptionMedicineExperationDate;
 	}
 
 	//endregion
 
 	//region getters/setters
-	/**
-	 * @return the prescriptionID
-	 */
-	public long getPrescriptionID()
-	{
-		return PrescriptionID;
-	}
-
-	/**
-	 * @param prescriptionID the prescriptionID to set
-	 */
-	public void setPrescriptionID(long prescriptionID)
-	{
-		PrescriptionID = prescriptionID;
-	}
 
 	/**
 	 * @return the prescriptionTreatmentID
@@ -95,9 +82,28 @@ public class Prescription
 	{
 		PrescriptionMedicineID = prescriptionMedicineID;
 	}
+	
+	/**
+	 * @return the prescriptionMedicineExperationDate
+	 */
+	public Date getPrescriptionMedicineExperationDate()
+	{
+		return PrescriptionMedicineExperationDate;
+	}
+
+	/**
+	 * @param prescriptionMedicineExperationDate the prescriptionMedicineExperationDate to set
+	 */
+	public void setPrescriptionMedicineExperationDate(
+			Date prescriptionMedicineExperationDate)
+	{
+		PrescriptionMedicineExperationDate = prescriptionMedicineExperationDate;
+	}
+	
 	//endregion
 
 	//region overrideMethods
+	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#hashCode()
 	 */
@@ -106,8 +112,12 @@ public class Prescription
 	{
 		final int prime = 31;
 		int result = 1;
-		result = prime * result
-				+ (int) (PrescriptionID ^ (PrescriptionID >>> 32));
+		result = prime
+				* result
+				+ (int) (PrescriptionMedicineID ^ (PrescriptionMedicineID >>> 32));
+		result = prime
+				* result
+				+ (int) (PrescriptionTreatmentID ^ (PrescriptionTreatmentID >>> 32));
 		return result;
 	}
 
@@ -126,7 +136,9 @@ public class Prescription
 		if (getClass() != obj.getClass())
 			return false;
 		Prescription other = (Prescription) obj;
-		if (PrescriptionID != other.PrescriptionID)
+		if (PrescriptionMedicineID != other.PrescriptionMedicineID)
+			return false;
+		if (PrescriptionTreatmentID != other.PrescriptionTreatmentID)
 			return false;
 		return true;
 	}
@@ -138,14 +150,15 @@ public class Prescription
 	public String toString()
 	{
 		StringBuilder builder = new StringBuilder();
-		builder.append("Prescription [PrescriptionID=");
-		builder.append(PrescriptionID);
-		builder.append(", PrescriptionTreatmentID=");
+		builder.append("Prescription [PrescriptionTreatmentID=");
 		builder.append(PrescriptionTreatmentID);
 		builder.append(", PrescriptionMedicineID=");
 		builder.append(PrescriptionMedicineID);
+		builder.append(", PrescriptionMedicineExperationDate=");
+		builder.append(PrescriptionMedicineExperationDate);
 		builder.append("]");
 		return builder.toString();
 	}
+	
 	//endregion
 }
