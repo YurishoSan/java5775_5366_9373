@@ -10,6 +10,7 @@ import com.example.java5775_5366_9373.R;
 
 import entities.Allergy;
 import android.app.Activity;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
@@ -17,9 +18,11 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -89,7 +92,38 @@ public class AllergyListActivity extends Activity
 						exp.printStackTrace();
 					}
 					
-					//TODO: add show info code here.
+					final Dialog dialog = new Dialog(AllergyListActivity.this);
+					dialog.setContentView(R.layout.allergy_details_dialog);
+					dialog.setTitle("פרטי תרופה");
+					
+					TextView idTextView = (TextView) dialog.findViewById(R.id.allergyIDTextView);
+					TextView nameTextView = (TextView) dialog.findViewById(R.id.allergyNameTextView);
+					TextView detailsTextView = (TextView) dialog.findViewById(R.id.allergyDetailsTextView);
+					
+					idTextView.setText(Long.toString(allergy.getAllergyID()));
+					nameTextView.setText(allergy.getAllergyName());
+					detailsTextView.setText(allergy.getAllergyNotes());
+					
+					Button okButton = (Button) dialog.findViewById(R.id.allergyOkButton);
+					okButton.setOnClickListener(new OnClickListener()
+					{
+						
+						@Override
+						public void onClick(View v)
+						{
+							dialog.dismiss();
+							
+						}
+					});
+					
+					try
+					{
+					dialog.show();
+					}
+					catch(Exception e)
+					{
+						e.getStackTrace();
+					}
 				}
 			});
 	}

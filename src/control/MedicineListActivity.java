@@ -10,6 +10,7 @@ import com.example.java5775_5366_9373.R;
 
 import entities.Medicine;
 import android.app.Activity;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;

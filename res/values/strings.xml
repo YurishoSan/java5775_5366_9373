@@ -17,6 +17,12 @@
     <string name="StartTreat">רישום טיפול</string>
     <string name="DocName">שם רופא</string>
     <string name="EnterIdPatient">ת ז של החולה</string>
-    <string name="mainMenuSlidingDrawerHandle">רשימות←</string>
+    <string name="mainMenuSlidingDrawerHandle">רשימות←</string>
+    <string name="allergy_number">"מספר אלרגיה: "</string>
+
+    <string name="allergy_name">"שם: "</string>
+
+    <string name="allergy_details">הערות:</string>
 
-</resources>
+
+    <string name="allergy_back_button">חזור</string></resources>

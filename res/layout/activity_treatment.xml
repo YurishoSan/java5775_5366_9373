@@ -44,7 +44,7 @@
             android:inputType="textPersonName" />
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/idTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.26"
@@ -67,7 +67,7 @@
             android:inputType="phone" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/nameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
