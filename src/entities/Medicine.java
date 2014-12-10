@@ -3,6 +3,7 @@
  */
 package entities;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import entities.enums.MedicineType;
@@ -15,10 +16,11 @@ import entities.enums.MedicineType;
  * 
  * @see entities.enums.MedicineType
  */
-public class Medicine
+public class Medicine implements Serializable
 {
-	//region attributes
+	private static final long serialVersionUID = 1082142125882550205L;
 	
+	//region attributes	
 	private long MedicineID;
 	private String MedicineName;
 	private String MedicineIngredients;

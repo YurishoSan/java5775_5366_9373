@@ -3,14 +3,18 @@
  */
 package entities;
 
+import java.io.Serializable;
+
 /**
  * Class representing an allergy a person can have, and a medicine can cause.
  * 
  * @author Yitzhak Goldstein
  * @author Shalom Tzichtig
  */
-public class Allergy
+public class Allergy implements Serializable
 {
+	private static final long serialVersionUID = -4618679877862667599L;
+	
 	//region attributes
 	private long AllergyID;
 	private String AllergyName;

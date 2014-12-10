@@ -3,6 +3,8 @@
  */
 package entities.enums;
 
+import java.io.Serializable;
+
 /**
  * Enum representing the permeations a user can have in the system.
  * 
