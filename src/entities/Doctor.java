@@ -3,6 +3,7 @@
  */
 package entities;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import entities.enums.Gender;
@@ -16,10 +17,11 @@ import entities.enums.Specialization;
  * 
  * @see entities.enums.Specialization
  */
-public class Doctor
+public class Doctor implements Serializable
 {
-	//region attributes
+	private static final long serialVersionUID = -7038844231655101070L;
 	
+	//region attributes
 	private long DoctorID;
 	private String DoctorFirstName;
 	private String DoctorLastName;

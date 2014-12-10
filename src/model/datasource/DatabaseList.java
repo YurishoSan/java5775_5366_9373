@@ -24,18 +24,18 @@ public class DatabaseList implements Backend
 
 	//region attributes
 	
-	private ArrayList<Allergy> allergies= new ArrayList<Allergy>();
-	private ArrayList<PatientAllergy> patientAllergies=new ArrayList<PatientAllergy>();
-	private ArrayList<Doctor> doctors = new ArrayList<Doctor>() ;
-	private ArrayList<Password> passwords= new ArrayList<Password>();
-	private ArrayList<Medicine> medicines= new ArrayList<Medicine>();
-	private ArrayList<Prescription> prescriptions = new ArrayList<Prescription>();
-	private ArrayList<Patient> patients =new ArrayList<Patient>() ;
-	private ArrayList<MedicineAllergy> medicineAllergies = new ArrayList<MedicineAllergy>();
-	private ArrayList<Treatment> treatments =new ArrayList<Treatment>();
-	private int AllergyCounter=0;
-	private int MedicineCounter=0;
-	private int TreatmentCounter=0;
+	private ArrayList<Allergy> allergies;
+	private ArrayList<PatientAllergy> patientAllergies;
+	private ArrayList<Doctor> doctors;
+	private ArrayList<Password> passwords;
+	private ArrayList<Medicine> medicines;
+	private ArrayList<Prescription> prescriptions;
+	private ArrayList<Patient> patients;
+	private ArrayList<MedicineAllergy> medicineAllergies;
+	private ArrayList<Treatment> treatments;
+	private int AllergyCounter;
+	private int MedicineCounter;
+	private int TreatmentCounter;
 	
 	//endregion
 	
@@ -69,6 +69,8 @@ public class DatabaseList implements Backend
 			this.addAllergy(new Allergy(0, "Paracetamol hypersensitivity",
 					"אלרגיה ל פאראסטמול, הרכיב הפעיל של אקמול."));
 			
+			this.addDoctor(new Doctor(1, "test", "testy", Gender.MALE, new Date(1970, 5, 12), new Date(2002, 7, 1), 
+					"moti_kereker321@yahoo.com", (float)130000.0, "050777654", Specialization.FAMILY));
 			this.addDoctor(new Doctor(333658712, "מוטי", "קרקר", Gender.MALE, new Date(1970, 5, 12), new Date(2002, 7, 1), 
 					"moti_kereker321@yahoo.com", (float)130000.0, "050777654", Specialization.FAMILY));
 			
@@ -81,7 +83,8 @@ public class DatabaseList implements Backend
 			
 			this.addMedicineAllergy(new MedicineAllergy(0, 0));
 			
-			this.addPassword(new Password(0, "1234", Permit.DOCTOR));
+			this.addPassword(new Password(1, "1", Permit.DOCTOR));
+			this.addPassword(new Password(333658712, "1234", Permit.DOCTOR));
 			
 			this.addPatient(new Patient(544812123, "שלומי", "סבבה", Gender.MALE, new Date(1980, 11, 15), "sabamba@gmail.com",
 					ServiceClass.GOLD, "035432213"));
@@ -701,7 +704,7 @@ public class DatabaseList implements Backend
 	{
 		for (Password passwordItem : passwords)
 			if (passwordItem.getPasswordUserID() == loginID &&
-				passwordItem.getPasswordWord() == password)
+				passwordItem.getPasswordWord().equals(password))
 				return passwordItem.getPasswordPermit();
 		
 		throw new Exception("שם משתמש או סיסמה שגויה!");

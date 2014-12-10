@@ -58,7 +58,7 @@ public class asyncTask extends AsyncTask<Void, Void, Void>
 				this.exp = new Exception(s);
 			}
 			else
-				this.exp = new Exception("An error has been detected.");
+				this.exp = exp;
 		}
 		
 		return null;

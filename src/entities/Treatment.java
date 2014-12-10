@@ -3,6 +3,7 @@
  */
 package entities;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -14,10 +15,11 @@ import java.util.Date;
  * @see Patient
  * @see Doctor
  */
-public class Treatment
+public class Treatment implements Serializable
 {
-	//region attributes
+	private static final long serialVersionUID = 3494624214489624333L;
 	
+	//region attributes
 	private long TreatmentID;
 	private long TreatmentDoctorID;
 	private long TreatmentPatientID;
