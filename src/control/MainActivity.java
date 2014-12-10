@@ -34,9 +34,7 @@ public class MainActivity extends ActionBarActivity
 						@Override
 						public void run() throws Exception
 						{
-							if (BackendFactory.getInstance(getApplicationContext()).getDoctorList().size() == 0)
-								BackendFactory.getInstance(getApplicationContext()).setLists();
-							
+							Backend test = BackendFactory.getInstance(getApplicationContext());
 						}
 					},					
 					null);

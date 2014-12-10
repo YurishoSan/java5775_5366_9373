@@ -15,6 +15,7 @@ import entities.Treatment;
 import entities.enums.Gender;
 import entities.enums.MedicineType;
 import entities.enums.Permit;
+import entities.enums.ServiceClass;
 import entities.enums.Specialization;
 import model.backend.Backend;
 
@@ -38,6 +39,28 @@ public class DatabaseList implements Backend
 	
 	//endregion
 	
+	/**
+	 * 
+	 */
+	public DatabaseList()
+	{
+		super();
+		allergies = new ArrayList<Allergy>();
+		patientAllergies = new ArrayList<PatientAllergy>();
+		doctors = new ArrayList<Doctor>();
+		medicines = new ArrayList<Medicine>();
+		prescriptions = new ArrayList<Prescription>();
+		patients = new ArrayList<Patient>();
+		medicineAllergies = new ArrayList<MedicineAllergy>();
+		passwords = new ArrayList<Password>();
+		treatments = new ArrayList<Treatment>();
+		AllergyCounter = 0;
+		MedicineCounter = 0;
+		TreatmentCounter = 0;
+		
+		setLists();
+	}
+
 	@SuppressWarnings("deprecation") // Date is deprecated, should change Date to GeorgianCalender in next version.
 	public void setLists()
 	{
@@ -58,16 +81,17 @@ public class DatabaseList implements Backend
 			
 			this.addMedicineAllergy(new MedicineAllergy(0, 0));
 			
-			/*this.addPassword(password);
+			this.addPassword(new Password(0, "1234", Permit.DOCTOR));
 			
-			this.addPatient(patient);
+			this.addPatient(new Patient(544812123, "שלומי", "סבבה", Gender.MALE, new Date(1980, 11, 15), "sabamba@gmail.com",
+					ServiceClass.GOLD, "035432213"));
 			
-			this.addPatientAllergy(patientAllergy);
+			//this.addPatientAllergy(patientAllergy);
 			
-			this.addPrescription(prescription);
+			//this.addPrescription(prescription);
 			
-			this.addTreatment(treatment);
-			*/
+			//this.addTreatment(treatment);
+			
 		}
 		catch (Exception e)
 		{
