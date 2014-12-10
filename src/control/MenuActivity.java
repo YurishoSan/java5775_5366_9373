@@ -8,7 +8,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
@@ -23,6 +25,16 @@ public class MenuActivity extends ActionBarActivity
 		setContentView(R.layout.activity_menu);
 		
 		//set events
+		Button button = (Button) findViewById(R.id.button1);
+		button.setOnClickListener(new OnClickListener()
+		{
+			public void onClick (View v)
+			{
+				Intent intent =new Intent(MenuActivity.this,TreatmentActivity.class);
+				startActivity(intent);
+			}
+		});
+	
 		ListView listview = (ListView) findViewById(R.id.content);
         listview.setOnItemClickListener(new OnItemClickListener()
         {
