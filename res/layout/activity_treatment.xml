@@ -28,29 +28,7 @@
     
   </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.5"
-        android:gravity="center"
-        android:orientation="horizontal" >
-
-        <EditText
-            android:id="@+id/editText1"
-            android:layout_width="135dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.26"
-            android:ems="10"
-            android:inputType="textPersonName" />
-
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.26"
-            android:text="@string/DocName" />
-
-    </LinearLayout>
+    
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -64,23 +42,69 @@
             android:layout_width="182dp"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="phone" />
+            android:gravity="center_vertical"
+            android:hint="ת.ז של החולה"
+            android:inputType="number" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/EnterIdPatient" />
  </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:orientation="horizontal" >
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="182dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center_vertical|start"
+        android:hint="כתובת"
+        android:inputType="textPostalAddress" >
+
+        <requestFocus />
+    </EditText>
+  </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+    
+     <Button
+         android:id="@+id/button1"
+         style="?android:attr/buttonStyleSmall"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_gravity="center"
+         android:background="@drawable/calendar"
+         android:text="" />
+     
+    <control.CustomDatePicker
+        android:id="@+id/customDatePicker1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="CustomDatePicker" />
+    
+     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical" >
 
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:hint="סיכום הטיפול" />
         
     </LinearLayout>
 
-</LinearLayout>
+    
+
+ </LinearLayout>
