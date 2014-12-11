@@ -9,11 +9,13 @@ import model.backend.asyncTask;
 import com.example.java5775_5366_9373.R;
 
 import entities.Allergy;
+import entities.Medicine;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -27,10 +29,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 
-public class AllergyListActivity extends Activity
+public class AllergyListActivity extends ActionBarActivity
 {
 	ListView l1;
 	Allergy allergy;
+	Medicine medicine; //medicine this list was called from, null if request all allergies.
 	ProgressDialog progressDialog;
 	ArrayList<Allergy> allergies;
 	
@@ -39,6 +42,8 @@ public class AllergyListActivity extends Activity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_allergy_list);
+		
+		medicine = (Medicine) getIntent().getSerializableExtra("medicine");
 		
 		l1 = (ListView) findViewById(R.id.allergyListView);
 		
@@ -51,7 +56,10 @@ public class AllergyListActivity extends Activity
 						@Override
 						public void run() throws Exception
 						{
-							allergies = BackendFactory.getInstance(getApplicationContext()).getAllergyList();
+							if (medicine == null)
+								allergies = BackendFactory.getInstance(getApplicationContext()).getAllergyList();
+							else
+								allergies = BackendFactory.getInstance(getApplicationContext()).getAllergyByMedicineList(medicine.getMedicineID());
 						}
 						
 					},
@@ -94,7 +102,7 @@ public class AllergyListActivity extends Activity
 					
 					final Dialog dialog = new Dialog(AllergyListActivity.this);
 					dialog.setContentView(R.layout.allergy_details_dialog);
-					dialog.setTitle("פרטי תרופה");
+					dialog.setTitle("פרטי אלרגיה");
 					
 					TextView idTextView = (TextView) dialog.findViewById(R.id.allergyIDTextView);
 					TextView nameTextView = (TextView) dialog.findViewById(R.id.allergyNameTextView);
@@ -104,7 +112,7 @@ public class AllergyListActivity extends Activity
 					nameTextView.setText(allergy.getAllergyName());
 					detailsTextView.setText(allergy.getAllergyNotes());
 					
-					Button okButton = (Button) dialog.findViewById(R.id.allergyOkButton);
+					Button okButton = (Button) dialog.findViewById(R.id.backButton);
 					okButton.setOnClickListener(new OnClickListener()
 					{
 						
@@ -115,15 +123,8 @@ public class AllergyListActivity extends Activity
 							
 						}
 					});
-					
-					try
-					{
+
 					dialog.show();
-					}
-					catch(Exception e)
-					{
-						e.getStackTrace();
-					}
 				}
 			});
 	}

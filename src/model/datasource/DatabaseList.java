@@ -68,6 +68,8 @@ public class DatabaseList implements Backend
 		{
 			this.addAllergy(new Allergy(0, "Paracetamol hypersensitivity",
 					"אלרגיה ל פאראסטמול, הרכיב הפעיל של אקמול."));
+			this.addAllergy(new Allergy(1, "test",
+					"אלרגיה ל פאראסטמול, הרכיב הפעיל של אקמול."));
 			
 			this.addDoctor(new Doctor(1, "test", "testy", Gender.MALE, new Date(1970, 5, 12), new Date(2002, 7, 1), 
 					"moti_kereker321@yahoo.com", (float)130000.0, "050777654", Specialization.FAMILY));
@@ -77,8 +79,8 @@ public class DatabaseList implements Backend
 			this.addMedicine(new Medicine(0, "אקמול פוקוס",
 					"Microcrystalline cellulose, stearic acid, crospovidone, silicon dioxide, hydroxypropyl"
 				+	"methylcellulose, FD&C red #40, FD&C yellow #6, polyethylene glycol 400, titanium dioxide,"
-				+	"polysorbate 80, purified water. "
-				, "Acetylsalicylic acid 250 mg, Paracetamol 250 mg, Caffeine anhydrous 65 mg",
+				+	"polysorbate 80, purified water. ",
+				"Acetylsalicylic acid 250 mg, Paracetamol 250 mg, Caffeine anhydrous 65 mg",
 				MedicineType.PILL_TABLET));
 			
 			this.addMedicineAllergy(new MedicineAllergy(0, 0));
@@ -611,6 +613,20 @@ public class DatabaseList implements Backend
 			if (patientAllergyItem.getPatientID() == patientID)
 				for (Allergy allergyItem : allergies)
 					if (allergyItem.getAllergyID() == patientAllergyItem.getAllergyID())
+						allergyByPatient.add(allergyItem);
+		
+		return allergyByPatient; // even if list is empty, it is acceptable result.
+	}
+	
+	@Override
+	public ArrayList<Allergy> getAllergyByMedicineList(long medicineID)
+			throws Exception
+	{
+		ArrayList<Allergy> allergyByPatient = new ArrayList<Allergy>();
+		for (MedicineAllergy medicineAllergyItem : medicineAllergies)
+			if (medicineAllergyItem.getMedicineID() == medicineID)
+				for (Allergy allergyItem : allergies)
+					if (allergyItem.getAllergyID() == medicineAllergyItem.getAllergyID())
 						allergyByPatient.add(allergyItem);
 		
 		return allergyByPatient; // even if list is empty, it is acceptable result.

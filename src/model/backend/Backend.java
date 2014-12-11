@@ -60,6 +60,7 @@ public interface Backend
 	
 	public ArrayList<Allergy> getAllergyList () throws Exception;
 	public ArrayList<Allergy> getAllergyByPatientList (long patientID) throws Exception;
+	public ArrayList<Allergy> getAllergyByMedicineList (long medicineID) throws Exception;
 	public ArrayList<Doctor> getDoctorList () throws Exception;
 	public ArrayList<Medicine> getMedicineList () throws Exception;
 	public ArrayList<Medicine> getMedicineByTreatmentList (long treatmentID) throws Exception;
