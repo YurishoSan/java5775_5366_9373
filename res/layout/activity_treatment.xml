@@ -46,7 +46,18 @@
             android:hint="ת.ז של החולה"
             android:inputType="number" />
 
+<<<<<<< HEAD
  </LinearLayout>
+=======
+        <TextView
+            android:id="@+id/idTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.26"
+            android:text="@string/DocName" />
+
+    </LinearLayout>
+>>>>>>> origin/master
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -63,9 +74,19 @@
         android:hint="כתובת"
         android:inputType="textPostalAddress" >
 
+<<<<<<< HEAD
         <requestFocus />
     </EditText>
   </LinearLayout>
+=======
+        <TextView
+            android:id="@+id/nameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/EnterIdPatient" />
+ </LinearLayout>
+>>>>>>> origin/master
 
     <LinearLayout
         android:layout_width="match_parent"

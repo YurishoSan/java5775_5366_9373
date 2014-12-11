@@ -15,7 +15,6 @@ package entities;
 public class MedicineAllergy
 {
 	//region attributes
-		private long MedicineAllergyID;
 		private long MedicineID;
 		private long AllergyID;
 		//endregion
@@ -35,20 +34,6 @@ public class MedicineAllergy
 		//endregion
 		
 		//region getters/setters
-		/**
-		 * @return the medicineAllergyID
-		 */
-		public long getMedicineAllergyID()
-		{
-			return MedicineAllergyID;
-		}
-		/**
-		 * @param matientAllergyID the matientAllergyID to set
-		 */
-		public void setMedicineAllergyID(long medicineAllergyID)
-		{
-			MedicineAllergyID = medicineAllergyID;
-		}
 		/**
 		 * @return the medicineID
 		 */
@@ -88,8 +73,8 @@ public class MedicineAllergy
 		{
 			final int prime = 31;
 			int result = 1;
-			result = prime * result
-					+ (int) (MedicineAllergyID ^ (MedicineAllergyID >>> 32));
+			result = prime * result + (int) (AllergyID ^ (AllergyID >>> 32));
+			result = prime * result + (int) (MedicineID ^ (MedicineID >>> 32));
 			return result;
 		}
 		/* (non-Javadoc)
@@ -105,10 +90,13 @@ public class MedicineAllergy
 			if (getClass() != obj.getClass())
 				return false;
 			MedicineAllergy other = (MedicineAllergy) obj;
-			if (MedicineAllergyID != other.MedicineAllergyID)
+			if (AllergyID != other.AllergyID)
+				return false;
+			if (MedicineID != other.MedicineID)
 				return false;
 			return true;
 		}
+		
 		/* (non-Javadoc)
 		 * @see java.lang.Object#toString()
 		 */
@@ -116,9 +104,7 @@ public class MedicineAllergy
 		public String toString()
 		{
 			StringBuilder builder = new StringBuilder();
-			builder.append("MedicineAllergy [MedicineAllergyID=");
-			builder.append(MedicineAllergyID);
-			builder.append(", MedicineID=");
+			builder.append("MedicineAllergy [MedicineID=");
 			builder.append(MedicineID);
 			builder.append(", AllergyID=");
 			builder.append(AllergyID);

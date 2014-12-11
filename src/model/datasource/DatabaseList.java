@@ -79,7 +79,7 @@ public class DatabaseList implements Backend
 				+	"methylcellulose, FD&C red #40, FD&C yellow #6, polyethylene glycol 400, titanium dioxide,"
 				+	"polysorbate 80, purified water. "
 				, "Acetylsalicylic acid 250 mg, Paracetamol 250 mg, Caffeine anhydrous 65 mg",
-				MedicineType.PILL_TABLET, new Date(2016, 3, 1)));
+				MedicineType.PILL_TABLET));
 			
 			this.addMedicineAllergy(new MedicineAllergy(0, 0));
 			
@@ -465,7 +465,6 @@ public class DatabaseList implements Backend
 			if (medicine.equals(medicineItem))
 			{
 				medicineItem.setMedicineActiveIngredients(medicine.getMedicineActiveIngredients());
-				medicineItem.setMedicineExpDate(medicine.getMedicineExpDate());
 				medicineItem.setMedicineIngredients(medicine.getMedicineIngredients());
 				medicineItem.setMedicineName(medicine.getMedicineName());
 				medicineItem.setMedicineType(medicine.getMedicineType());
