@@ -18,6 +18,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,6 +34,7 @@ public class MedicineListActivity extends ActionBarActivity
 {
 	ListView l1;
 	Medicine medicine;
+	boolean isAdd;
 	ProgressDialog progressDialog;
 	ArrayList<Medicine> medicines;
 
@@ -41,6 +43,8 @@ public class MedicineListActivity extends ActionBarActivity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_medicine_list);
+		
+		isAdd = (boolean) getIntent().getBooleanExtra("isAdd", false);
 
 		l1 = (ListView) findViewById(R.id.medicineListView);
 		
@@ -76,13 +80,68 @@ public class MedicineListActivity extends ActionBarActivity
 		{
 			exp.printStackTrace();
 		}
-		
-		l1.setOnItemClickListener(new OnItemClickListener()
-			{
+	}
+	
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
+	 */
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu)
+	{
+		if(isAdd)
+		{
+			MenuInflater inflater = getMenuInflater();
+			inflater.inflate(R.menu.medicine_list, menu);
+		}
+		return super.onCreateOptionsMenu(menu);
+	}
 
+	private class adapter extends BaseAdapter
+	{
+		ArrayList<Medicine> medicines;
+
+		public adapter(ArrayList<Medicine> medicines)
+		{
+			super();
+			this.medicines = medicines;
+		}
+
+		@Override
+		public int getCount()
+		{
+			return medicines.size();
+		}
+
+		@Override
+		public Object getItem(int position)
+		{
+			return null;
+		}
+
+		@Override
+		public long getItemId(int position)
+		{
+			return position;
+		}
+
+		@Override
+		public View getView(final int position, View convertView, ViewGroup parent)
+		{
+			View row;
+			LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+			
+			if (isAdd)
+				row = inflater.inflate(R.layout.add_medicine_row_item, parent, false);
+			else
+				row = inflater.inflate(R.layout.medicine_row_item, parent, false);
+			
+			TextView tv = (TextView) row.findViewById(R.id.NameTextView);
+			tv.setText(medicines.get(position).getMedicineName());
+			
+			tv.setOnClickListener(new OnClickListener()
+			{
 				@Override
-				public void onItemClick(AdapterView<?> parent, View view,
-						int position, long id)
+				public void onClick(View v)
 				{
 					try
 					{
@@ -95,6 +154,7 @@ public class MedicineListActivity extends ActionBarActivity
 					}
 					
 					final Dialog dialog = new Dialog(MedicineListActivity.this);
+							
 					dialog.setContentView(R.layout.medicine_details_dialog);
 					dialog.setTitle("פרטי תרופה");
 					
@@ -140,43 +200,7 @@ public class MedicineListActivity extends ActionBarActivity
 					dialog.show();
 				}
 			});
-	}
-	
-	private class adapter extends BaseAdapter
-	{
-		ArrayList<Medicine> medicines;
-
-		public adapter(ArrayList<Medicine> medicines)
-		{
-			super();
-			this.medicines = medicines;
-		}
-
-		@Override
-		public int getCount()
-		{
-			return medicines.size();
-		}
-
-		@Override
-		public Object getItem(int position)
-		{
-			return null;
-		}
-
-		@Override
-		public long getItemId(int position)
-		{
-			return position;
-		}
-
-		@Override
-		public View getView(int position, View convertView, ViewGroup parent)
-		{
-			LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			View row = inflater.inflate(R.layout.medicine_row_item, parent, false);
-			TextView tv = (TextView) row.findViewById(R.id.NameTextView);
-			tv.setText(medicines.get(position).getMedicineName());
+			
 			return row;
 		}
 	}

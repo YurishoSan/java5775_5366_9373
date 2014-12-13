@@ -27,6 +27,7 @@
     <string name="medicine_type">סוג:</string>
     <string name="medicine_active_ingredients">רכיבים פעילים:</string>
     <string name="medicine_ingredients">רכיבים:</string>
-    <string name="show_allergies">הצג אלרגיות</string>
+    <string name="show_allergies">הצג אלרגיות</string>	<string name="accept_option">אשר</string>
+    <string name="accept_icon_descreption">[a]ccept</string>
     
 </resources>
