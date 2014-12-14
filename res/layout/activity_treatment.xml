@@ -18,17 +18,14 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:orientation="vertical" >
-    
-    <TextView
-        android:layout_width="160dp"
-        android:layout_height="0dp"
-        android:layout_gravity="center"
-        android:layout_weight="1"
-        android:text="@string/StartTreat" />
-    
-  </LinearLayout>
 
-    
+        <TextView
+            android:layout_width="160dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="@string/StartTreat" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -46,18 +43,13 @@
             android:hint="ת.ז של החולה"
             android:inputType="number" />
 
-<<<<<<< HEAD
- </LinearLayout>
-=======
         <TextView
             android:id="@+id/idTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.26"
             android:text="@string/DocName" />
-
     </LinearLayout>
->>>>>>> origin/master
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -65,67 +57,57 @@
         android:gravity="center"
         android:orientation="horizontal" >
 
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="182dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:gravity="center_vertical|start"
-        android:hint="כתובת"
-        android:inputType="textPostalAddress" >
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="182dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center_vertical|start"
+            android:hint="כתובת"
+            android:inputType="textPostalAddress" />
 
-<<<<<<< HEAD
-        <requestFocus />
-    </EditText>
-  </LinearLayout>
-=======
         <TextView
             android:id="@+id/nameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/EnterIdPatient" />
- </LinearLayout>
->>>>>>> origin/master
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" >
-    
-     <Button
-         android:id="@+id/button1"
-         style="?android:attr/buttonStyleSmall"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_gravity="center"
-         android:background="@drawable/calendar"
-         android:text="" />
-     
-    <control.CustomDatePicker
-        android:id="@+id/customDatePicker1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="CustomDatePicker" />
-    
-     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" >
-
-    <EditText
-        android:id="@+id/editText3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:ems="10"
-        android:hint="סיכום הטיפול" />
-        
     </LinearLayout>
 
-    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
 
- </LinearLayout>
+        <Button
+            android:id="@+id/button1"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/calendar"
+            android:text="" />
+
+        <control.CustomDatePicker
+            android:id="@+id/customDatePicker1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="CustomDatePicker" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ems="10"
+            android:hint="סיכום הטיפול" />
+    </LinearLayout>
+
+</LinearLayout>
