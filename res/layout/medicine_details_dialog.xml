@@ -35,7 +35,7 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/medicine_name"
+            android:text="@string/name"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <TextView

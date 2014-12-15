@@ -19,15 +19,21 @@
     <string name="EnterIdPatient">ת ז של החולה</string>
     <string name="mainMenuSlidingDrawerHandle">רשימות←</string>
     <string name="allergy_number">"מספר אלרגיה: "</string>
-    <string name="allergy_name">"שם: "</string>
+    <string name="name">"שם: "</string>
     <string name="allergy_details">הערות:</string>
     <string name="back_button">חזור</string>
     <string name="medicine_number">מספר תרופה:</string>
-    <string name="medicine_name">שם:</string>
     <string name="medicine_type">סוג:</string>
     <string name="medicine_active_ingredients">רכיבים פעילים:</string>
     <string name="medicine_ingredients">רכיבים:</string>
-    <string name="show_allergies">הצג אלרגיות</string>	<string name="accept_option">אשר</string>
+    <string name="show_allergies">הצג אלרגיות</string>
+    <string name="show_treatments">הצג טיפולים</string>	<string name="accept_option">אשר</string>
     <string name="accept_icon_descreption">[a]ccept</string>
+    <string name="patient_number">מספר פציינט:</string>
+    <string name="patient_sex">מין:</string>
+    <string name="patient_dob">תאריך לידה:</string>
+    <string name="patient_phone">טלפון:</string>
+    <string name="patient_email">אימייל:</string>
+    <string name="patient_service_class">רמת שירות:</string>
     
 </resources>
