@@ -10,7 +10,7 @@ package model.datasource;
 public class SQLNAME
 {
 
-	public static final int DATABASE_VERSION = 1;
+	public static final int DATABASE_VERSION = 9;
 	
 	public static final String DATABASE_NAME = "doctor_info_app";
 	

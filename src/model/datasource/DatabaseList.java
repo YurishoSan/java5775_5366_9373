@@ -57,8 +57,6 @@ public class DatabaseList implements Backend
 		AllergyCounter = 0;
 		MedicineCounter = 0;
 		TreatmentCounter = 0;
-		
-		setLists();
 	}
 
 	@SuppressWarnings("deprecation") // Date is deprecated, should change Date to GeorgianCalender in next version.
@@ -725,6 +723,12 @@ public class DatabaseList implements Backend
 				return passwordItem.getPasswordPermit();
 		
 		throw new Exception("שם משתמש או סיסמה שגויה!");
+	}
+
+	@Override
+	public boolean isEmpty() throws Exception
+	{
+		return (doctors.size() == 0)? true : false;
 	}
 
 }

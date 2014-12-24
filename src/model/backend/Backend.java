@@ -72,4 +72,6 @@ public interface Backend
 	//endregion
 	
 	public Permit checkPassword (long loginID, String password) throws Exception;
+
+	public boolean isEmpty() throws Exception;
 }

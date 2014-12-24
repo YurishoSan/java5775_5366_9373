@@ -44,6 +44,8 @@ public class MainActivity extends ActionBarActivity
 						{
 							Backend test = BackendFactory
 									.getInstance(getApplicationContext());
+							if(test.isEmpty())
+								test.setLists();
 						}
 					}, null);
 
