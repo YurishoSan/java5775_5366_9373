@@ -14,12 +14,18 @@ package entities;
  */
 public class MedicineAllergy
 {
-	//region attributes
+		//region attributes
 		private long MedicineID;
 		private long AllergyID;
 		//endregion
 		
 		//region contors
+		
+		public MedicineAllergy()
+		{
+			// TODO Auto-generated constructor stub
+		}
+		
 		/**
 		 * @param medicineID
 		 * @param allergyID
@@ -32,7 +38,7 @@ public class MedicineAllergy
 			AllergyID = allergyID;
 		}
 		//endregion
-		
+
 		//region getters/setters
 		/**
 		 * @return the medicineID

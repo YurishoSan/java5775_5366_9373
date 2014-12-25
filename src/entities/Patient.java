@@ -137,7 +137,7 @@ public class Patient implements Serializable
 	/**
 	 * @param patientGender the patientGender to set
 	 */
-	public void setHumanGender(Gender patientGender)
+	public void setPatientGender(Gender patientGender)
 	{
 		PatientGender = patientGender;
 	}

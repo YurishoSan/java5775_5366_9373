@@ -57,11 +57,10 @@ public class DatabaseList implements Backend
 		AllergyCounter = 0;
 		MedicineCounter = 0;
 		TreatmentCounter = 0;
-		
-		setLists();
 	}
 
 	@SuppressWarnings("deprecation") // Date is deprecated, should change Date to GeorgianCalender in next version.
+	@Override
 	public void setLists()
 	{
 		try
@@ -153,7 +152,7 @@ public class DatabaseList implements Backend
 	{
 		for (Password  passwordItem : passwords)
 			if (passwordItem.getPasswordUserID() == password.getPasswordUserID()) // user can have only one password
-				throw new Exception("אלרגיה זו כבר מחוברת לתרופה זו!");
+				throw new Exception("למשתמש זה יש כבר סיסמה!");
 		 passwords.add(password);
 
 	}
@@ -227,6 +226,7 @@ public class DatabaseList implements Backend
 		{
 			if (doctorItem.getDoctorID() == doctorID)
 			{
+				deletePasswordByUserID(doctorID);
 				doctors.remove(doctorItem);
 				return;
 			}
@@ -387,13 +387,13 @@ public class DatabaseList implements Backend
 	}
 
 	@Override
-	public void deletePrescriptionByTreatment(long teatmentID) throws Exception
+	public void deletePrescriptionByTreatment(long treatmentID) throws Exception
 	{
 		boolean oneDeleted = false;
 		
 		for (Prescription prescriptionItem : prescriptions)
 		{
-			if (prescriptionItem.getPrescriptionTreatmentID() == teatmentID)
+			if (prescriptionItem.getPrescriptionTreatmentID() == treatmentID)
 			{
 				prescriptions.remove(prescriptionItem);
 				oneDeleted = true;
@@ -405,8 +405,7 @@ public class DatabaseList implements Backend
 		
 	}
 	
-	@Override
-	public void deletePasswordByUserID(long userID) throws Exception
+	private void deletePasswordByUserID(long userID) throws Exception
 	{
 		for (Password passwordItem : passwords)
 		{
@@ -492,10 +491,10 @@ public class DatabaseList implements Backend
 	}
 
 	@Override
-	public void updatePassword(Password password, String newPassword) throws Exception
+	public void updatePassword(Password oldPassword, String newPassword) throws Exception
 	{
 		for (Password passwordItem : passwords)
-			if (password.equals(passwordItem))
+			if (oldPassword.equals(passwordItem))
 			{
 				passwordItem.setPasswordWord(newPassword);
 				return;
@@ -510,14 +509,15 @@ public class DatabaseList implements Backend
 	{
 		for (Password passwordItem : passwords)
 			if (oldPassword.equals(passwordItem))
-			{
-				passwordItem.setPasswordWord(newPassword);
-				
+			{	
 				if (oldPassword.getPasswordPermit() != Permit.ADMIN || // do not allow change to admin's premision.
 						permit != Permit.ADMIN)						// do not allow other users to turn admins.
 					passwordItem.setPasswordPermit(permit);
 				else
 					throw new Exception("שינוי הרשאות (ל)אדמין אסור.");
+				
+				passwordItem.setPasswordWord(newPassword);
+				
 				return;
 			}
 		
@@ -531,7 +531,7 @@ public class DatabaseList implements Backend
 		for (Patient patientItem : patients)
 			if (patient.equals(patientItem))
 			{
-				patientItem.setHumanGender(patient.getPatientGender());
+				patientItem.setPatientGender(patient.getPatientGender());
 				patientItem.setPatientDoB(patient.getPatientDoB());
 				patientItem.setPatientEmailAdress(patient.getPatientEmailAdress());
 				patientItem.setPatientFirstName(patient.getPatientFirstName());
@@ -723,6 +723,12 @@ public class DatabaseList implements Backend
 				return passwordItem.getPasswordPermit();
 		
 		throw new Exception("שם משתמש או סיסמה שגויה!");
+	}
+
+	@Override
+	public boolean isEmpty() throws Exception
+	{
+		return (doctors.size() == 0)? true : false;
 	}
 
 }

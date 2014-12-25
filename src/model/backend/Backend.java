@@ -6,7 +6,7 @@ import entities.*;
 import entities.enums.*;
 
 public interface Backend
-{
+{	
 	public void setLists();
 	
 	//region addFunctions
@@ -34,10 +34,9 @@ public interface Backend
 	public void deleteMedicineAllergyByAllergy (long allergyID) throws Exception;
 	public void deleteMedicineAllergyByMedicine (long medicineID) throws Exception;
 	public void deletePatientAllergyByPatient (long patientID) throws Exception;
-	public void deletePatientAllergyByAllergy (long medicineID) throws Exception;
+	public void deletePatientAllergyByAllergy (long allergyID) throws Exception;
 	public void deletePrescriptionByMedicine (long medicineID) throws Exception;
-	public void deletePrescriptionByTreatment (long teatmentID) throws Exception;
-	public void deletePasswordByUserID (long userID) throws Exception;
+	public void deletePrescriptionByTreatment (long treatmentID) throws Exception;
 	
 	//endregion
 
@@ -47,7 +46,7 @@ public interface Backend
 	public void updateDoctor (Doctor doctor) throws Exception;
 	public void updateMedicine (Medicine medicine) throws Exception;
 	public void updateMedicineAllergy (MedicineAllergy medicineAllergy) throws Exception;
-	public void updatePassword (Password password, String newPassword) throws Exception;
+	public void updatePassword (Password oldPassword, String newPassword) throws Exception;
 	public void updatePassword (Password oldPassword, String newPassword, Permit permit) throws Exception;
 	public void updatePatient (Patient patient) throws Exception;
 	public void updatePatientAllergy (PatientAllergy patientAllergy) throws Exception;
@@ -73,4 +72,6 @@ public interface Backend
 	//endregion
 	
 	public Permit checkPassword (long loginID, String password) throws Exception;
+
+	public boolean isEmpty() throws Exception;
 }

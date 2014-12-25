@@ -7,7 +7,7 @@ public final class BackendFactory
 
 	static Backend instance = null;
 	
-	public static String mode = "lists";
+	public static String mode = "sql";
 	
 	public final static Backend getInstance(Context context)
 	{
@@ -17,14 +17,14 @@ public final class BackendFactory
 				instance = new model.datasource.DatabaseList();
 			return instance;
 		}
-		/*
+		
 		else if (mode == "sql")
 		{
 			if (instance == null)
 				instance = new model.datasource.DatabaseSqlite(context);
 			return instance;
 		}
-		
+		/*
 		else if (mode == "service")
 		{
 			if (instance == null)
