@@ -294,8 +294,8 @@ public class DatabaseSqlite extends SQLiteOpenHelper implements Backend
 		values.put(SQLNAME.KEY_DOCTOR_SALARY, doctor.getDoctorSalary());
 		values.put(SQLNAME.KEY_DOCTOR_PHONE_NUMBER,
 				doctor.getDoctorPhoneNumber());
-		values.put(SQLNAME.KEY_DOCTOR_SPECIALIZATION, doctor
-				.getDoctorSpecialization().name());
+		values.put(SQLNAME.KEY_DOCTOR_SPECIALIZATION,
+				doctor.getDoctorSpecialization().name());
 
 		db.insertWithOnConflict(SQLNAME.TABLE_DOCTOR, null, values,
 				SQLiteDatabase.CONFLICT_IGNORE);
@@ -572,7 +572,7 @@ public class DatabaseSqlite extends SQLiteOpenHelper implements Backend
 	public void deleteMedicineAllergyByAllergy(long allergyID) throws Exception
 	{
 		SQLiteDatabase db = this.getWritableDatabase();
-		db.delete(SQLNAME.TABLE_ALLERGY, SQLNAME.KEY_ALLERGY_ID + " = ?",
+		db.delete(SQLNAME.TABLE_ALLERGY, SQLNAME.KEY_MEDICINE_ALLERGY_ALLERGY_ID + " = ?",
 				new String[] { String.valueOf(allergyID) });
 
 	}
@@ -746,7 +746,7 @@ public class DatabaseSqlite extends SQLiteOpenHelper implements Backend
 		SQLiteDatabase db = this.getWritableDatabase();
 		ContentValues values = new ContentValues();
 
-		// add updated attributes here, if an
+		// add updated attributes here, if any
 
 		// db.update(SQLNAME.TABLE_MEDICINE_ALLERGY, values, /* what check goes
 		// here? */);
@@ -798,17 +798,15 @@ public class DatabaseSqlite extends SQLiteOpenHelper implements Backend
 				oldPassword.getPasswordWord()) == Permit.DENIED)
 			throw new Exception("סיסמה שגויה");
 
-		if (oldPassword.getPasswordPermit() != Permit.ADMIN || // do not allow
+		if (oldPassword.getPasswordPermit() == Permit.ADMIN || // do not allow
 																// change to
 																// admin's
 																// premision.
-				permit != Permit.ADMIN) // do not allow other users to turn
+				permit == Permit.ADMIN) // do not allow other users to turn
 										// admins.
-			values.put(SQLNAME.KEY_PASSWORD_PERMIT, permit.name());
-		else
 			throw new Exception("שינוי הרשאות (ל)אדמין אסור.");
-
 		values.put(SQLNAME.KEY_PASSWORD_WORD, newPassword);
+		values.put(SQLNAME.KEY_PASSWORD_PERMIT, permit.name());
 
 		db.update(
 				SQLNAME.TABLE_PASSWORD,
@@ -863,7 +861,7 @@ public class DatabaseSqlite extends SQLiteOpenHelper implements Backend
 		SQLiteDatabase db = this.getWritableDatabase();
 		ContentValues values = new ContentValues();
 
-		// add updated attributes here, if an
+		// add updated attributes here, if any
 
 		// db.update(SQLNAME.TABLE_PATIENT_ALLERGY, values, /* what check goes
 		// here? */);
@@ -882,7 +880,7 @@ public class DatabaseSqlite extends SQLiteOpenHelper implements Backend
 		SQLiteDatabase db = this.getWritableDatabase();
 		ContentValues values = new ContentValues();
 
-		// add updated attributes here, if an
+		// add updated attributes here, if any
 
 		// db.update(SQLNAME.TABLE_PRESCRIPTION, values, /* what check goes
 		// here? */);
