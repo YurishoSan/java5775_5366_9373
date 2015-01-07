@@ -5,6 +5,10 @@ package entities;
 
 import java.io.Serializable;
 import java.util.Date;
+
+import org.codehaus.jackson.annotate.JsonAutoDetect;
+import org.codehaus.jackson.annotate.JsonAutoDetect.Visibility;
+
 import entities.enums.Gender;
 import entities.enums.ServiceClass;
 
@@ -16,6 +20,7 @@ import entities.enums.ServiceClass;
  * 
  * @see entities.enums.ServiceClass
  */
+@JsonAutoDetect(fieldVisibility=Visibility.ANY)
 public class Patient implements Serializable
 {
 	private static final long serialVersionUID = 1281384021264625797L;

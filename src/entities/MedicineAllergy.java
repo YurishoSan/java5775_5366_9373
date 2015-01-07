@@ -3,6 +3,9 @@
  */
 package entities;
 
+import org.codehaus.jackson.annotate.JsonAutoDetect;
+import org.codehaus.jackson.annotate.JsonAutoDetect.Visibility;
+
 /**
  * Class representing pairs of medicines and an allergy it can cause
  * 
@@ -12,6 +15,7 @@ package entities;
  * @see Medicine
  * @see Allergy
  */
+@JsonAutoDetect(fieldVisibility=Visibility.ANY)
 public class MedicineAllergy
 {
 		//region attributes
