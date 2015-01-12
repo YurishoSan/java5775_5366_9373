@@ -191,9 +191,9 @@ public class DatabaseList implements Backend
 	@Override
 	public void addTreatment(Treatment treatment) throws Exception
 	{
-		for (Treatment treatmentItem : treatments)
-			if (treatmentItem.equals(treatment))
-				throw new Exception("טיפול זה כבר קיים במסד הנתונים!");
+		//for (Treatment treatmentItem : treatments)
+		//	if (treatmentItem.equals(treatment))
+			//	throw new Exception("טיפול זה כבר קיים במסד הנתונים!");
 		treatment.setTreatmentID(TreatmentCounter++);
 		treatments.add(treatment);
 
