@@ -3,6 +3,9 @@
  */
 package entities;
 
+import org.codehaus.jackson.annotate.JsonAutoDetect;
+import org.codehaus.jackson.annotate.JsonAutoDetect.Visibility;
+
 import entities.enums.Permit;
 
 /**
@@ -11,6 +14,7 @@ import entities.enums.Permit;
  * @author Yitzhak Goldstein
  * @author Shalom Tzichtig
  */
+@JsonAutoDetect(fieldVisibility=Visibility.ANY)
 public class Password
 {
 	//region attributes

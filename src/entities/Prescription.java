@@ -5,6 +5,9 @@ package entities;
 
 import java.util.Date;
 
+import org.codehaus.jackson.annotate.JsonAutoDetect;
+import org.codehaus.jackson.annotate.JsonAutoDetect.Visibility;
+
 /**
  * Class representing a prescription on a medicine during a treatment.
  * 
@@ -14,6 +17,7 @@ import java.util.Date;
  * @see Medicine
  * @see Treatment
  */
+@JsonAutoDetect(fieldVisibility=Visibility.ANY)
 public class Prescription
 {
 	//region attributes

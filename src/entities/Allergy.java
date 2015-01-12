@@ -5,12 +5,16 @@ package entities;
 
 import java.io.Serializable;
 
+import org.codehaus.jackson.annotate.JsonAutoDetect;
+import org.codehaus.jackson.annotate.JsonAutoDetect.Visibility;
+
 /**
  * Class representing an allergy a person can have, and a medicine can cause.
  * 
  * @author Yitzhak Goldstein
  * @author Shalom Tzichtig
  */
+@JsonAutoDetect(fieldVisibility=Visibility.ANY)
 public class Allergy implements Serializable
 {
 	private static final long serialVersionUID = -4618679877862667599L;

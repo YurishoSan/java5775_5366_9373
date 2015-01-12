@@ -6,6 +6,9 @@ package entities;
 import java.io.Serializable;
 import java.util.Date;
 
+import org.codehaus.jackson.annotate.JsonAutoDetect;
+import org.codehaus.jackson.annotate.JsonAutoDetect.Visibility;
+
 /**
  * Class representing a treatment of a patient by a doctor.
  * 
@@ -15,6 +18,7 @@ import java.util.Date;
  * @see Patient
  * @see Doctor
  */
+@JsonAutoDetect(fieldVisibility=Visibility.ANY)
 public class Treatment implements Serializable
 {
 	private static final long serialVersionUID = 3494624214489624333L;
