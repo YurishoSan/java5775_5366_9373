@@ -7,7 +7,7 @@ public final class BackendFactory
 
 	static Backend instance = null;
 	
-	public static String mode = "sql";
+	public static String mode = "lists";
 	
 	public final static Backend getInstance(Context context)
 	{
