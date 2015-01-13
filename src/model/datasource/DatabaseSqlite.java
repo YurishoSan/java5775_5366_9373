@@ -64,7 +64,7 @@ public class DatabaseSqlite extends SQLiteOpenHelper implements Backend
 		String CREATE_TABLE;
 
 		CREATE_TABLE = "CREATE TABLE " + SQLNAME.TABLE_ALLERGY + "("
-				+ SQLNAME.KEY_ALLERGY_ID + " INTEGER PRIMARY KEY AUTO_INCREMENT,"
+				+ SQLNAME.KEY_ALLERGY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
 				+ SQLNAME.KEY_ALLERGY_NAME + " TEXT,"
 				+ SQLNAME.KEY_ALLERGY_NOTES + " TEXT" + ")";
 		db.execSQL(CREATE_TABLE);
@@ -81,7 +81,7 @@ public class DatabaseSqlite extends SQLiteOpenHelper implements Backend
 		db.execSQL(CREATE_TABLE);
 
 		CREATE_TABLE = "CREATE TABLE " + SQLNAME.TABLE_MEDICINE + "("
-				+ SQLNAME.KEY_MEDICINE_ID + " INTEGER PRIMARY KEY AUTO_INCREMENT,"
+				+ SQLNAME.KEY_MEDICINE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
 				+ SQLNAME.KEY_MEDICINE_NAME + " TEXT,"
 				+ SQLNAME.KEY_MEDICINE_INGREDIENTS + " TEXT,"
 				+ SQLNAME.KEY_MEDICINE_ACTIVE_INGREDIENTS + " TEXT,"
@@ -175,6 +175,7 @@ public class DatabaseSqlite extends SQLiteOpenHelper implements Backend
 		
 	}
 
+	@SuppressWarnings("deprecation") // Date is deprecated, should change Date to GeorgianCalender in next version.
 	@Override
 	public void setLists()
 	{
@@ -744,6 +745,7 @@ public class DatabaseSqlite extends SQLiteOpenHelper implements Backend
 			throws Exception
 	{
 		SQLiteDatabase db = this.getWritableDatabase();
+		@SuppressWarnings("unused")
 		ContentValues values = new ContentValues();
 
 		// add updated attributes here, if any
@@ -859,6 +861,7 @@ public class DatabaseSqlite extends SQLiteOpenHelper implements Backend
 			throws Exception
 	{
 		SQLiteDatabase db = this.getWritableDatabase();
+		@SuppressWarnings("unused")
 		ContentValues values = new ContentValues();
 
 		// add updated attributes here, if any
@@ -878,6 +881,7 @@ public class DatabaseSqlite extends SQLiteOpenHelper implements Backend
 	public void updatePrescription(Prescription prescription) throws Exception
 	{
 		SQLiteDatabase db = this.getWritableDatabase();
+		@SuppressWarnings("unused")
 		ContentValues values = new ContentValues();
 
 		// add updated attributes here, if any
