@@ -9,19 +9,20 @@ import model.backend.asyncTask;
 import com.example.java5775_5366_9373.R;
 
 import entities.Patient;
-import android.app.Activity;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -90,7 +91,57 @@ public class PatientListActivity extends ActionBarActivity
 						exp.printStackTrace();
 					}
 					
-					//TODO: add show info code here.
+					final Dialog dialog = new Dialog(PatientListActivity.this);
+					
+					dialog.setContentView(R.layout.patient_details_dialog);
+					dialog.setTitle("פרטי פציינט");
+					
+					TextView patientIDTextView = (TextView) dialog.findViewById(R.id.patientIDTextView);
+					TextView patientFirstNameTextView = (TextView) dialog.findViewById(R.id.patientFirstNameTextView);
+					TextView patientLastNameTextView = (TextView) dialog.findViewById(R.id.patientLastNameTextView);
+					TextView patientServiceClassTextView = (TextView) dialog.findViewById(R.id.patientServiceClassTextView);
+					TextView patientSexTextView = (TextView) dialog.findViewById(R.id.patientSexTextView);
+					TextView patientDoBTextView = (TextView) dialog.findViewById(R.id.patientDoBTextView);
+					TextView patientPhoneTextView = (TextView) dialog.findViewById(R.id.patientPhoneTextView);
+					TextView patientEmailTextView = (TextView) dialog.findViewById(R.id.patientEmailTextView);
+					
+					patientIDTextView.setText(Long.toString(patient.getPatientID()));
+					patientFirstNameTextView.setText(patient.getPatientFirstName());
+					patientLastNameTextView.setText(patient.getPatientLastName());
+					patientServiceClassTextView.setText(patient.getPatientServiceClass().toString());
+					patientSexTextView.setText(patient.getPatientGender().toString());
+					patientDoBTextView.setText(patient.getPatientDoB().toString());
+					patientPhoneTextView.setText(patient.getPatientPhoneNumber());
+					patientEmailTextView.setText(patient.getPatientEmailAdress());
+					
+					/*Button showTreatments = (Button) dialog.findViewById(R.id.showTreatmentsButton);
+					showTreatments.setOnClickListener(new OnClickListener()
+					{
+						
+						@Override
+						public void onClick(View v)
+						{
+							Intent intent;
+							intent = new Intent(PatientListActivity.this, TreatmentListActivity.class);
+							intent.putExtra("patient", patient);
+							startActivity(intent);
+							
+						}
+					});*/
+					
+					Button okButton = (Button) dialog.findViewById(R.id.backButton);
+					okButton.setOnClickListener(new OnClickListener()
+					{
+						
+						@Override
+						public void onClick(View v)
+						{
+							dialog.dismiss();
+							
+						}
+					});
+
+					dialog.show();
 				}
 			});
 	}

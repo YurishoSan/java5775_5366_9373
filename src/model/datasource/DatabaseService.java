@@ -62,7 +62,7 @@ public class DatabaseService implements Backend
 		}
 		catch (Exception e)
 		{
-
+			return e.getMessage();
 		}
 		return result;
 	}
@@ -85,7 +85,7 @@ public class DatabaseService implements Backend
 		}
 		catch (Exception e)
 		{
-
+			return e.getMessage();
 		}
 		return result;
 	}
@@ -159,6 +159,7 @@ public class DatabaseService implements Backend
 
 	}
 
+	@SuppressLint("SimpleDateFormat")
 	@SuppressWarnings("deprecation")
 	@Override
 	public void addDoctor(Doctor doctor) throws Exception
@@ -205,6 +206,7 @@ public class DatabaseService implements Backend
 
 	}
 
+	@SuppressLint("SimpleDateFormat")
 	@SuppressWarnings("deprecation")
 	@Override
 	public void addPatient(Patient patient) throws Exception
@@ -229,6 +231,7 @@ public class DatabaseService implements Backend
 
 	}
 
+	@SuppressLint("SimpleDateFormat")
 	@SuppressWarnings("deprecation")
 	@Override
 	public void addPrescription(Prescription prescription) throws Exception
@@ -241,12 +244,14 @@ public class DatabaseService implements Backend
 
 	}
 
+	@SuppressLint("SimpleDateFormat")
+	@SuppressWarnings("deprecation")
 	@Override
 	public void addTreatment(Treatment treatment) throws Exception
 	{
-		Gson gson = new Gson();
-		String result = POST(URL + "addTreatment",
-				gson.toJson(treatment, Treatment.class));
+		ObjectMapper objectMapper = new ObjectMapper();
+		objectMapper.getSerializationConfig().setDateFormat(new SimpleDateFormat("yyyy-MM-dd"));
+		String result = POST(URL + "addTreatment", objectMapper.writeValueAsString(treatment));
 		if (!result.equals("success"))
 			throw new Exception("Connection Problems");
 
@@ -371,6 +376,7 @@ public class DatabaseService implements Backend
 
 	}
 
+	@SuppressLint("SimpleDateFormat")
 	@SuppressWarnings("deprecation")
 	@Override
 	public void updateDoctor(Doctor doctor) throws Exception
@@ -432,6 +438,7 @@ public class DatabaseService implements Backend
 
 	}
 
+	@SuppressLint("SimpleDateFormat")
 	@SuppressWarnings("deprecation")
 	@Override
 	public void updatePatient(Patient patient) throws Exception
@@ -455,6 +462,7 @@ public class DatabaseService implements Backend
 
 	}
 
+	@SuppressLint("SimpleDateFormat")
 	@SuppressWarnings("deprecation")
 	@Override
 	public void updatePrescription(Prescription prescription) throws Exception
@@ -466,12 +474,14 @@ public class DatabaseService implements Backend
 			throw new Exception("Connection Problems");
 	}
 
+	@SuppressLint("SimpleDateFormat")
+	@SuppressWarnings("deprecation")
 	@Override
 	public void updateTreatment(Treatment treatment) throws Exception
 	{
-		Gson gson = new Gson();
-		String result = POST(URL + "updateTreatment",
-				gson.toJson(treatment, Treatment.class));
+		ObjectMapper objectMapper = new ObjectMapper();
+		objectMapper.getSerializationConfig().setDateFormat(new SimpleDateFormat("yyyy-MM-dd"));
+		String result = POST(URL + "updateTreatment", objectMapper.writeValueAsString(treatment));
 		if (!result.equals("success"))
 			throw new Exception("Connection Problems");
 	}
@@ -502,7 +512,7 @@ public class DatabaseService implements Backend
 			throws Exception
 	{
 		Gson gson = new Gson();
-		String result = GET(URL + "getAllergyByPatientList?medicineID="
+		String result = GET(URL + "getAllergyByMedicineList?medicineID="
 				+ medicineID);
 		return new ArrayList<Allergy>(Arrays.asList(gson.fromJson(result,
 				Allergy[].class)));

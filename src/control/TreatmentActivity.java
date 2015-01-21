@@ -1,7 +1,5 @@
 package control;
 
-import java.sql.Date;
-
 import model.backend.BackendFactory;
 
 import com.example.java5775_5366_9373.R;
@@ -9,11 +7,7 @@ import com.example.java5775_5366_9373.R;
 import entities.Treatment;
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
-import android.net.MailTo;
 import android.os.Bundle;
-import android.preference.EditTextPreference;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;

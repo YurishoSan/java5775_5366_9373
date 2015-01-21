@@ -1,24 +1,19 @@
 package control;
 
 import java.util.ArrayList;
-
 import model.backend.BackendFactory;
 import model.backend.Run;
 import model.backend.asyncTask;
-
 import com.example.java5775_5366_9373.R;
-
 import entities.Allergy;
 import entities.Medicine;
-import android.app.Activity;
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -157,6 +152,7 @@ public class AllergyListActivity extends ActionBarActivity
 			return position;
 		}
 
+		@SuppressLint("ViewHolder")
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent)
 		{

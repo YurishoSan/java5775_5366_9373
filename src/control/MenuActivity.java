@@ -52,7 +52,6 @@ public class MenuActivity extends ActionBarActivity
 					break;
 				case 1:
 					intent = new Intent(MenuActivity.this, MedicineListActivity.class);
-					intent.putExtra("isAdd", true);
 					startActivity(intent);
 					break;
 				case 2:
