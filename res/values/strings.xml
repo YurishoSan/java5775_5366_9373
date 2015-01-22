@@ -29,11 +29,17 @@
     <string name="show_allergies">הצג אלרגיות</string>
     <string name="show_treatments">הצג טיפולים</string>	<string name="accept_option">אשר</string>
     <string name="accept_icon_descreption">[a]ccept</string>
-    <string name="patient_number">מספר פציינט:</string>
-    <string name="patient_sex">מין:</string>
-    <string name="patient_dob">תאריך לידה:</string>
-    <string name="patient_phone">טלפון:</string>
-    <string name="patient_email">אימייל:</string>
-    <string name="patient_service_class">רמת שירות:</string>
+    <string name="person_number">מספר פציינט:</string>
+    <string name="person_sex">מין:</string>
+    <string name="person_dob">תאריך לידה:</string>
+    <string name="person_phone">טלפון:</string>
+    <string name="person_email">אימייל:</string>
+    <string name="person_service_class">רמת שירות:</string>
+    <string name="menu_start_treatment">התחל טיפול</string>
+    <string name="menu_doctor_details">פרטי רופא</string>
+    <string name="doctor_doj">תאריך הצתרפות:</string>
+    <string name="doctor_salary">משכורת:</string>
+    <string name="doctor_specialization">התמחות:</string>
+    <string name="space"> </string>
     
 </resources>

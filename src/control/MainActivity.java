@@ -7,6 +7,7 @@ import model.backend.*;
 import com.example.java5775_5366_9373.R;
 
 import entities.Doctor;
+import entities.ObjectSerializer;
 import entities.enums.Permit;
 import android.support.v7.app.ActionBarActivity;
 import android.app.ProgressDialog;
@@ -138,10 +139,10 @@ public class MainActivity extends ActionBarActivity
 						{
 							if (permit == Permit.DOCTOR)
 							{
-								
 								Intent myIntent = new Intent(MainActivity.this,
 										MenuActivity.class);
-								myIntent.putExtra("DoctorDetails", user);
+								String doctorSerialization = ObjectSerializer.serialize(user); 
+								myIntent.putExtra("doctorDetails",doctorSerialization);
 								myIntent.putExtra("Permit", permit);
 								startActivity(myIntent);
 							}

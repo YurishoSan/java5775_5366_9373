@@ -1,8 +1,14 @@
 package control;
 
+import java.io.Serializable;
+
 import com.example.java5775_5366_9373.R;
 
+import entities.Doctor;
+import entities.Medicine;
+import entities.ObjectSerializer;
 import android.support.v7.app.ActionBarActivity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -11,12 +17,14 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
 public class MenuActivity extends ActionBarActivity
 {
+	Doctor doctor;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -24,14 +32,74 @@ public class MenuActivity extends ActionBarActivity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_menu);
 		
+		try
+		{
+			String serial =  getIntent().getStringExtra("doctorDetails");
+		    if(serial!=null)
+		    doctor = (Doctor) ObjectSerializer.deserialize(serial);
+		}
+		
+		catch (Exception exp)
+		{
+			exp.printStackTrace();
+		}
+		
 		//set events
-		Button button = (Button) findViewById(R.id.button1);
-		button.setOnClickListener(new OnClickListener()
+		Button startTreatmentButton = (Button) findViewById(R.id.start_treatment_button);
+		startTreatmentButton.setOnClickListener(new OnClickListener()
 		{
 			public void onClick (View v)
 			{
 				Intent intent =new Intent(MenuActivity.this,TreatmentActivity.class);
 				startActivity(intent);
+			}
+		});
+		
+		Button doctorDetailsButton = (Button) findViewById(R.id.doctor_details_button);
+		doctorDetailsButton.setOnClickListener(new OnClickListener()
+		{
+			public void onClick (View v)
+			{		
+				final Dialog dialog = new Dialog(MenuActivity.this);
+						
+				dialog.setContentView(R.layout.doctor_details_dialog);
+				dialog.setTitle("פרטי רופא");
+				
+				TextView doctorIDTextView = (TextView) dialog.findViewById(R.id.doctorIDTextView);
+				TextView doctorFirstNameTextView = (TextView) dialog.findViewById(R.id.doctorFirstNameTextView);
+				TextView doctorLastNameTextView = (TextView) dialog.findViewById(R.id.doctorLastNameTextView);
+				TextView doctorGenderTextView = (TextView) dialog.findViewById(R.id.doctorGenderTextView);
+				TextView DoctorDoBTextView = (TextView) dialog.findViewById(R.id.DoctorDoBTextView);
+				TextView DoctorDoJTextView = (TextView) dialog.findViewById(R.id.DoctorDoJTextView);
+				TextView doctorPhoneTextView = (TextView) dialog.findViewById(R.id.doctorPhoneTextView);
+				TextView DoctorEmailAdressTextView = (TextView) dialog.findViewById(R.id.DoctorEmailAdressTextView);
+				TextView DoctorSalaryTextView = (TextView) dialog.findViewById(R.id.DoctorSalaryTextView);
+				TextView DoctorSpecializationTextView = (TextView) dialog.findViewById(R.id.DoctorSpecializationTextView);
+				
+				doctorIDTextView.setText(Long.toString(doctor.getDoctorID()));
+				doctorFirstNameTextView.setText(doctor.getDoctorFirstName());
+				doctorLastNameTextView.setText(doctor.getDoctorLastName());
+				doctorGenderTextView.setText(doctor.getDoctorGender().toString());
+				DoctorDoBTextView.setText(doctor.getDoctorDoB().toString());
+				DoctorDoJTextView.setText(doctor.getDoctorDoJ().toString());
+				doctorPhoneTextView.setText(doctor.getDoctorPhoneNumber());
+				DoctorEmailAdressTextView.setText(doctor.getDoctorEmailAdress());
+				DoctorSalaryTextView.setText(Float.toString(doctor.getDoctorSalary()));
+				DoctorSpecializationTextView.setText(doctor.getDoctorSpecialization().toString());
+				
+				Button okButton = (Button) dialog.findViewById(R.id.backButton);
+				okButton.setOnClickListener(new OnClickListener()
+				{
+					
+					@Override
+					public void onClick(View v)
+					{
+						dialog.dismiss();
+						
+					}
+				});
+
+				dialog.show();
 			}
 		});
 	
