@@ -51,6 +51,7 @@ public class AllergyListActivity extends ActionBarActivity
 						@Override
 						public void run() throws Exception
 						{
+							// if was called generally - get all allergies, if called from a medicine - get all medicine's allergies.
 							if (medicine == null)
 								allergies = BackendFactory.getInstance(getApplicationContext()).getAllergyList();
 							else
@@ -95,6 +96,7 @@ public class AllergyListActivity extends ActionBarActivity
 						exp.printStackTrace();
 					}
 					
+					//show allergy details.
 					final Dialog dialog = new Dialog(AllergyListActivity.this);
 					dialog.setContentView(R.layout.allergy_details_dialog);
 					dialog.setTitle("פרטי אלרגיה");

@@ -7,6 +7,11 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
+/**
+ * 
+ * Class to help serialize complex objects. found on the Internet.
+ *
+ */
 public final class ObjectSerializer {
 
     private ObjectSerializer() {

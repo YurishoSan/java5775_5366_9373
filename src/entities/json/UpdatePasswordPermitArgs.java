@@ -7,7 +7,7 @@ import entities.Password;
 import entities.enums.Permit;
 
 /**
- * @author Yurisho
+ * Class used to pass arguments in DatabaseService and API-DB.
  *
  */
 public class UpdatePasswordPermitArgs

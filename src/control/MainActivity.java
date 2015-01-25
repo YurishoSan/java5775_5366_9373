@@ -43,9 +43,10 @@ public class MainActivity extends ActionBarActivity
 						@Override
 						public void run() throws Exception
 						{
+							// populate database if empty.
 							Backend test = BackendFactory
 									.getInstance(getApplicationContext());
-							if(test.isEmpty())
+							if (test.isEmpty())
 								test.setLists();
 						}
 					}, null);
@@ -89,14 +90,16 @@ public class MainActivity extends ActionBarActivity
 
 		String temp = ((EditText) findViewById(R.id.docNum)).getText()
 				.toString().trim();
-		
-		if (temp.equals(""))
+
+		if (temp.equals("")) // no id given
 		{
-			Toast.makeText(getApplicationContext(), "נא הכנס מספר משתמש", Toast.LENGTH_SHORT).show();
+			Toast.makeText(getApplicationContext(), "נא הכנס מספר משתמש",
+					Toast.LENGTH_SHORT).show();
 			return;
 		}
 		id = Long.valueOf(temp);
-		pass = ((EditText) findViewById(R.id.password)).getText().toString().trim();
+		pass = ((EditText) findViewById(R.id.password)).getText().toString()
+				.trim();
 
 		progressDialog = new ProgressDialog(this);
 		progressDialog.dismiss();
@@ -113,21 +116,26 @@ public class MainActivity extends ActionBarActivity
 							ArrayList<Doctor> doctors;
 							user = null;
 							permit = Permit.DENIED;
-							
-							doctors = BackendFactory.getInstance(
-									getApplicationContext()).getDoctorList();
-							for(Doctor doctorItem : doctors)
-								if (doctorItem.getDoctorID() == id)
-								{
-									user = doctorItem;
-									
-									permit = BackendFactory.getInstance(
-											getApplicationContext()).checkPassword(id,
-											pass);
-									break;
-								}
-							if (user == null) // no doctor with this id found.
-								permit = Permit.DENIED;
+
+							permit = BackendFactory.getInstance(
+									getApplicationContext()).checkPassword(id,
+									pass); // try to log in with this password
+
+							if (permit == Permit.DOCTOR) // find doctor who
+															// logged in.
+							{
+								doctors = BackendFactory.getInstance(
+										getApplicationContext())
+										.getDoctorList();
+								for (Doctor doctorItem : doctors)
+									// find the doctor
+									if (doctorItem.getDoctorID() == id) // doctor
+																		// found
+									{
+										user = doctorItem;
+										break;
+									}
+							}
 						}
 					},
 
@@ -137,20 +145,23 @@ public class MainActivity extends ActionBarActivity
 						@Override
 						public void run() throws Exception
 						{
-							if (permit == Permit.DOCTOR)
+							if (permit == Permit.DOCTOR) // login ok
 							{
 								Intent myIntent = new Intent(MainActivity.this,
 										MenuActivity.class);
-								String doctorSerialization = ObjectSerializer.serialize(user); 
-								myIntent.putExtra("doctorDetails",doctorSerialization);
-								myIntent.putExtra("Permit", permit);
+								String doctorSerialization = ObjectSerializer
+										.serialize(user);
+								myIntent.putExtra("doctorDetails",
+										doctorSerialization);
 								startActivity(myIntent);
 							}
-							else if (permit == Permit.DENIED)
+							else if (permit == Permit.DENIED) // login bad
 								Toast.makeText(getApplicationContext(),
 										"שם משתמש או סיסמה שגויה.",
 										Toast.LENGTH_SHORT).show();
-							else // other permit i.e. ADMIN, COMPANY, PATIENT, etc.
+							else
+								// other permit i.e. ADMIN, COMPANY, PATIENT,
+								// etc.
 								Toast.makeText(getApplicationContext(),
 										"האפליקציה לשימוש רופאים בלבד.",
 										Toast.LENGTH_SHORT).show();

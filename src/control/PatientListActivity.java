@@ -91,6 +91,8 @@ public class PatientListActivity extends ActionBarActivity
 						exp.printStackTrace();
 					}
 					
+					//show patient details dialog.
+					
 					final Dialog dialog = new Dialog(PatientListActivity.this);
 					
 					dialog.setContentView(R.layout.patient_details_dialog);

@@ -6,7 +6,7 @@ package entities.json;
 import entities.Password;
 
 /**
- * @author Yurisho
+ * Class used to pass arguments in DatabaseService and API-DB.
  *
  */
 public class UpdatePasswordArgs

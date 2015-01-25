@@ -1429,6 +1429,7 @@ containing a value of this type.
         public static final int LinearLayout1=0x7f05003c;
         public static final int NameTextView=0x7f050052;
         public static final int TextView5=0x7f05006e;
+        public static final int acceptImageView=0x7f05006a;
         public static final int action_accept_option=0x7f05007d;
         public static final int action_bar=0x7f05001c;
         public static final int action_bar_activity_content=0x7f050015;
@@ -1443,7 +1444,9 @@ containing a value of this type.
         public static final int action_mode_close_button=0x7f050024;
         public static final int action_settings=0x7f05007c;
         public static final int activity_chooser_view_content=0x7f050025;
-        public static final int addresText=0x7f05004c;
+        public static final int addButton=0x7f050050;
+        public static final int addMedicineTreatment=0x7f05004f;
+        public static final int addressText=0x7f05004c;
         public static final int allergyDetailsTextView=0x7f050057;
         public static final int allergyIDTextView=0x7f050054;
         public static final int allergyListView=0x7f05003d;
@@ -1452,13 +1455,11 @@ containing a value of this type.
         public static final int backButton=0x7f050058;
         public static final int beginning=0x7f050011;
         public static final int button1=0x7f050043;
-        public static final int button2=0x7f050050;
-        public static final int button3=0x7f05004f;
         public static final int checkBox=0x7f050051;
         public static final int checkbox=0x7f05002d;
         public static final int collapseActionView=0x7f05000d;
         public static final int content=0x7f050048;
-        public static final int customDatePicker1=0x7f05004d;
+        public static final int dateDatePicker=0x7f05004d;
         public static final int default_activity_button=0x7f050028;
         public static final int dialog=0x7f05000e;
         public static final int disableHome=0x7f050008;
@@ -1481,7 +1482,6 @@ containing a value of this type.
         public static final int idTextView=0x7f05003e;
         public static final int ifRoom=0x7f05000a;
         public static final int image=0x7f050027;
-        public static final int imageView1=0x7f05006a;
         public static final int listMode=0x7f050001;
         public static final int list_item=0x7f050029;
         public static final int medicineActiveIngredientsTextView=0x7f05006f;
@@ -1496,11 +1496,11 @@ containing a value of this type.
         public static final int none=0x7f050010;
         public static final int normal=0x7f050000;
         public static final int password=0x7f050042;
-        public static final int patieIdText=0x7f05004b;
         public static final int patientDoBTextView=0x7f050078;
         public static final int patientEmailTextView=0x7f05007a;
         public static final int patientFirstNameTextView=0x7f050073;
         public static final int patientIDTextView=0x7f050072;
+        public static final int patientIdSpinner=0x7f05004b;
         public static final int patientLastNameTextView=0x7f050074;
         public static final int patientListView=0x7f05004a;
         public static final int patientPhoneTextView=0x7f050079;
@@ -1528,7 +1528,7 @@ containing a value of this type.
         public static final int split_action_bar=0x7f05001e;
         public static final int start_treatment_button=0x7f050046;
         public static final int submit_area=0x7f050039;
-        public static final int sumaryText=0x7f05004e;
+        public static final int summaryText=0x7f05004e;
         public static final int tabMode=0x7f050002;
         public static final int textView1=0x7f05005b;
         public static final int textView10=0x7f050066;

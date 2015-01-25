@@ -582,6 +582,7 @@ int id IdTextView 0x7f05007b
 int id LinearLayout1 0x7f05003c
 int id NameTextView 0x7f050052
 int id TextView5 0x7f05006e
+int id acceptImageView 0x7f05006a
 int id action_accept_option 0x7f05007d
 int id action_bar 0x7f05001c
 int id action_bar_activity_content 0x7f050015
@@ -596,7 +597,9 @@ int id action_menu_presenter 0x7f050017
 int id action_mode_close_button 0x7f050024
 int id action_settings 0x7f05007c
 int id activity_chooser_view_content 0x7f050025
-int id addresText 0x7f05004c
+int id addButton 0x7f050050
+int id addMedicineTreatment 0x7f05004f
+int id addressText 0x7f05004c
 int id allergyDetailsTextView 0x7f050057
 int id allergyIDTextView 0x7f050054
 int id allergyListView 0x7f05003d
@@ -605,13 +608,11 @@ int id always 0x7f05000b
 int id backButton 0x7f050058
 int id beginning 0x7f050011
 int id button1 0x7f050043
-int id button2 0x7f050050
-int id button3 0x7f05004f
 int id checkBox 0x7f050051
 int id checkbox 0x7f05002d
 int id collapseActionView 0x7f05000d
 int id content 0x7f050048
-int id customDatePicker1 0x7f05004d
+int id dateDatePicker 0x7f05004d
 int id default_activity_button 0x7f050028
 int id dialog 0x7f05000e
 int id disableHome 0x7f050008
@@ -634,7 +635,6 @@ int id icon 0x7f05002a
 int id idTextView 0x7f05003e
 int id ifRoom 0x7f05000a
 int id image 0x7f050027
-int id imageView1 0x7f05006a
 int id listMode 0x7f050001
 int id list_item 0x7f050029
 int id medicineActiveIngredientsTextView 0x7f05006f
@@ -649,11 +649,11 @@ int id never 0x7f050009
 int id none 0x7f050010
 int id normal 0x7f050000
 int id password 0x7f050042
-int id patieIdText 0x7f05004b
 int id patientDoBTextView 0x7f050078
 int id patientEmailTextView 0x7f05007a
 int id patientFirstNameTextView 0x7f050073
 int id patientIDTextView 0x7f050072
+int id patientIdSpinner 0x7f05004b
 int id patientLastNameTextView 0x7f050074
 int id patientListView 0x7f05004a
 int id patientPhoneTextView 0x7f050079
@@ -681,7 +681,7 @@ int id slidingDrawer1 0x7f050047
 int id split_action_bar 0x7f05001e
 int id start_treatment_button 0x7f050046
 int id submit_area 0x7f050039
-int id sumaryText 0x7f05004e
+int id summaryText 0x7f05004e
 int id tabMode 0x7f050002
 int id textView1 0x7f05005b
 int id textView10 0x7f050066

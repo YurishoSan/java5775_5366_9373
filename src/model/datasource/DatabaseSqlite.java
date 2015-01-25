@@ -466,7 +466,7 @@ public class DatabaseSqlite extends SQLiteOpenHelper implements Backend
 	 * @see model.backend.Backend#addTreatment(entities.Treatment)
 	 */
 	@Override
-	public void addTreatment(Treatment treatment) throws Exception
+	public long addTreatment(Treatment treatment) throws Exception
 	{
 		SQLiteDatabase db = this.getWritableDatabase();
 		ContentValues values = new ContentValues();
@@ -485,9 +485,12 @@ public class DatabaseSqlite extends SQLiteOpenHelper implements Backend
 		values.put(SQLNAME.KEY_TREATMENT_DONE,
 				(treatment.isTreatmentDone()) ? 1 : 0);
 
-		db.insertWithOnConflict(SQLNAME.TABLE_TREATMENT, null, values,
+		long id = db.insertWithOnConflict(SQLNAME.TABLE_TREATMENT, null, values,
 				SQLiteDatabase.CONFLICT_IGNORE);
+		
 		db.close();
+		
+		return id;
 	}
 
 	// endregion
