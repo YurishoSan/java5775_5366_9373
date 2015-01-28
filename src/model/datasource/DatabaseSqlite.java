@@ -140,7 +140,7 @@ public class DatabaseSqlite extends SQLiteOpenHelper implements Backend
 				+ SQLNAME.TABLE_PATIENT + "(" + SQLNAME.KEY_PATIENT_ID
 				+ ") on delete SET NULL on update SET NULL)";
 		db.execSQL(CREATE_TABLE);
-
+		
 		CREATE_TABLE = "CREATE TABLE " + SQLNAME.TABLE_PRESCRIPTION + "("
 				+ SQLNAME.KEY_PRESCRIPTION_TREATMENT_ID + " INTEGER,"
 				+ SQLNAME.KEY_PRESCRIPTION_MEDICINE_ID + " INTEGER,"
@@ -157,7 +157,7 @@ public class DatabaseSqlite extends SQLiteOpenHelper implements Backend
 				+ ") on delete SET NULL on update SET NULL)";
 		db.execSQL(CREATE_TABLE);
 
-		CREATE_TABLE = "CREATE TABLE " + SQLNAME.TABLE_PATIENT + "("
+		CREATE_TABLE = "CREATE TABLE " + SQLNAME.TABLE_TREATMENT + "("
 				+ SQLNAME.KEY_TREATMENT_ID + " INTEGER PRIMARY KEY,"
 				+ SQLNAME.KEY_TREATMENT_DOCTOR_ID + " INTEGER, "
 				+ SQLNAME.KEY_TREATMENT_PATIENT_ID + " INTEGER, "
@@ -172,7 +172,7 @@ public class DatabaseSqlite extends SQLiteOpenHelper implements Backend
 				+ SQLNAME.KEY_TREATMENT_PATIENT_ID + ") references "
 				+ SQLNAME.TABLE_PATIENT + "(" + SQLNAME.KEY_PATIENT_ID
 				+ ") on delete SET NULL on update SET NULL)";
-		
+		db.execSQL(CREATE_TABLE);
 	}
 
 	@SuppressWarnings("deprecation") // Date is deprecated, should change Date to GeorgianCalender in next version.
@@ -213,7 +213,7 @@ public class DatabaseSqlite extends SQLiteOpenHelper implements Backend
 					Gender.MALE, new Date(1980, 11, 15), "sabamba@gmail.com",
 					ServiceClass.GOLD, "035432213"));
 
-			// this.addPatientAllergy(patientAllergy);
+			this.addPatientAllergy(new PatientAllergy(544812123, 0));
 
 			// this.addPrescription(prescription);
 
