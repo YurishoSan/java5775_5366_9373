@@ -16,7 +16,7 @@ public final class BackendFactory
 
 	static Backend instance = null;
 	
-	public static Mode mode = Mode.SQL;
+	public static Mode mode = Mode.SERVICE;
 	
 	
 	public final static Backend getInstance(Context context)

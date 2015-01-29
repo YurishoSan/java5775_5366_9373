@@ -175,6 +175,12 @@ public class TreatmentActivity extends ActionBarActivity
 					EditText summeryText = (EditText) findViewById(R.id.summaryText);
 					final CustomDatePicker dateDatePicker = (CustomDatePicker) findViewById(R.id.dateDatePicker);
 
+					if (addressText.getText().toString().isEmpty() ||
+							summeryText.getText().toString().isEmpty())
+					{
+						throw new Exception("נא למלא את כל השדות!");
+					}
+					
 					final Treatment treatment = new Treatment(0, doctor
 							.getDoctorID(), patient.getPatientID(),
 							dateDatePicker.calendar.getTime(), addressText

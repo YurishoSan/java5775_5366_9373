@@ -36,15 +36,6 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class DatabaseSqlite extends SQLiteOpenHelper implements Backend
 {
-	@Override
-	public void onOpen(SQLiteDatabase db) {
-	    super.onOpen(db);
-	    if (!db.isReadOnly()) {
-	        // Enable foreign key constraints
-	        db.execSQL("PRAGMA foreign_keys=ON;");
-	    }
-	}
-	
 	@SuppressLint("SimpleDateFormat")
 	private static final SimpleDateFormat dateFormat = new SimpleDateFormat(
 			"yyyy-MM-dd HH:mm:ss");
@@ -182,6 +173,15 @@ public class DatabaseSqlite extends SQLiteOpenHelper implements Backend
 				+ SQLNAME.TABLE_PATIENT + "(" + SQLNAME.KEY_PATIENT_ID
 				+ ") on delete SET NULL on update SET NULL)";
 		db.execSQL(CREATE_TABLE);
+	}
+	
+	@Override
+	public void onOpen(SQLiteDatabase db) {
+	    super.onOpen(db);
+	    if (!db.isReadOnly()) {
+	        // Enable foreign key constraints
+	        db.execSQL("PRAGMA foreign_keys=ON;");
+	    }
 	}
 
 	@SuppressWarnings("deprecation") // Date is deprecated, should change Date to GeorgianCalender in next version.
